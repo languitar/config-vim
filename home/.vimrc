@@ -100,7 +100,9 @@ set showcmd
 
 " virtual line breaks on word boundaries with correct indentation
 set linebreak
-set breakindent
+if exists("&breakindent")
+    set breakindent
+endif
 
 " allow project-specific settings
 set exrc
@@ -228,9 +230,11 @@ nmap <leader>nt :NERDTreeToggle <CR>
 map <leader>tb :TagbarToggle <CR>
 
 " settings for neovim terminals
-autocmd vimrc TermOpen * setlocal nospell
-command Fish :terminal fish
-let g:terminal_scrollback_buffer_size=100000
+if v:progname == "nvim"
+    autocmd vimrc TermOpen * setlocal nospell
+    command Fish :terminal fish
+    let g:terminal_scrollback_buffer_size=100000
+endif
 
 " mappings for using tabs
 " map <F5> :tabe<CR>
