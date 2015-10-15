@@ -150,7 +150,7 @@ let g:detectindent_preferred_indent=4
 " let NERDTreeShowHidden=1
 " change cwd with nerd tree
 let NERDTreeChDirMode=2
-let NERDTreeIgnore = ['\.pyc$', '\.swp$']
+let NERDTreeIgnore = ['\.pyc$', '\.swp$', '\.egg-info$', '\.egg$']
 " autopen NERDTree and focus cursor in new document
 " autocmd vimrc VimEnter * NERDTree
 " autocmd vimrc VimEnter * wincmd p
@@ -193,6 +193,14 @@ let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp' " cache path results
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)|.*\.egg-info$',
   \ 'file': '\v\.(so|o|pyc)$'
+  \ }
+let g:ctrlp_user_command = {
+  \ 'types': {
+    \ 1: ['.git', 'cd %s && git ls-files --exclude-standard'],
+    \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+    \ },
+  \ 'fallback': 'ag %s -l --nocolor --hidden -g ""',
+  \ 'ignore': 1
   \ }
 
 " markdown settings
