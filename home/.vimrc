@@ -27,6 +27,7 @@ NeoBundle 'Shougo/vimproc.vim', {
 \    },
 \ }
 NeoBundle 'kmnk/vim-unite-giti'
+NeoBundle 'kopischke/unite-spell-suggest'
 NeoBundle 'gcmt/taboo.vim'
 NeoBundle 'bkad/CamelCaseMotion'
 
@@ -239,6 +240,7 @@ function! s:unite_my_settings()
   imap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
   imap <silent><buffer><expr> <C-t> unite#do_action('tabopen')
 endfunction
+nmap z= :Unite spell_suggest <CR>
 
 " markdown settings
 let g:vim_markdown_initial_foldlevel=1
