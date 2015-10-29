@@ -4,8 +4,8 @@ scriptencoding utf-8
 set nocompatible
 filetype off
 
-set runtimepath+=~/.vim/bundle/neobundle.vim/
-call neobundle#begin(expand('~/.vim/bundle/'))
+set runtimepath+=~/.local/share/nvim/bundle/neobundle.vim/
+call neobundle#begin(expand('~/.local/share/nvim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
