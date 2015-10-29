@@ -59,6 +59,7 @@ NeoBundle 'dag/vim-fish'
 NeoBundle 'hynek/vim-python-pep8-indent'
 NeoBundle 'jamessan/vim-gnupg'
 NeoBundle 'chrisbra/csv.vim'
+NeoBundle 'jceb/vim-orgmode'
 " NeoBundle 'plasticboy/vim-markdown'
 
 call neobundle#end()
@@ -220,7 +221,6 @@ let g:ctrlp_user_command = {
 nnoremap <C-p> :Unite -start-insert file_rec/async<CR>
 
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
-call unite#filters#sorter_default#use(['sorter_reverse'])
 call unite#custom#source('file_mru,file_rec,file_rec/async,grep,locate',
   \ 'ignore_pattern', join(['\.git/', 'tmp/', 'bundle/'], '\|'))
 
