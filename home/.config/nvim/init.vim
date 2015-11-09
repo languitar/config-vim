@@ -275,6 +275,7 @@ autocmd vimrc BufNewFile,BufReadPost *.md.erb set filetype=markdown
 " key bindings to open navigation aids
 nmap <leader>nt :NERDTreeToggle <CR>
 map <leader>tb :TagbarToggle <CR>
+map <leader>b :Unite buffer <CR>
 
 " settings for neovim terminals
 if v:progname == "nvim"
