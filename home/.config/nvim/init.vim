@@ -322,3 +322,6 @@ function! s:SpellLegend()
     endfor
 endfunction
 command! -bar SpellLegend call s:SpellLegend()
+
+" utility commands
+command Wsudo w !sudo tee % > /dev/null
