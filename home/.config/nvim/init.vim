@@ -125,6 +125,11 @@ set secure
 " current insert operation
 set backspace=indent,eol,start
 
+" ensure that ctrl+u in insert mode can be reversed
+" http://vim.wikia.com/wiki/Recover_from_accidental_Ctrl-U
+inoremap <c-u> <c-g>u<c-u>
+inoremap <c-w> <c-g>u<c-w>
+
 " bracket matching settings
 highlight MatchParen cterm=bold ctermbg=none ctermfg=9
 
