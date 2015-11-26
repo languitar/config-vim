@@ -45,6 +45,7 @@ NeoBundle 'bronson/vim-trailing-whitespace'
 " NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'tomtom/tcomment_vim'
+NeoBundle 'jpalardy/vim-slime'
 " NeoBundle 'Chiel92/vim-autoformat'
 
 " language support
@@ -57,6 +58,8 @@ NeoBundle 'nelstrom/vim-markdown-folding'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'dag/vim-fish'
 NeoBundle 'hynek/vim-python-pep8-indent'
+NeoBundle 'kana/vim-textobj-user'
+NeoBundle 'bps/vim-textobj-python'
 NeoBundle 'jamessan/vim-gnupg'
 NeoBundle 'chrisbra/csv.vim'
 NeoBundle 'jceb/vim-orgmode'
@@ -265,6 +268,10 @@ let g:instant_rst_bind_scroll=0
 " latex settings
 let g:Tex_DefaultTargetFormat="pdf"
 let g:Tex_IgnoredWarnings=''
+
+" vim-slime
+let g:slime_target="tmux"
+let g:slime_python_ipython=1
 
 " riv rest settings
 " let g:riv_disable_folding=1
