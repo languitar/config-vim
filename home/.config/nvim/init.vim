@@ -49,7 +49,7 @@ NeoBundle 'tomtom/tcomment_vim'
 
 " language support
 " NeoBundle 'jalcine/cmake.vim'
-NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
+NeoBundle 'vim-latex/vim-latex'
 NeoBundle 'languitar/riv.vim'
 " NeoBundle 'Rykka/InstantRst'
 NeoBundle 'suan/vim-instant-markdown'
