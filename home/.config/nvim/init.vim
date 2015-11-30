@@ -63,6 +63,7 @@ NeoBundle 'bps/vim-textobj-python'
 NeoBundle 'jamessan/vim-gnupg'
 NeoBundle 'chrisbra/csv.vim'
 NeoBundle 'jceb/vim-orgmode'
+NeoBundle 'vim-scripts/icalendar.vim'
 " NeoBundle 'plasticboy/vim-markdown'
 
 call neobundle#end()
@@ -281,6 +282,7 @@ autocmd vimrc BufRead,BufNewFile rsb.conf set filetype=dosini
 autocmd vimrc BufRead,BufNewFile *.project set filetype=json
 autocmd vimrc BufRead,BufNewFile *.template set filetype=json
 autocmd vimrc BufRead,BufNewFile *.distribution set filetype=json
+autocmd vimrc BufRead,BufNewFile *.ics set filetype=icalendar
 autocmd vimrc BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd vimrc BufNewFile,BufReadPost *.md.erb set filetype=markdown
 
