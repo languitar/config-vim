@@ -43,10 +43,11 @@ NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'ciaranm/detectindent'
 NeoBundle 'bronson/vim-trailing-whitespace'
 " NeoBundle 'terryma/vim-multiple-cursors'
-NeoBundle 'nathanaelkane/vim-indent-guides'
+" NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'jpalardy/vim-slime'
-" NeoBundle 'Chiel92/vim-autoformat'
+NeoBundle 'kshenoy/vim-signature'
+NeoBundle 'terryma/vim-expand-region'
 
 " language support
 " NeoBundle 'jalcine/cmake.vim'
@@ -60,6 +61,7 @@ NeoBundle 'dag/vim-fish'
 NeoBundle 'hynek/vim-python-pep8-indent'
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'bps/vim-textobj-python'
+NeoBundle 'tmhedberg/SimpylFold'
 NeoBundle 'jamessan/vim-gnupg'
 NeoBundle 'chrisbra/csv.vim'
 NeoBundle 'jceb/vim-orgmode'
@@ -273,6 +275,15 @@ let g:Tex_IgnoredWarnings=''
 " vim-slime
 let g:slime_target="tmux"
 let g:slime_python_ipython=1
+let g:slime_no_mappings=1
+nmap <c-c><c-f> vaf :SlimeSend<CR>
+nmap <c-c><c-c> vac :SlimeSend<CR>
+nmap <c-c><c-l> V :SlimeSend<CR>
+nmap <c-c><c-p> vip :SlimeSend<CR>
+xmap <c-c><c-c> :SlimeSend<CR>
+
+" python folding
+let g:SimpylFold_docstring_preview=1
 
 " riv rest settings
 " let g:riv_disable_folding=1
