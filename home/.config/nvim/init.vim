@@ -52,7 +52,7 @@ NeoBundle 'terryma/vim-expand-region'
 " language support
 " NeoBundle 'jalcine/cmake.vim'
 NeoBundle 'vim-latex/vim-latex'
-NeoBundle 'languitar/riv.vim'
+NeoBundle 'Rykka/riv.vim'
 " NeoBundle 'Rykka/InstantRst'
 NeoBundle 'suan/vim-instant-markdown'
 NeoBundle 'nelstrom/vim-markdown-folding'
