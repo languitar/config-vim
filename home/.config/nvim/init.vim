@@ -27,7 +27,7 @@ NeoBundle 'Shougo/vimproc.vim', {
 \    },
 \ }
 NeoBundle 'kmnk/vim-unite-giti'
-NeoBundle 'kopischke/unite-spell-suggest'
+NeoBundle 'kopischke/unite-spell-suggest', { 'on_unite': 'spell_suggest' }
 NeoBundle 'gcmt/taboo.vim'
 NeoBundle 'bkad/CamelCaseMotion'
 
