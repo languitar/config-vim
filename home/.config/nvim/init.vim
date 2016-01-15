@@ -67,6 +67,7 @@ NeoBundle 'chrisbra/csv.vim'
 " NeoBundle 'jceb/vim-orgmode'
 NeoBundle 'vim-scripts/icalendar.vim'
 " NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'bfredl/nvim-ipy'
 
 call neobundle#end()
 
