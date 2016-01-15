@@ -47,7 +47,7 @@ NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'kshenoy/vim-signature'
-NeoBundle 'terryma/vim-expand-region'
+" NeoBundle 'terryma/vim-expand-region'
 
 " language support
 " NeoBundle 'jalcine/cmake.vim'
@@ -64,7 +64,7 @@ NeoBundle 'bps/vim-textobj-python'
 NeoBundle 'tmhedberg/SimpylFold'
 NeoBundle 'jamessan/vim-gnupg'
 NeoBundle 'chrisbra/csv.vim'
-NeoBundle 'jceb/vim-orgmode'
+" NeoBundle 'jceb/vim-orgmode'
 NeoBundle 'vim-scripts/icalendar.vim'
 " NeoBundle 'plasticboy/vim-markdown'
 
