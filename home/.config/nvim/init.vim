@@ -172,16 +172,12 @@ let g:detectindent_preferred_indent=4
 " autocmd BufReadPost * :DetectIndent
 
 " nerdtree modifications
-" let NERDTreeShowHidden=1
 " change cwd with nerd tree
 let NERDTreeChDirMode=2
-let NERDTreeIgnore = ['\.pyc$', '\.swp$', '\.egg-info$', '\.egg$']
-" autopen NERDTree and focus cursor in new document
-" autocmd vimrc VimEnter * NERDTree
-" autocmd vimrc VimEnter * wincmd p
-" open nerdtree if no documents will be opened
-" autocmd vimrc StdinReadPre * let s:std_in=1
-" autocmd vimrc VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+let NERDTreeIgnore = [
+    \ '\.pyc$', '\.egg-info$', '\.egg$',
+    \ '\.bbx$', '\.cbx$', '\.dbx$', '-blx\.bib$', '\.aux$', '\.bbl$', '\.bcf$', '\.blg$', '\.fdb_latexmk$', '\.fls$', '\.run\.xml$', '\.aux$',
+    \ '\.swp$', ]
 
 " syntastic config
 let g:syntastic_always_populate_loc_list=1
