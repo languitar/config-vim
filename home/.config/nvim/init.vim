@@ -346,4 +346,5 @@ endfunction
 command! -bar SpellLegend call s:SpellLegend()
 
 " utility commands
-command Wsudo w !sudo tee % > /dev/null
+command W w
+command Sudow w !sudo tee % > /dev/null
