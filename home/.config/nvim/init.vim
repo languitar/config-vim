@@ -15,6 +15,7 @@ NeoBundle 'scrooloose/nerdtree'
 " NeoBundle 'jeetsukumaran/vim-buffergator'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'bling/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
 " NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimproc.vim', {
