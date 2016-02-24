@@ -33,7 +33,14 @@ NeoBundle 'gcmt/taboo.vim'
 NeoBundle 'bkad/CamelCaseMotion'
 
 " completion
-NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'Valloric/YouCompleteMe', {
+\ 'build' : {
+\     'mac' : 'python2 ./install.py --clang-completer',
+\     'unix' : 'python 2 ./install.py --clang-completer',
+\     'windows' : 'python2 install.py --clang-completer',
+\     'cygwin' : 'python2 ./install.py --clang-completer'
+\     }
+\ }
 NeoBundle 'benekastah/neomake'
 
 " SCM support
