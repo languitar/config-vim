@@ -29,6 +29,8 @@ NeoBundle 'Shougo/vimproc.vim', {
 \ }
 NeoBundle 'kmnk/vim-unite-giti'
 NeoBundle 'kopischke/unite-spell-suggest', { 'on_unite': 'spell_suggest' }
+NeoBundle 'Shougo/unite-outline'
+NeoBundle 'Shougo/neoyank.vim'
 NeoBundle 'gcmt/taboo.vim'
 NeoBundle 'bkad/CamelCaseMotion'
 
@@ -233,18 +235,22 @@ let g:ctrlp_user_command = {
   \ }
 
 " unite settings
-" ctrlp-like behavior from https://gist.github.com/copitux/6434354
+nmap <C-y> :Unite source<CR>
 nnoremap <C-p> :Unite -start-insert file_rec/async<CR>
 
+call unite#filters#sorter_default#use(['sorter_word', 'sorter_rank'])
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#custom#source('file_mru,file_rec,file_rec/async,grep,locate',
   \ 'ignore_pattern', join(['\.git/', 'tmp/', 'bundle/'], '\|'))
+" sort files by best match
+call unite#custom#source('file_mru,file_rec,file_rec/async',
+  \ 'sorters', 'sorter_rank')
 
 let g:unite_prompt = '>>> '
 let g:unite_winheight = 15
 let g:unite_update_time = 200
 let g:unite_split_rule = 'botright'
-let g:unite_data_directory = $HOME.'/.vim/tmp/unite'
+let g:unite_data_directory = $HOME.'/.cache/unite'
 
 autocmd FileType unite call s:unite_my_settings()
 function! s:unite_my_settings()
@@ -252,9 +258,9 @@ function! s:unite_my_settings()
   nmap <buffer> <ESC> <Plug>(unite_exit)
   imap <buffer> <C-j>   <Plug>(unite_select_next_line)
   imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
-  imap <silent><buffer><expr> <C-s> unite#do_action('split')
-  imap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
-  imap <silent><buffer><expr> <C-t> unite#do_action('tabopen')
+  " imap <silent><buffer><expr> <C-s> unite#do_action('split')
+  " imap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
+  " imap <silent><buffer><expr> <C-t> unite#do_action('tabopen')
 endfunction
 nmap z= :Unite spell_suggest <CR>
 
