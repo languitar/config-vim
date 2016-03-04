@@ -31,6 +31,7 @@ NeoBundle 'kmnk/vim-unite-giti'
 NeoBundle 'kopischke/unite-spell-suggest', { 'on_unite': 'spell_suggest' }
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'Shougo/neoyank.vim'
+NeoBundle 'termoshtt/unite-bibtex'
 NeoBundle 'gcmt/taboo.vim'
 NeoBundle 'bkad/CamelCaseMotion'
 
