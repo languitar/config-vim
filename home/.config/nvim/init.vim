@@ -253,7 +253,7 @@ let g:unite_update_time = 200
 let g:unite_split_rule = 'botright'
 let g:unite_data_directory = $HOME.'/.cache/unite'
 
-autocmd FileType unite call s:unite_my_settings()
+autocmd vimrc FileType unite call s:unite_my_settings()
 function! s:unite_my_settings()
   " Overwrite settings.
   nmap <buffer> <ESC> <Plug>(unite_exit)
