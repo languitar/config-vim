@@ -34,14 +34,25 @@ NeoBundle 'gcmt/taboo.vim'
 NeoBundle 'bkad/CamelCaseMotion'
 
 " completion
-NeoBundle 'Valloric/YouCompleteMe', {
-\ 'build' : {
-\     'mac' : 'python2 ./install.py --clang-completer',
-\     'unix' : 'python 2 ./install.py --clang-completer',
-\     'windows' : 'python2 install.py --clang-completer',
-\     'cygwin' : 'python2 ./install.py --clang-completer'
-\     }
-\ }
+" NeoBundle 'Valloric/YouCompleteMe', {
+" \ 'build' : {
+" \     'mac' : 'python2 ./install.py --clang-completer',
+" \     'unix' : 'python 2 ./install.py --clang-completer',
+" \     'windows' : 'python2 install.py --clang-completer',
+" \     'cygwin' : 'python2 ./install.py --clang-completer'
+" \     }
+" \ }
+NeoBundle 'Shougo/deoplete.nvim'
+NeoBundleLazy 'zchee/deoplete-jedi', {
+    \     'autoload': {
+    \         'filetypes': ['python', 'python3']
+    \     }
+    \ }
+NeoBundleLazy 'Rip-Rip/clang_complete', {
+    \     'autoload': {
+    \         'filetypes': ['c', 'cpp']
+    \     }
+    \ }
 NeoBundle 'benekastah/neomake'
 
 " SCM support
@@ -212,6 +223,17 @@ let g:ycm_collect_identifiers_from_comments_and_strings=1
 let g:ycm_seed_identifiers_with_syntax=1
 let g:ycm_add_preview_to_completeopt=1
 
+" deoplete settings
+let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_camel_case = 1
+
+let g:clang_complete_auto = 0
+let g:clang_auto_select = 0
+let g:clang_omnicppcomplete_compliance = 0
+let g:clang_make_default_keymappings = 0
+let g:clang_use_library = 1
+let g:clang_complete_macros = 1
+" let g:clang_complete_patterns = 1
 
 " unite settings
 nmap <C-y> :Unite source<CR>
