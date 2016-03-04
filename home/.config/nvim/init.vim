@@ -12,11 +12,9 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " general configuration
 NeoBundle 'sjl/badwolf'
 NeoBundle 'scrooloose/nerdtree'
-" NeoBundle 'jeetsukumaran/vim-buffergator'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'vim-airline/vim-airline-themes'
-" NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimproc.vim', {
 \ 'build' : {
@@ -190,12 +188,6 @@ let NERDTreeIgnore = [
     \ '\.bbx$', '\.cbx$', '\.dbx$', '-blx\.bib$', '\.aux$', '\.bbl$', '\.bcf$', '\.blg$', '\.fdb_latexmk$', '\.fls$', '\.run\.xml$', '\.aux$',
     \ '\.swp$', ]
 
-" syntastic config
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_check_on_open=1
-let g:syntastic_python_checkers=['pep8', 'pylint']
-let g:syntastic_aggregate_errors=1
-
 " Neomake settings
 let g:neomake_error_sign = {
             \ 'text': '>>',
@@ -220,20 +212,6 @@ let g:ycm_collect_identifiers_from_comments_and_strings=1
 let g:ycm_seed_identifiers_with_syntax=1
 let g:ycm_add_preview_to_completeopt=1
 
-" ctrlp settings
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp' " cache path results
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)|.*\.egg-info$',
-  \ 'file': '\v\.(so|o|pyc)$'
-  \ }
-let g:ctrlp_user_command = {
-  \ 'types': {
-    \ 1: ['.git', 'cd %s && git ls-files --exclude-standard'],
-    \ 2: ['.hg', 'hg --cwd %s locate -I .'],
-    \ },
-  \ 'fallback': 'ag %s -l --nocolor --hidden -g ""',
-  \ 'ignore': 1
-  \ }
 
 " unite settings
 nmap <C-y> :Unite source<CR>
