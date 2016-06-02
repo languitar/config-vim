@@ -32,6 +32,7 @@ NeoBundle 'Shougo/neoyank.vim'
 NeoBundle 'termoshtt/unite-bibtex'
 NeoBundle 'gcmt/taboo.vim'
 NeoBundle 'bkad/CamelCaseMotion'
+NeoBundle 'mbbill/undotree'
 
 " completion
 " NeoBundle 'Valloric/YouCompleteMe', {
