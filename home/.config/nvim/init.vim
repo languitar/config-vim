@@ -168,6 +168,9 @@ set wildmenu
 " allow mouse control
 set mouse=a
 
+" shortcut for replacing words under the cursor
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+
 " color scheme
 " set background=dark
 colorscheme badwolf
