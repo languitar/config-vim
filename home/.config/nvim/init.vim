@@ -4,96 +4,63 @@ scriptencoding utf-8
 set nocompatible
 filetype off
 
-set runtimepath+=~/.local/share/nvim/bundle/neobundle.vim/
-call neobundle#begin(expand('~/.local/share/nvim/bundle/'))
-
-NeoBundleFetch 'Shougo/neobundle.vim'
+call plug#begin('~/.local/share/nvim/bundle/')
 
 " general configuration
-NeoBundle 'sjl/badwolf'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'majutsushi/tagbar'
-NeoBundle 'bling/vim-airline'
-NeoBundle 'vim-airline/vim-airline-themes'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimproc.vim', {
-\ 'build' : {
-\     'windows' : 'tools\\update-dll-mingw',
-\     'cygwin' : 'make -f make_cygwin.mak',
-\     'mac' : 'make',
-\     'linux' : 'make',
-\     'unix' : 'gmake',
-\    },
-\ }
-NeoBundle 'kmnk/vim-unite-giti'
-NeoBundle 'kopischke/unite-spell-suggest', { 'on_unite': 'spell_suggest' }
-NeoBundle 'Shougo/unite-outline'
-NeoBundle 'Shougo/neoyank.vim'
-NeoBundle 'termoshtt/unite-bibtex'
-NeoBundle 'gcmt/taboo.vim'
-NeoBundle 'bkad/CamelCaseMotion'
-NeoBundle 'mbbill/undotree'
+Plug 'sjl/badwolf'
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'majutsushi/tagbar'
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/vimproc.vim', {'do': 'make'}
+Plug 'kmnk/vim-unite-giti'
+Plug 'kopischke/unite-spell-suggest'
+Plug 'Shougo/unite-outline'
+Plug 'Shougo/neoyank.vim'
+Plug 'termoshtt/unite-bibtex'
+Plug 'gcmt/taboo.vim'
+Plug 'bkad/CamelCaseMotion'
+Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
 
 " completion
-" NeoBundle 'Valloric/YouCompleteMe', {
-" \ 'build' : {
-" \     'mac' : 'python2 ./install.py --clang-completer',
-" \     'unix' : 'python 2 ./install.py --clang-completer',
-" \     'windows' : 'python2 install.py --clang-completer',
-" \     'cygwin' : 'python2 ./install.py --clang-completer'
-" \     }
-" \ }
-NeoBundle 'Shougo/deoplete.nvim'
-NeoBundleLazy 'zchee/deoplete-jedi', {
-    \     'autoload': {
-    \         'filetypes': ['python', 'python3']
-    \     }
-    \ }
-NeoBundleLazy 'Rip-Rip/clang_complete', {
-    \     'autoload': {
-    \         'filetypes': ['c', 'cpp']
-    \     }
-    \ }
-NeoBundle 'benekastah/neomake'
+Plug 'Shougo/deoplete.nvim'
+Plug 'zchee/deoplete-jedi', {'for': ['python', 'python3']}
+Plug 'Rip-Rip/clang_complete', {'for': ['c', 'cpp']}
+Plug 'benekastah/neomake'
 
 " SCM support
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 " editing aids
-NeoBundle 'ciaranm/detectindent'
-NeoBundle 'bronson/vim-trailing-whitespace'
-" NeoBundle 'terryma/vim-multiple-cursors'
-" NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'tomtom/tcomment_vim'
-NeoBundle 'jpalardy/vim-slime'
-NeoBundle 'kshenoy/vim-signature'
-" NeoBundle 'terryma/vim-expand-region'
+Plug 'ciaranm/detectindent'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'nathanaelkane/vim-indent-guides', {'on': 'IndentGuidesToggle'}
+Plug 'tomtom/tcomment_vim'
+Plug 'jpalardy/vim-slime'
+Plug 'kshenoy/vim-signature'
 
 " language support
-" NeoBundle 'jalcine/cmake.vim'
-NeoBundle 'vim-latex/vim-latex'
-NeoBundle 'Rykka/riv.vim'
-" NeoBundle 'Rykka/InstantRst'
-NeoBundle 'suan/vim-instant-markdown'
-NeoBundle 'nelstrom/vim-markdown-folding'
-NeoBundle 'elzr/vim-json'
-NeoBundle 'dag/vim-fish'
-NeoBundle 'hynek/vim-python-pep8-indent'
-NeoBundle 'kana/vim-textobj-user'
-NeoBundle 'bps/vim-textobj-python'
-NeoBundle 'tmhedberg/SimpylFold'
-NeoBundle 'jamessan/vim-gnupg'
-NeoBundle 'chrisbra/csv.vim'
-" NeoBundle 'jceb/vim-orgmode'
-NeoBundle 'vim-scripts/icalendar.vim'
-" NeoBundle 'plasticboy/vim-markdown'
-" NeoBundle 'bfredl/nvim-ipy'
+Plug 'vim-latex/vim-latex', {'for': 'tex'}
+Plug 'Rykka/riv.vim'
+" Plug 'Rykka/InstantRst'
+Plug 'suan/vim-instant-markdown'
+Plug 'nelstrom/vim-markdown-folding'
+Plug 'elzr/vim-json'
+Plug 'dag/vim-fish'
+Plug 'hynek/vim-python-pep8-indent'
+Plug 'kana/vim-textobj-user'
+Plug 'bps/vim-textobj-python'
+Plug 'tmhedberg/SimpylFold'
+Plug 'jamessan/vim-gnupg'
+Plug 'chrisbra/csv.vim'
+" Plug 'jceb/vim-orgmode'
+Plug 'vim-scripts/icalendar.vim'
 
-call neobundle#end()
+call plug#end()
 
 filetype plugin indent on
-NeoBundleCheck
 
 " define a default autocmd group to prevent duplicated commands
 augroup vimrc
@@ -318,6 +285,8 @@ autocmd vimrc BufNewFile,BufReadPost *.md.erb set filetype=markdown
 " key bindings to open navigation aids
 nmap <leader>nt :NERDTreeToggle <CR>
 map <leader>tb :TagbarToggle <CR>
+map <leader>u :UndotreeToggle <CR>
+map <leader>i :IndentGuidesToggle <CR>
 map <leader>b :Unite buffer <CR>
 
 " settings for neovim terminals
