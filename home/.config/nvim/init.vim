@@ -34,7 +34,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " editing aids
-Plug 'ciaranm/detectindent'
+Plug 'ciaranm/detectindent', {'on': 'DetectIndent'}
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'nathanaelkane/vim-indent-guides', {'on': 'IndentGuidesToggle'}
 Plug 'tomtom/tcomment_vim'
@@ -43,20 +43,20 @@ Plug 'kshenoy/vim-signature'
 
 " language support
 Plug 'vim-latex/vim-latex', {'for': 'tex'}
-Plug 'Rykka/riv.vim'
+Plug 'Rykka/riv.vim', {'for': 'rst'}
 " Plug 'Rykka/InstantRst'
-Plug 'suan/vim-instant-markdown'
-Plug 'nelstrom/vim-markdown-folding'
-Plug 'elzr/vim-json'
-Plug 'dag/vim-fish'
-Plug 'hynek/vim-python-pep8-indent'
+Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
+Plug 'nelstrom/vim-markdown-folding', {'for': 'markdown'}
+Plug 'elzr/vim-json', {'for': 'json'}
+Plug 'dag/vim-fish', {'for': 'fish'}
+Plug 'hynek/vim-python-pep8-indent', {'for': ['python', 'python3']}
 Plug 'kana/vim-textobj-user'
 Plug 'bps/vim-textobj-python'
-Plug 'tmhedberg/SimpylFold'
+Plug 'tmhedberg/SimpylFold', {'for': ['python', 'python3']}
 Plug 'jamessan/vim-gnupg'
-Plug 'chrisbra/csv.vim'
+Plug 'chrisbra/csv.vim', {'for': 'csv'}
 " Plug 'jceb/vim-orgmode'
-Plug 'vim-scripts/icalendar.vim'
+Plug 'vim-scripts/icalendar.vim', {'for': 'icalendar'}
 
 call plug#end()
 
