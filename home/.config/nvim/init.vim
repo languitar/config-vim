@@ -50,8 +50,8 @@ Plug 'nelstrom/vim-markdown-folding', {'for': 'markdown'}
 Plug 'elzr/vim-json', {'for': 'json'}
 Plug 'dag/vim-fish', {'for': 'fish'}
 Plug 'hynek/vim-python-pep8-indent', {'for': ['python', 'python3']}
-Plug 'kana/vim-textobj-user'
-Plug 'bps/vim-textobj-python'
+Plug 'kana/vim-textobj-user', {'for': ['python', 'python3']}
+Plug 'bps/vim-textobj-python', {'for': ['python', 'python3']}
 Plug 'tmhedberg/SimpylFold', {'for': ['python', 'python3']}
 Plug 'jamessan/vim-gnupg'
 Plug 'chrisbra/csv.vim', {'for': 'csv'}
