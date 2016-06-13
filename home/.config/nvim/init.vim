@@ -34,8 +34,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " editing aids
-Plug 'ciaranm/detectindent', {'on': 'DetectIndent'}
-Plug 'bronson/vim-trailing-whitespace'
+Plug 'roryokane/detectindent', {'on': 'DetectIndent'}
+Plug 'ntpeters/vim-better-whitespace'
 Plug 'nathanaelkane/vim-indent-guides', {'on': 'IndentGuidesToggle'}
 Plug 'tomtom/tcomment_vim'
 Plug 'jpalardy/vim-slime'
