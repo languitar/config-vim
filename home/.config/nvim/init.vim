@@ -28,6 +28,8 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'zchee/deoplete-jedi', {'for': ['python', 'python3']}
 Plug 'Rip-Rip/clang_complete', {'for': ['c', 'cpp']}
 Plug 'benekastah/neomake'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 " SCM support
 Plug 'tpope/vim-fugitive'
@@ -288,6 +290,10 @@ map <leader>tb :TagbarToggle <CR>
 map <leader>u :UndotreeToggle <CR>
 map <leader>i :IndentGuidesToggle <CR>
 map <leader>b :Unite buffer <CR>
+
+" UltiSnips settings
+let g:UltiSnipsEditSplit = "context"
+let g:UltiSnipsSnippetsDir = "~/.config/nvim/UltiSnips"
 
 " settings for neovim terminals
 if v:progname == "nvim"
