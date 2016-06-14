@@ -219,7 +219,7 @@ call unite#custom#source('file_mru,file_rec,file_rec/async,grep,locate',
 " sort files by best match
 call unite#custom#source('file_mru,file_rec,file_rec/async',
   \ 'sorters', 'sorter_rank')
-call unite#custom#source('spell_suggest',
+call unite#custom#source('spell_suggest,history/yank',
   \ 'sorters', 'sorter_nothing')
 
 let g:unite_prompt = '>>> '
