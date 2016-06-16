@@ -156,10 +156,32 @@ highlight DiffChange ctermbg=242
 " status line modification
 set laststatus=2 " always show a status line
 let g:airline#extensions#tabline#enabled=1
-let g:airline#extensions#syntastic#enabled=0 " already visible in gutter
+" already visible in gutter
+let g:airline#extensions#syntastic#enabled=0
 let g:airline#extensions#tagbar#enabled=1
 let g:airline#extensions#branch#enabled=1
+" already done by another plugin
+let g:airline#extensions#whitespace#checks=['indent', 'mixed-indent-file']
 let g:airline_powerline_fonts=1
+" make things more compact
+let g:airline_mode_map={
+    \ '__': '-',
+    \ 'n' : 'N',
+    \ 'i' : 'I',
+    \ 'R' : 'R',
+    \ 'c' : 'C',
+    \ 'v' : 'V',
+    \ 'V' : 'V',
+    \ '': 'V',
+    \ 's' : 'S',
+    \ 'S' : 'S',
+    \ '': 'S',
+    \ }
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_symbols.spell = '✓'
+let g:airline_section_z = '%4l/%L'
 
 " detect indent settings
 let g:detectindent_preferred_expandtab=1
