@@ -1,4 +1,7 @@
-scriptencoding utf-8
+scriptencoding utf8
+if !has('nvim')
+    set encoding utf8
+end
 
 " bundle settings
 set nocompatible
@@ -76,7 +79,6 @@ set shell=bash " fix the shell to something vim understand
 syntax on " enable syntax highlighting
 set number " show line numbers
 
-set encoding=utf8 " default encoding
 set fileformats=unix,dos,mac " set newline preferences
 
 " default indentation settings
@@ -296,9 +298,9 @@ let g:UltiSnipsEditSplit = "context"
 let g:UltiSnipsSnippetsDir = "~/.config/nvim/UltiSnips"
 
 " settings for neovim terminals
-if v:progname == "nvim"
+if !has('nvim')
     autocmd vimrc TermOpen * setlocal nospell
-    command Fish :terminal fish
+    command! Fish :terminal fish
     let g:terminal_scrollback_buffer_size=100000
 endif
 
@@ -342,5 +344,5 @@ endfunction
 command! -bar SpellLegend call s:SpellLegend()
 
 " utility commands
-command W w
-command Sudow w !sudo tee % > /dev/null
+command! W w
+command! Sudow w !sudo tee % > /dev/null
