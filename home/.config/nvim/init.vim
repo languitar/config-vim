@@ -213,13 +213,6 @@ let g:neomake_tex_enabled_makers = [ 'chktex' ]
 " let g:neomake_python_enabled_makers = [ 'pylama', 'pylint' ]
 autocmd vimrc BufReadPost,BufWritePost * Neomake
 
-" YouCompleteMe settings
-nnoremap <leader>gt :YcmCompleter GoTo<CR>
-let g:ycm_complete_in_comments=1
-let g:ycm_collect_identifiers_from_comments_and_strings=1
-let g:ycm_seed_identifiers_with_syntax=1
-let g:ycm_add_preview_to_completeopt=1
-
 " deoplete settings
 let g:deoplete#enable_at_startup = 1
 " let g:deoplete#enable_camel_case = 1
