@@ -314,8 +314,9 @@ let g:UltiSnipsEditSplit = "context"
 let g:UltiSnipsSnippetsDir = "~/.config/nvim/UltiSnips"
 
 " settings for neovim terminals
-if !has('nvim')
+if has('nvim')
     autocmd vimrc TermOpen * setlocal nospell
+    autocmd vimrc TermOpen * set bufhidden=hide
     command! Fish :terminal fish
     let g:terminal_scrollback_buffer_size=100000
 endif
