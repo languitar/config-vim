@@ -223,6 +223,7 @@ let g:clang_omnicppcomplete_compliance = 0
 let g:clang_make_default_keymappings = 0
 let g:clang_use_library = 1
 let g:clang_complete_macros = 1
+let g:clang_auto_user_options = 'compile_commands.json'
 " let g:clang_complete_patterns = 1
 
 " unite settings
@@ -361,3 +362,8 @@ command! -bar SpellLegend call s:SpellLegend()
 " utility commands
 command! W w
 command! Sudow w !sudo tee % > /dev/null
+
+" system-specific changes
+if filereadable(glob("~/.config/nvim/local.vim"))
+    source ~/.config/nvim/local.vim
+endif
