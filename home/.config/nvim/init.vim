@@ -49,8 +49,6 @@ Plug 'kshenoy/vim-signature'
 " language support
 Plug 'vim-latex/vim-latex', {'for': 'tex'}
 Plug 'Rykka/riv.vim', {'for': 'rst'}
-" Plug 'Rykka/InstantRst'
-Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'nelstrom/vim-markdown-folding', {'for': 'markdown'}
 Plug 'elzr/vim-json', {'for': 'json'}
 Plug 'dag/vim-fish', {'for': 'fish'}
