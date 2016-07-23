@@ -362,6 +362,10 @@ command! -bar SpellLegend call s:SpellLegend()
 command! W w
 command! Sudow w !sudo tee % > /dev/null
 
+" Some abbreviations
+iabbrev <expr> DATE strftime("%Y-%m-%d")
+iabbrev <expr> STAMP strftime("%FT%T%z")
+
 " system-specific changes
 if filereadable(glob("~/.config/nvim/local.vim"))
     source ~/.config/nvim/local.vim
