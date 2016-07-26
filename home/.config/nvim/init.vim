@@ -138,6 +138,14 @@ set wildmenu
 " allow mouse control
 set mouse=a
 
+" avoid delays when exiting insert mode with escape
+set timeoutlen=1000
+set ttimeoutlen=0
+
+" put leader to space
+map <space> <leader>
+map <space><space> <leader><leader>
+
 " shortcut for replacing words under the cursor
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
