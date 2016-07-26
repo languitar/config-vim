@@ -265,11 +265,6 @@ function! s:unite_my_settings()
 endfunction
 nmap z= :Unite spell_suggest <CR>
 
-" markdown settings
-let g:vim_markdown_initial_foldlevel=1
-let g:instant_markdown_slow=1
-let g:instant_markdown_autostart=0
-
 " taboo settings
 let g:taboo_tabline = 0
 
