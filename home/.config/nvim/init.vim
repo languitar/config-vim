@@ -25,6 +25,7 @@ Plug 'termoshtt/unite-bibtex'
 Plug 'gcmt/taboo.vim'
 Plug 'bkad/CamelCaseMotion'
 Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
+Plug 'easymotion/vim-easymotion'
 
 " completion
 Plug 'Shougo/deoplete.nvim'
