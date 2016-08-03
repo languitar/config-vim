@@ -310,6 +310,7 @@ map <leader>tb :TagbarToggle <CR>
 map <leader>u :UndotreeToggle <CR>
 map <leader>i :IndentGuidesToggle <CR>
 map <leader>b :Unite buffer <CR>
+map <leader>r :UniteResume <CR>
 
 " UltiSnips settings
 let g:UltiSnipsEditSplit = "context"
