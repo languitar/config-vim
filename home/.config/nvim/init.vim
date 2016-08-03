@@ -234,15 +234,14 @@ let g:clang_auto_user_options = 'compile_commands.json'
 " let g:clang_complete_patterns = 1
 
 " unite settings
-nmap <C-y> :Unite source<CR>
-nnoremap <C-p> :Unite -start-insert file_rec/async<CR>
+" nmap <C-y> :Unite source<CR>
 
 call unite#filters#sorter_default#use(['sorter_word', 'sorter_rank'])
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
-call unite#custom#source('file_mru,file_rec,file_rec/async,grep,locate',
-  \ 'ignore_pattern', join(['\.git/', 'tmp/', 'bundle/'], '\|'))
+" call unite#custom#source('file_mru,file_rec,file_rec/async,grep,locate',
+"   \ 'ignore_pattern', join(['\.git/', 'tmp/', 'bundle/'], '\|'))
 " sort files by best match
-call unite#custom#source('file_mru,file_rec,file_rec/async',
+call unite#custom#source('file_mru,file_rec,file_rec/async,file_rec/git',
   \ 'sorters', 'sorter_rank')
 call unite#custom#source('spell_suggest,history/yank',
   \ 'sorters', 'sorter_nothing')
@@ -311,6 +310,9 @@ map <leader>u :UndotreeToggle <CR>
 map <leader>i :IndentGuidesToggle <CR>
 map <leader>b :Unite buffer <CR>
 map <leader>r :UniteResume <CR>
+map <leader>p :UniteWithProjectDir -start-insert file_rec/async<CR>
+map <leader>pg :Unite -start-insert file_rec/git<CR>
+map <leader>g :Unite -start-insert file_rec/git<CR>
 
 " UltiSnips settings
 let g:UltiSnipsEditSplit = "context"
