@@ -243,7 +243,7 @@ call unite#filters#matcher_default#use(['matcher_fuzzy'])
 " sort files by best match
 call unite#custom#source('file_mru,file_rec,file_rec/async,file_rec/git',
   \ 'sorters', 'sorter_rank')
-call unite#custom#source('spell_suggest,history/yank',
+call unite#custom#source('spell_suggest,history/yank,buffer',
   \ 'sorters', 'sorter_nothing')
 
 let g:unite_prompt = '>>> '
@@ -311,8 +311,8 @@ map <leader>i :IndentGuidesToggle <CR>
 map <leader>b :Unite buffer <CR>
 map <leader>r :UniteResume <CR>
 map <leader>p :UniteWithProjectDir -start-insert file_rec/async<CR>
-map <leader>pg :Unite -start-insert file_rec/git<CR>
 map <leader>g :Unite -start-insert file_rec/git<CR>
+map <leader>e :Unite grep/git<CR>
 
 " UltiSnips settings
 let g:UltiSnipsEditSplit = "context"
