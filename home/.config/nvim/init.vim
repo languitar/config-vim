@@ -314,6 +314,8 @@ map <leader>p :UniteWithProjectDir -start-insert file_rec/async<CR>
 map <leader>g :Unite -start-insert file_rec/git<CR>
 map <leader>e :Unite grep/git<CR>
 
+map <leader>w :w<CR>
+
 " UltiSnips settings
 let g:UltiSnipsEditSplit = "context"
 let g:UltiSnipsSnippetsDir = "~/.config/nvim/UltiSnips"
