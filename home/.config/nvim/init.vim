@@ -26,6 +26,7 @@ Plug 'gcmt/taboo.vim'
 Plug 'bkad/CamelCaseMotion'
 Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
 Plug 'easymotion/vim-easymotion'
+Plug 'itspriddle/ZoomWin'
 
 " completion
 Plug 'Shougo/deoplete.nvim'
