@@ -243,7 +243,7 @@ call unite#filters#matcher_default#use(['matcher_fuzzy'])
 "   \ 'ignore_pattern', join(['\.git/', 'tmp/', 'bundle/'], '\|'))
 " sort files by best match
 call unite#custom#source('file_mru,file_rec,file_rec/async,file_rec/git',
-  \ 'sorters', 'sorter_rank')
+  \ 'sorters', 'sorter_selecta')
 call unite#custom#source('spell_suggest,history/yank,buffer',
   \ 'sorters', 'sorter_nothing')
 
