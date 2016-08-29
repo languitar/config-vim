@@ -327,19 +327,17 @@ if has('nvim')
     autocmd vimrc TermOpen * set bufhidden=hide
     command! Fish :terminal fish
     let g:terminal_scrollback_buffer_size=100000
+    tnoremap <A-h> <C-\><C-n><C-w>h
+    tnoremap <A-j> <C-\><C-n><C-w>j
+    tnoremap <A-k> <C-\><C-n><C-w>k
+    tnoremap <A-l> <C-\><C-n><C-w>l
 endif
 
-" mappings for using tabs
-" map <F5> :tabe<CR>
-" map <F6> :tabc<CR>
-" map <F7> :tabp<CR>
-" map <F8> :tabn<CR>
-
-" mappings for navigating between windows with alt+arrows
-nmap <silent> <C-L> :wincmd l<CR>
-nmap <silent> <C-H> :wincmd h<CR>
-nmap <silent> <C-K> :wincmd k<CR>
-nmap <silent> <C-J> :wincmd j<CR>
+" mappings for navigating between windows with alt+homerow
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
 
 " Handle tmux $TERM quirks in vim
 map <Esc>OH <Home>
