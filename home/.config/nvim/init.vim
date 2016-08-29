@@ -60,8 +60,8 @@ Plug 'bps/vim-textobj-python', {'for': ['python', 'python3']}
 Plug 'tmhedberg/SimpylFold', {'for': ['python', 'python3']}
 Plug 'jamessan/vim-gnupg'
 Plug 'chrisbra/csv.vim', {'for': 'csv'}
-" Plug 'jceb/vim-orgmode'
 Plug 'vim-scripts/icalendar.vim', {'for': 'icalendar'}
+Plug 'tmux-plugins/vim-tmux', {'for': 'tmux'}
 
 call plug#end()
 
