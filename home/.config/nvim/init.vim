@@ -50,7 +50,8 @@ Plug 'kshenoy/vim-signature'
 Plug 'sk1418/Join', {'on': 'Join'}
 
 " language support
-Plug 'vim-latex/vim-latex', {'for': 'tex'}
+" Plug 'vim-latex/vim-latex', {'for': 'tex'}
+Plug 'lervag/vimtex', {'for': 'tex'}
 Plug 'Rykka/riv.vim', {'for': 'rst'}
 Plug 'nelstrom/vim-markdown-folding', {'for': 'markdown'}
 Plug 'elzr/vim-json', {'for': 'json'}
