@@ -1,3 +1,5 @@
+priority 1
+
 snippet 2columns "Adds LaTeX beamer columns" b
 \begin{columns}[${1:T}]
 	\begin{column}{${2:0.48}\textwidth}
@@ -6,4 +8,12 @@ snippet 2columns "Adds LaTeX beamer columns" b
 	\begin{column}{${3:0.48}\textwidth}
 	\end{column}
 \end{columns}
+endsnippet
+
+snippet frame "LaTeX beamer frame" b
+\begin{frame}[${1:t}]
+	\frametitle{${2:title}}
+	\framesubtitle{${3:subtitle}}
+	${0:${VISUAL}}
+\end{frame}
 endsnippet
