@@ -27,6 +27,7 @@ Plug 'bkad/CamelCaseMotion'
 Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
 Plug 'easymotion/vim-easymotion'
 Plug 'itspriddle/ZoomWin'
+Plug 'tpope/vim-eunuch'
 
 " completion
 Plug 'Shougo/deoplete.nvim'
@@ -394,7 +395,6 @@ command! -bar SpellLegend call s:SpellLegend()
 
 " utility commands
 command! W w
-command! Sudow w !sudo tee % > /dev/null
 
 " system-specific changes
 if filereadable(glob("~/.config/nvim/local.vim"))
