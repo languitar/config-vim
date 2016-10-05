@@ -46,7 +46,7 @@ Plug 'roryokane/detectindent', {'on': 'DetectIndent'}
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'nathanaelkane/vim-indent-guides', {'on': 'IndentGuidesToggle'}
 Plug 'tomtom/tcomment_vim'
-Plug 'jpalardy/vim-slime'
+Plug 'bfredl/nvim-ipy'
 Plug 'kshenoy/vim-signature'
 Plug 'sk1418/Join', {'on': 'Join'}
 
