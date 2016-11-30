@@ -17,7 +17,6 @@ Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
-Plug 'kmnk/vim-unite-giti'
 Plug 'kopischke/unite-spell-suggest'
 Plug 'Shougo/unite-outline'
 Plug 'Shougo/neoyank.vim'
@@ -39,7 +38,7 @@ Plug 'honza/vim-snippets'
 
 " SCM support
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 
 " editing aids
 Plug 'roryokane/detectindent', {'on': 'DetectIndent'}
@@ -280,6 +279,9 @@ let g:instant_rst_bind_scroll=0
 " latex settings
 let g:Tex_DefaultTargetFormat="pdf"
 let g:Tex_IgnoredWarnings=''
+
+" signify
+let g:signify_vcs_list = [ 'git', 'svn', 'hg' ]
 
 " vim-slime
 let g:slime_target="tmux"
