@@ -163,6 +163,12 @@ highlight DiffDelete ctermbg=1
 highlight DiffChange ctermbg=238
 highlight DiffChange ctermbg=242
 
+" indent guides
+let g:indent_guides_default_mapping = 0
+let g:indent_guides_auto_colors = 0
+highlight IndentGuidesOdd  guibg=red   ctermbg=234
+highlight IndentGuidesEven guibg=green ctermbg=236
+
 " status line modification
 set laststatus=2 " always show a status line
 let g:airline#extensions#tabline#enabled=1
