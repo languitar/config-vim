@@ -11,9 +11,15 @@ snippet 2columns "Adds LaTeX beamer columns" b
 endsnippet
 
 snippet frame "LaTeX beamer frame" b
-\begin{frame}[${1:t}]
+\begin{frame}[${1:c}]
 	\frametitle{${2:title}}
 	\framesubtitle{${3:subtitle}}
 	${0:${VISUAL}}
 \end{frame}
+endsnippet
+
+snippet minted "Source code highlighting environment using minted" b
+\begin{minted}[${1:}]{${2}}
+	${0:${VISUAL}}
+\end{minted}
 endsnippet
