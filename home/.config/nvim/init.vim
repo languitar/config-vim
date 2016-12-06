@@ -45,8 +45,6 @@ Plug 'roryokane/detectindent', {'on': 'DetectIndent'}
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'nathanaelkane/vim-indent-guides', {'on': 'IndentGuidesToggle'}
 Plug 'tomtom/tcomment_vim'
-Plug 'bfredl/nvim-ipy'
-Plug 'kshenoy/vim-signature'
 Plug 'sk1418/Join', {'on': 'Join'}
 Plug 'machakann/vim-highlightedyank'
 
@@ -56,6 +54,7 @@ Plug 'Rykka/riv.vim', {'for': 'rst'}
 Plug 'nelstrom/vim-markdown-folding', {'for': 'markdown'}
 Plug 'elzr/vim-json', {'for': 'json'}
 Plug 'dag/vim-fish', {'for': 'fish'}
+Plug 'bfredl/nvim-ipy', {'on': ['IPython', 'IPython2'] }
 Plug 'hynek/vim-python-pep8-indent', {'for': ['python', 'python3']}
 Plug 'kana/vim-textobj-user', {'for': ['python', 'python3']}
 Plug 'bps/vim-textobj-python', {'for': ['python', 'python3']}
