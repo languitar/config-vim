@@ -48,6 +48,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'bfredl/nvim-ipy'
 Plug 'kshenoy/vim-signature'
 Plug 'sk1418/Join', {'on': 'Join'}
+Plug 'machakann/vim-highlightedyank'
 
 " language support
 Plug 'lervag/vimtex', {'for': 'tex'}
