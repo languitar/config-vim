@@ -162,6 +162,9 @@ highlight DiffDelete ctermbg=1
 highlight DiffChange ctermbg=238
 highlight DiffChange ctermbg=242
 
+" solid utf-8 lines for splits
+set fillchars=vert:\│
+
 " indent guides
 let g:indent_guides_default_mapping = 0
 let g:indent_guides_auto_colors = 0
