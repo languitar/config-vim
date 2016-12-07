@@ -48,6 +48,7 @@ Plug 'nathanaelkane/vim-indent-guides', {'on': 'IndentGuidesToggle'}
 Plug 'tomtom/tcomment_vim'
 Plug 'sk1418/Join', {'on': 'Join'}
 Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-surround'
 
 " language support
 Plug 'lervag/vimtex', {'for': 'tex'}
