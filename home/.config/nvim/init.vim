@@ -12,6 +12,7 @@ call plug#begin('~/.local/share/nvim/bundle/')
 " general configuration
 Plug 'sjl/badwolf'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'albfan/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
 Plug 'majutsushi/tagbar'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -209,10 +210,6 @@ let g:detectindent_preferred_indent=4
 " nerdtree modifications
 " change cwd with nerd tree
 let NERDTreeChDirMode=2
-let NERDTreeIgnore = [
-    \ '\.pyc$', '\.egg-info$', '\.egg$',
-    \ '\.bbx$', '\.cbx$', '\.dbx$', '-blx\.bib$', '\.aux$', '\.bbl$', '\.bcf$', '\.blg$', '\.fdb_latexmk$', '\.fls$', '\.run\.xml$', '\.aux$',
-    \ '\.swp$', ]
 
 " Neomake settings
 let g:neomake_error_sign = {
