@@ -289,6 +289,7 @@ let g:Tex_IgnoredWarnings=''
 
 " signify
 let g:signify_vcs_list = [ 'git', 'svn', 'hg' ]
+autocmd vimrc User Fugitive SignifyRefresh
 
 " vim-slime
 let g:slime_target="tmux"
