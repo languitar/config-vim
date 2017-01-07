@@ -65,6 +65,9 @@ Plug 'jamessan/vim-gnupg'
 Plug 'chrisbra/csv.vim', {'for': 'csv'}
 Plug 'vim-scripts/icalendar.vim', {'for': 'icalendar'}
 Plug 'tmux-plugins/vim-tmux', {'for': 'tmux'}
+Plug 'rust-lang/rust.vim', {'for': 'rust'}
+Plug 'sebastianmarkow/deoplete-rust', {'for': 'rust'}
+Plug 'cespare/vim-toml', {'for': 'toml'}
 
 call plug#end()
 
