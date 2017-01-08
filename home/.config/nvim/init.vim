@@ -412,6 +412,8 @@ command! -bar SpellLegend call s:SpellLegend()
 " utility commands
 command! W w
 
+command! CopyFileLine let @+=expand("%") . ':' . line(".")
+
 " system-specific changes
 if filereadable(glob("~/.config/nvim/local.vim"))
     source ~/.config/nvim/local.vim
