@@ -49,6 +49,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'sk1418/Join', {'on': 'Join'}
 Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-surround'
+Plug 'kshenoy/vim-signature'
 
 " language support
 Plug 'lervag/vimtex', {'for': 'tex'}
