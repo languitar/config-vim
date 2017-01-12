@@ -317,6 +317,8 @@ autocmd vimrc BufRead,BufNewFile *.project set filetype=json
 autocmd vimrc BufRead,BufNewFile *.template set filetype=json
 autocmd vimrc BufRead,BufNewFile *.distribution set filetype=json
 autocmd vimrc BufRead,BufNewFile *.ics set filetype=icalendar
+autocmd vimrc BufRead,BufNewFile *.bbx set filetype=tex
+autocmd vimrc BufRead,BufNewFile *.cbx set filetype=tex
 autocmd vimrc BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd vimrc BufNewFile,BufReadPost *.md.erb set filetype=markdown
 
