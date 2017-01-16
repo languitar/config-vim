@@ -263,7 +263,7 @@ call unite#custom#profile('default', 'context', {
     \   'prompt': '>>> ',
     \   'direction': 'belowright',
     \   'winheight': 15,
-    \   'updatetime': 200,
+    \   'start_insert': 1,
     \ })
 
 let g:unite_data_directory = $HOME.'/.cache/unite'
@@ -330,10 +330,10 @@ nmap <leader>n :NERDTreeToggle <CR>
 map <leader>t :TagbarToggle <CR>
 map <leader>u :UndotreeToggle <CR>
 map <leader>i :IndentGuidesToggle <CR>
-map <leader>b :Unite -start-insert buffer <CR>
+map <leader>b :Unite buffer <CR>
 map <leader>r :UniteResume <CR>
-map <leader>p :UniteWithProjectDir -start-insert file_rec/async<CR>
-map <leader>g :Unite -start-insert file_rec/git<CR>
+map <leader>p :UniteWithProjectDir file_rec/async<CR>
+map <leader>g :Unite file_rec/git<CR>
 map <leader>e :Unite grep/git<CR>
 map <leader>vp :Gpull --rebase<CR>
 map <leader>vu :Gpush<CR>
