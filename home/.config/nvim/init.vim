@@ -259,10 +259,13 @@ call unite#custom#source('file_mru,file_rec,file_rec/async,file_rec/git',
 call unite#custom#source('spell_suggest,history/yank,buffer',
   \ 'sorters', 'sorter_nothing')
 
-let g:unite_prompt = '>>> '
-let g:unite_winheight = 15
-let g:unite_update_time = 200
-let g:unite_split_rule = 'botright'
+call unite#custom#profile('default', 'context', {
+    \   'prompt': '>>> ',
+    \   'direction': 'belowright',
+    \   'winheight': 15,
+    \   'updatetime': 200,
+    \ })
+
 let g:unite_data_directory = $HOME.'/.cache/unite'
 
 autocmd vimrc FileType unite call s:unite_my_settings()
