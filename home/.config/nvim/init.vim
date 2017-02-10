@@ -21,7 +21,6 @@ Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'kopischke/unite-spell-suggest'
 Plug 'Shougo/unite-outline'
 Plug 'Shougo/neoyank.vim'
-Plug 'termoshtt/unite-bibtex'
 Plug 'gcmt/taboo.vim'
 Plug 'bkad/CamelCaseMotion'
 Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
