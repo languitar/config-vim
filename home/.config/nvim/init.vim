@@ -27,6 +27,7 @@ Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
 Plug 'easymotion/vim-easymotion'
 Plug 'itspriddle/ZoomWin'
 Plug 'tpope/vim-eunuch'
+Plug 'hkupty/iron.nvim'
 
 " completion
 Plug 'Shougo/deoplete.nvim'
@@ -56,7 +57,6 @@ Plug 'Rykka/riv.vim', {'for': 'rst'}
 Plug 'nelstrom/vim-markdown-folding', {'for': 'markdown'}
 Plug 'elzr/vim-json', {'for': 'json'}
 Plug 'dag/vim-fish', {'for': 'fish'}
-Plug 'bfredl/nvim-ipy', {'on': ['IPython', 'IPython2'] }
 Plug 'hynek/vim-python-pep8-indent', {'for': ['python', 'python3']}
 Plug 'kana/vim-textobj-user', {'for': ['python', 'python3']}
 Plug 'bps/vim-textobj-python', {'for': ['python', 'python3']}
