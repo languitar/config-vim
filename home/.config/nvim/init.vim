@@ -11,6 +11,7 @@ call plug#begin('~/.local/share/nvim/bundle/')
 
 " general configuration
 Plug 'sjl/badwolf'
+Plug 'vim-scripts/mayansmoke'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'albfan/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
 Plug 'majutsushi/tagbar'
@@ -413,6 +414,10 @@ function! s:SpellLegend()
     endfor
 endfunction
 command! -bar SpellLegend call s:SpellLegend()
+
+" Colorscheme switching
+command! Light :colorscheme mayansmoke | :AirlineTheme molokai
+command! Dark :colorscheme badwolf | :AirlineTheme badwolf
 
 " utility commands
 command! W w
