@@ -37,6 +37,7 @@ Plug 'Rip-Rip/clang_complete', {'for': ['c', 'cpp']}
 Plug 'benekastah/neomake'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'artur-shaik/vim-javacomplete2', {'for': ['java']}
 
 " SCM support
 Plug 'tpope/vim-fugitive'
@@ -381,6 +382,9 @@ map <leader>h :nohlsearch <CR>
 if has('nvim')
     let g:vimtex_latexmk_progname = 'nvr'
 endif
+
+" java completion
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
 " deoplete completion for LaTeX
 if !exists('g:deoplete#omni#input_patterns')
