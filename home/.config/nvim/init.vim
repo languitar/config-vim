@@ -369,8 +369,9 @@ map <leader>h :nohlsearch <CR>
 
 " make vimtex work with neovim
 if has('nvim')
-    let g:vimtex_latexmk_progname = 'nvr'
+    let g:vimtex_compiler_progname = 'nvr'
 endif
+let g:vimtex_view_method = 'zathura'
 
 " java completion
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
