@@ -34,7 +34,7 @@ Plug 'hkupty/iron.nvim'
 Plug 'Shougo/deoplete.nvim'
 Plug 'zchee/deoplete-jedi', {'for': ['python', 'python3']}
 Plug 'Rip-Rip/clang_complete', {'for': ['c', 'cpp']}
-Plug 'benekastah/neomake'
+Plug 'w0rp/ale'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'artur-shaik/vim-javacomplete2', {'for': ['java']}
@@ -217,22 +217,11 @@ let g:detectindent_preferred_indent=4
 " change cwd with nerd tree
 let NERDTreeChDirMode=2
 
-" Neomake settings
-let g:neomake_error_sign = {
-            \ 'text': '>>',
-            \ 'texthl': 'ErrorMsg',
-            \ }
-hi MyWarningMsg ctermbg=3 ctermfg=0
-let g:neomake_warning_sign = {
-            \ 'text': '>>',
-            \ 'texthl': 'MyWarningMsg',
-            \ }
-
-let g:neomake_c_enabled_makers = []
-let g:neomake_cpp_enabled_makers = []
-let g:neomake_tex_enabled_makers = [ 'chktex' ]
-" let g:neomake_python_enabled_makers = [ 'pylama', 'pylint' ]
-autocmd vimrc BufReadPost,BufWritePost * Neomake
+" ale settings
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_linters = {
+    \ 'tex': ['proselint', 'chktex'],
+    \ }
 
 " deoplete settings
 let g:deoplete#enable_at_startup = 1
