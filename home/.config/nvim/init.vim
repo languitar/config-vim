@@ -110,6 +110,9 @@ set hlsearch " highlight search matches. Turn of with :nohlsearch after a search
 set incsearch " highlight partial search pattern matches while typing
 set ignorecase " usually ignore case when searching
 set smartcase " unless a search term starts with a capital letter
+if exists('+inccommand')
+    set inccommand=nosplit
+endif
 
 " print margin at the specified textwidth setting (- important to distinguish
 " from off (being 0))
