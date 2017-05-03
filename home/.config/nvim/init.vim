@@ -225,6 +225,7 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_linters = {
     \ 'tex': ['proselint', 'chktex'],
     \ }
+let g:ale_lint_on_text_changed = 'never'
 
 " deoplete settings
 let g:deoplete#enable_at_startup = 1
