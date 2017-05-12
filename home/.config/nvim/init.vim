@@ -306,6 +306,7 @@ let g:vim_json_syntax_conceal=0 " do not remove double quotes in view
 let g:instant_rst_bind_scroll=0
 
 " latex settings
+let g:tex_flavor = "latex"
 let g:Tex_DefaultTargetFormat="pdf"
 let g:Tex_IgnoredWarnings=''
 
