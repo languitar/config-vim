@@ -17,10 +17,8 @@ Plug 'albfan/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
 Plug 'majutsushi/tagbar'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'Shougo/unite.vim'
+Plug 'Shougo/denite.nvim'
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
-Plug 'kopischke/unite-spell-suggest'
-Plug 'Shougo/unite-outline'
 Plug 'Shougo/neoyank.vim'
 Plug 'gcmt/taboo.vim'
 Plug 'bkad/CamelCaseMotion'
@@ -240,39 +238,62 @@ let g:clang_complete_macros = 1
 let g:clang_auto_user_options = 'compile_commands.json'
 " let g:clang_complete_patterns = 1
 
-" unite settings
-" nmap <C-y> :Unite source<CR>
+" Denite settings
+" git file source
+call denite#custom#alias('source', 'file_rec/git', 'file_rec')
+call denite#custom#var('file_rec/git', 'command',
+    \ ['git', 'ls-files', '-co', '--exclude-standard'])
+" git grep source
+call denite#custom#alias('source', 'grep/git', 'grep')
+call denite#custom#var('grep/git', 'command',
+    \ ['git'])
+call denite#custom#var('grep/git', 'default_opts',
+        \ ['grep', '-n'])
+call denite#custom#var('grep/git', 'recursive_opts', ['--recurse-submodules'])
+call denite#custom#var('grep/git', 'pattern_opt', ['-e'])
+call denite#custom#var('grep/git', 'separator', ['--'])
+call denite#custom#var('grep/git', 'final_opts', ['.'])
 
-call unite#filters#sorter_default#use(['sorter_word', 'sorter_rank'])
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-" call unite#custom#source('file_mru,file_rec,file_rec/async,grep,locate',
-"   \ 'ignore_pattern', join(['\.git/', 'tmp/', 'bundle/'], '\|'))
-" sort files by best match
-call unite#custom#source('file_mru,file_rec,file_rec/async,file_rec/git',
-  \ 'sorters', 'sorter_selecta')
-call unite#custom#source('spell_suggest,history/yank,buffer',
-  \ 'sorters', 'sorter_nothing')
+" maps for navigating entries up and downwards
+call denite#custom#map(
+    \ 'insert',
+    \ '<Down>',
+    \ '<denite:move_to_next_line>',
+    \ 'noremap'
+    \)
+call denite#custom#map(
+    \ 'insert',
+    \ '<C-j>',
+    \ '<denite:move_to_next_line>',
+    \ 'noremap'
+    \)
+call denite#custom#map(
+    \ 'insert',
+    \ '<C-n>',
+    \ '<denite:move_to_next_line>',
+    \ 'noremap'
+    \)
+call denite#custom#map(
+    \ 'insert',
+    \ '<Up>',
+    \ '<denite:move_to_previous_line>',
+    \ 'noremap'
+    \)
+call denite#custom#map(
+    \ 'insert',
+    \ '<C-k>',
+    \ '<denite:move_to_previous_line>',
+    \ 'noremap'
+    \)
+call denite#custom#map(
+    \ 'insert',
+    \ '<C-p>',
+    \ '<denite:move_to_previous_line>',
+    \ 'noremap'
+    \)
 
-call unite#custom#profile('default', 'context', {
-    \   'prompt': '>>> ',
-    \   'direction': 'belowright',
-    \   'winheight': 15,
-    \   'start_insert': 1,
-    \ })
-
-let g:unite_data_directory = $HOME.'/.cache/unite'
-
-autocmd vimrc FileType unite call s:unite_my_settings()
-function! s:unite_my_settings()
-  " Overwrite settings.
-  nmap <buffer> <ESC> <Plug>(unite_exit)
-  imap <buffer> <C-j>   <Plug>(unite_select_next_line)
-  imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
-  " imap <silent><buffer><expr> <C-s> unite#do_action('split')
-  " imap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
-  " imap <silent><buffer><expr> <C-t> unite#do_action('tabopen')
-endfunction
-nmap z= :Unite spell_suggest <CR>
+" better colors
+call denite#custom#option('_', 'highlight_mode_insert', 'Search')
 
 " taboo settings
 let g:taboo_tabline = 0
@@ -324,11 +345,11 @@ nmap <leader>n :NERDTreeToggle <CR>
 map <leader>t :TagbarToggle <CR>
 map <leader>u :UndotreeToggle <CR>
 map <leader>i :IndentGuidesToggle <CR>
-map <leader>b :Unite buffer <CR>
-map <leader>r :UniteResume <CR>
-map <leader>p :UniteWithProjectDir file_rec/async<CR>
-map <leader>g :Unite file_rec/git<CR>
-map <leader>e :Unite grep/git<CR>
+map <leader>b :Denite buffer <CR>
+map <leader>r :Denite -resume <CR>
+map <leader>p :DeniteProjectDir buffer file_rec <CR>
+map <leader>g :Denite file_rec/git <CR>
+map <leader>e :Denite grep/git <CR>
 map <leader>vp :Gpull --rebase<CR>
 map <leader>vu :Gpush<CR>
 map <leader>vs :Gstatus <CR>
