@@ -297,8 +297,8 @@ call denite#custom#source('buffer', 'sorters', [])
 
 " better colors
 call denite#custom#option('_', 'highlight_mode_insert', 'CursorLine')
-call denite#custom#option('_', 'highlight_matched_range', 'Nothing')
-call denite#custom#option('_', 'highlight_matched_char', 'Nothing')
+call denite#custom#option('_', 'highlight_matched_range', 'None')
+call denite#custom#option('_', 'highlight_matched_char', 'None')
 
 " disable spell checking here
 autocmd vimrc FileType denite setlocal nospell
