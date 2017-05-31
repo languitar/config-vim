@@ -292,8 +292,16 @@ call denite#custom#map(
     \ 'noremap'
     \)
 
+" lru sorting for buffers
+call denite#custom#source('buffer', 'sorters', [])
+
 " better colors
-call denite#custom#option('_', 'highlight_mode_insert', 'Search')
+call denite#custom#option('_', 'highlight_mode_insert', 'CursorLine')
+call denite#custom#option('_', 'highlight_matched_range', 'Nothing')
+call denite#custom#option('_', 'highlight_matched_char', 'Nothing')
+
+" disable spell checking here
+autocmd vimrc FileType denite setlocal nospell
 
 " taboo settings
 let g:taboo_tabline = 0
@@ -349,7 +357,7 @@ map <leader>i :IndentGuidesToggle <CR>
 map <leader>b :Denite buffer <CR>
 map <leader>r :Denite -resume <CR>
 map <leader>p :DeniteProjectDir buffer file_rec <CR>
-map <leader>g :Denite file_rec/git <CR>
+map <leader>g :Denite buffer file_rec/git <CR>
 map <leader>e :Denite grep/git <CR>
 map <leader>vp :Gpull --rebase<CR>
 map <leader>vu :Gpush<CR>
