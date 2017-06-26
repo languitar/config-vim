@@ -13,7 +13,6 @@ call plug#begin('~/.local/share/nvim/bundle/')
 Plug 'sjl/badwolf'
 Plug 'vim-scripts/mayansmoke'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
-Plug 'albfan/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
 Plug 'majutsushi/tagbar'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
