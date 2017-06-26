@@ -128,7 +128,7 @@ if exists("&breakindent")
 endif
 
 " remember tab names in sessions
-set sessionoptions+=tabpages,globals
+set sessionoptions+=tabpages,globals,winpos,winsize
 
 " allow project-specific settings
 set exrc
