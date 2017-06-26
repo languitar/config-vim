@@ -26,6 +26,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'itspriddle/ZoomWin'
 Plug 'tpope/vim-eunuch'
 Plug 'hkupty/iron.nvim'
+Plug 'junegunn/vim-easy-align', {'on': 'EasyAlign'}
 
 " completion
 Plug 'Shougo/deoplete.nvim'
