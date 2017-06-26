@@ -51,6 +51,7 @@ Plug 'sk1418/Join', {'on': 'Join'}
 Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-surround'
 Plug 'kshenoy/vim-signature'
+Plug 'sbdchd/neoformat', {'on': 'Neoformat'}
 
 " language support
 Plug 'lervag/vimtex', {'for': 'tex'}
