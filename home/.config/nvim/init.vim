@@ -26,6 +26,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'itspriddle/ZoomWin'
 Plug 'tpope/vim-eunuch'
 Plug 'hkupty/iron.nvim'
+Plug 'tpope/vim-obsession'
 Plug 'junegunn/vim-easy-align', {'on': 'EasyAlign'}
 
 " completion
@@ -124,6 +125,9 @@ set linebreak
 if exists("&breakindent")
     set breakindent
 endif
+
+" remember tab names in sessions
+set sessionoptions+=tabpages,globals
 
 " allow project-specific settings
 set exrc
