@@ -428,6 +428,9 @@ let g:deoplete#omni#input_patterns.tex = '\\(?:'
     \ . '|\w*(gls|Gls|GLS)(pl)?\w*(\s*\[[^]]*\]){0,2}\s*\{[^}]*'
     \ . '|includepdf(\s*\[[^]]*\])?\s*\{[^}]*'
     \ . '|includestandalone(\s*\[[^]]*\])?\s*\{[^}]*'
+    \ . '|usepackage(\s*\[[^]]*\])?\s*\{[^}]*'
+    \ . '|documentclass(\s*\[[^]]*\])?\s*\{[^}]*'
+    \ . '|\w*'
     \ .')'
 
 " function to explain the different highlights for spelling errors
