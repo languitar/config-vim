@@ -27,7 +27,7 @@ Plug 'itspriddle/ZoomWin'
 Plug 'tpope/vim-eunuch'
 Plug 'hkupty/iron.nvim'
 Plug 'tpope/vim-obsession'
-Plug 'junegunn/vim-easy-align', {'on': 'EasyAlign'}
+Plug 'ludovicchabant/vim-gutentags'
 
 " completion
 Plug 'Shougo/deoplete.nvim'
@@ -51,6 +51,7 @@ Plug 'sk1418/Join', {'on': 'Join'}
 Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-surround'
 Plug 'kshenoy/vim-signature'
+Plug 'junegunn/vim-easy-align', {'on': 'EasyAlign'}
 Plug 'sbdchd/neoformat', {'on': 'Neoformat'}
 
 " language support
