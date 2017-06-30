@@ -234,6 +234,7 @@ let g:ale_lint_on_text_changed = 'never'
 " deoplete settings
 let g:deoplete#enable_at_startup = 1
 " let g:deoplete#enable_camel_case = 1
+call deoplete#custom#set('ultisnips', 'matchers', ['matcher_fuzzy'])
 
 let g:clang_complete_auto = 0
 let g:clang_auto_select = 0
@@ -374,6 +375,7 @@ map <leader>w :w<CR>
 " UltiSnips settings
 let g:UltiSnipsEditSplit = "context"
 let g:UltiSnipsSnippetsDir = "~/.config/nvim/UltiSnips"
+let g:UltiSnipsListSnippets = "<A-tab>"
 
 " settings for neovim terminals
 if has('nvim')
