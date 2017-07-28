@@ -55,7 +55,7 @@ Plug 'junegunn/vim-easy-align', {'on': 'EasyAlign'}
 Plug 'sbdchd/neoformat', {'on': 'Neoformat'}
 
 " language support
-Plug 'lervag/vimtex', {'for': 'tex'}
+Plug 'lervag/vimtex'
 Plug 'Rykka/riv.vim', {'for': 'rst'}
 Plug 'nelstrom/vim-markdown-folding', {'for': 'markdown'}
 Plug 'elzr/vim-json', {'for': 'json'}
@@ -422,19 +422,7 @@ autocmd FileType java setlocal omnifunc=javacomplete#Complete
 if !exists('g:deoplete#omni#input_patterns')
     let g:deoplete#omni#input_patterns = {}
 endif
-let g:deoplete#omni#input_patterns.tex = '\\(?:'
-    \ .  '\w*cite\w*(?:\s*\[[^]]*\]){0,2}\s*{[^}]*'
-    \ . '|\w*ref(?:\s*\{[^}]*|range\s*\{[^,}]*(?:}{)?)'
-    \ . '|hyperref\s*\[[^]]*'
-    \ . '|includegraphics\*?(?:\s*\[[^]]*\]){0,2}\s*\{[^}]*'
-    \ . '|(?:include(?:only)?|input)\s*\{[^}]*'
-    \ . '|\w*(gls|Gls|GLS)(pl)?\w*(\s*\[[^]]*\]){0,2}\s*\{[^}]*'
-    \ . '|includepdf(\s*\[[^]]*\])?\s*\{[^}]*'
-    \ . '|includestandalone(\s*\[[^]]*\])?\s*\{[^}]*'
-    \ . '|usepackage(\s*\[[^]]*\])?\s*\{[^}]*'
-    \ . '|documentclass(\s*\[[^]]*\])?\s*\{[^}]*'
-    \ . '|\w*'
-    \ .')'
+let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
 
 " function to explain the different highlights for spelling errors
 function! s:SpellLegend()
