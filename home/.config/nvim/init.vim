@@ -194,7 +194,7 @@ let g:airline#extensions#tagbar#enabled=1
 let g:airline#extensions#branch#enabled=1
 " already done by another plugin
 let g:airline#extensions#whitespace#checks=['indent', 'mixed-indent-file']
-let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts=0
 " make things more compact
 let g:airline_mode_map={
     \ '__': '-',
