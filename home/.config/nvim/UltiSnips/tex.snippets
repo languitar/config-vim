@@ -30,3 +30,11 @@ snippet chap "Chapter" b
 
 $0
 endsnippet
+
+snippet newgloss "Glossary entry"
+\newglossaryentry{${1:}}
+{
+	name={${2:${1/-/ /ga}}},
+	description={${3}},
+}
+endsnippet
