@@ -416,7 +416,9 @@ map <leader>h :nohlsearch <CR>
 if has('nvim')
     let g:vimtex_compiler_progname = 'nvr'
 endif
+let g:vimtex_view_use_temp_files = 1
 let g:vimtex_view_method = 'zathura'
+let g:vimtex_quickfix_mode = 0 " do not open the quickfix window automatically
 
 " java completion
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
