@@ -37,6 +37,7 @@ Plug 'w0rp/ale'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'artur-shaik/vim-javacomplete2', {'for': ['java']}
+Plug 'chrisbra/unicode.vim'
 
 " SCM support
 Plug 'tpope/vim-fugitive'
