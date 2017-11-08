@@ -28,6 +28,9 @@ Plug 'tpope/vim-eunuch'
 Plug 'hkupty/iron.nvim'
 Plug 'tpope/vim-obsession'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'chrisbra/Recover.vim'
+Plug 'tpope/vim-repeat'
+Plug 'vim-scripts/visualrepeat'
 
 " completion
 Plug 'Shougo/deoplete.nvim'
@@ -41,6 +44,7 @@ Plug 'chrisbra/unicode.vim'
 
 " SCM support
 Plug 'tpope/vim-fugitive'
+Plug 'idanarye/vim-merginal'
 Plug 'mhinz/vim-signify'
 
 " editing aids
@@ -50,10 +54,10 @@ Plug 'nathanaelkane/vim-indent-guides', {'on': 'IndentGuidesToggle'}
 Plug 'tomtom/tcomment_vim'
 Plug 'sk1418/Join', {'on': 'Join'}
 Plug 'machakann/vim-highlightedyank'
-Plug 'tpope/vim-surround'
 Plug 'kshenoy/vim-signature'
 Plug 'junegunn/vim-easy-align', {'on': 'EasyAlign'}
 Plug 'sbdchd/neoformat', {'on': 'Neoformat'}
+Plug 'machakann/vim-sandwich'
 
 " language support
 Plug 'lervag/vimtex'
@@ -123,6 +127,9 @@ set colorcolumn=-0
 " show leader character
 set showcmd
 
+" reload changed files
+set autoread
+
 " virtual line breaks on word boundaries with correct indentation
 set linebreak
 if exists("&breakindent")
@@ -179,6 +186,11 @@ highlight DiffChange ctermbg=242
 
 " solid utf-8 lines for splits
 set fillchars=vert:\│
+
+" recommended by vim-sandwich (and never used)
+nmap s <Nop>
+xmap s <Nop>
+let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
 
 " indent guides
 let g:indent_guides_default_mapping = 0
