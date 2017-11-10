@@ -326,6 +326,9 @@ call denite#custom#option('_', 'highlight_matched_char', 'None')
 " disable spell checking here
 autocmd vimrc FileType denite setlocal nospell
 
+" disable line numbers in terminal
+autocmd vimrc TermOpen * setlocal nonumber norelativenumber
+
 " taboo settings
 let g:taboo_tabline = 0
 
