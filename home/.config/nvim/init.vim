@@ -363,6 +363,10 @@ let g:SimpylFold_docstring_preview=1
 
 " focus undo tree when toggling
 let g:undotree_SetFocusWhenToggle=1
+if has("persistent_undo")
+    set undodir=~/.cache/nvim/undo/
+    set undofile
+endif
 
 " fix editing modes to file types
 autocmd vimrc BufRead,BufNewFile rsb.conf set filetype=dosini
