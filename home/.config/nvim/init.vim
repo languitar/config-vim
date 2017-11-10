@@ -361,6 +361,9 @@ let g:SimpylFold_docstring_preview=1
 " riv rest settings
 " let g:riv_disable_folding=1
 
+" focus undo tree when toggling
+let g:undotree_SetFocusWhenToggle=1
+
 " fix editing modes to file types
 autocmd vimrc BufRead,BufNewFile rsb.conf set filetype=dosini
 autocmd vimrc BufRead,BufNewFile *.project set filetype=json
