@@ -409,7 +409,7 @@ if has('nvim')
     autocmd vimrc TermOpen * set bufhidden=hide
     command! Fish :terminal fish
     autocmd vimrc BufEnter * if &buftype == 'terminal' | :startinsert | endif
-    let g:terminal_scrollback_buffer_size=100000
+    set scrollback=-1
     tnoremap <A-h> <C-\><C-n><C-w>h
     tnoremap <A-j> <C-\><C-n><C-w>j
     tnoremap <A-k> <C-\><C-n><C-w>k
