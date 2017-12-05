@@ -287,7 +287,7 @@ call denite#custom#alias('source', 'grep/git', 'grep')
 call denite#custom#var('grep/git', 'command',
     \ ['git'])
 call denite#custom#var('grep/git', 'default_opts',
-        \ ['grep', '-n'])
+        \ ['grep', '-n', '-P'])
 call denite#custom#var('grep/git', 'recursive_opts', ['--recurse-submodules'])
 call denite#custom#var('grep/git', 'pattern_opt', ['-e'])
 call denite#custom#var('grep/git', 'separator', ['--'])
