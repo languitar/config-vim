@@ -133,6 +133,7 @@ set showcmd
 
 " reload changed files
 set autoread
+autocmd vimrc FocusGained * :checktime
 
 " virtual line breaks on word boundaries with correct indentation
 set linebreak
