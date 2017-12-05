@@ -16,7 +16,7 @@ Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'majutsushi/tagbar'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'Shougo/denite.nvim'
+Plug 'Shougo/denite.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'Shougo/neoyank.vim'
 Plug 'gcmt/taboo.vim'
@@ -25,7 +25,7 @@ Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
 Plug 'easymotion/vim-easymotion'
 Plug 'itspriddle/ZoomWin'
 Plug 'tpope/vim-eunuch'
-Plug 'hkupty/iron.nvim'
+Plug 'hkupty/iron.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'tpope/vim-obsession'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'chrisbra/Recover.vim'
@@ -33,14 +33,14 @@ Plug 'tpope/vim-repeat'
 Plug 'vim-scripts/visualrepeat'
 
 " completion
-Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'zchee/deoplete-jedi', {'for': ['python', 'python3']}
-Plug 'Rip-Rip/clang_complete', {'for': ['c', 'cpp']}
 Plug 'w0rp/ale'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'artur-shaik/vim-javacomplete2', {'for': ['java']}
+" Plug 'artur-shaik/vim-javacomplete2', {'for': ['java']}
 Plug 'chrisbra/unicode.vim'
+Plug 'autozimu/LanguageClient-neovim', {'do': ':UpdateRemotePlugins'}
 
 " SCM support
 Plug 'tpope/vim-fugitive'
@@ -76,10 +76,14 @@ Plug 'tmux-plugins/vim-tmux', {'for': 'tmux'}
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'sebastianmarkow/deoplete-rust', {'for': 'rust'}
 Plug 'cespare/vim-toml', {'for': 'toml'}
+Plug 'leafgarland/typescript-vim'
 
 call plug#end()
 
 filetype plugin indent on
+
+set hidden
+set noshowmode
 
 " define a default autocmd group to prevent duplicated commands
 augroup vimrc
@@ -170,9 +174,6 @@ set ttimeoutlen=0
 map <space> <leader>
 map <space><space> <leader><leader>
 
-" shortcut for replacing words under the cursor
-nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
-
 " color scheme
 " set background=dark
 colorscheme badwolf
@@ -260,6 +261,21 @@ let g:clang_use_library = 1
 let g:clang_complete_macros = 1
 let g:clang_auto_user_options = 'compile_commands.json'
 " let g:clang_complete_patterns = 1
+
+" language server stuff
+let g:LanguageClient_serverCommands = {
+    \ 'python': ['pyls'],
+    \ 'cpp': ['clangd'],
+    \ 'java': ['jdtls', '-data', getcwd(), '-Dlog.level=ALL'],
+    \ 'typescript': ['javascript-typescript-stdio'],
+    \ 'javascript': ['javascript-typescript-stdio'],
+    \ 'html': ['html-languageserver', '--stdio'],
+    \ 'css': ['css-languageserver', '--stdio'],
+    \ 'json': ['json-languageserver', '--stdio'],
+    \ }
+
+" Automatically start language servers.
+let g:LanguageClient_autoStart = 1
 
 " Denite settings
 " git file source
@@ -395,6 +411,17 @@ map <leader>e :Denite grep/git <CR>
 map <leader>vp :Gpull --rebase<CR>
 map <leader>vu :Gpush<CR>
 map <leader>vs :Gstatus <CR>
+
+" l used by latex
+
+map <leader>sh :call LanguageClient_textDocument_hover()<CR>
+map <leader>sd :call LanguageClient_textDocument_definition()<CR>
+map <leader>sr :call LanguageClient_textDocument_rename()<CR>
+map <leader>ss :Denite documentSymbol<CR>
+map <leader>se :Denite references<CR>
+map <leader>sw :Denite workspaceSymbol<CR>
+nmap <leader>sf :call LanguageClient_textDocument_formatting()<CR>
+vmap <leader>sf :call LanguageClient_textDocument_rangeFormatting()<CR>
 
 map <leader>w :w<CR>
 
