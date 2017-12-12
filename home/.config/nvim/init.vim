@@ -40,7 +40,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " Plug 'artur-shaik/vim-javacomplete2', {'for': ['java']}
 Plug 'chrisbra/unicode.vim'
-Plug 'autozimu/LanguageClient-neovim', {'do': ':UpdateRemotePlugins'}
+Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'make release'}
 
 " SCM support
 Plug 'tpope/vim-fugitive'
@@ -423,6 +423,9 @@ map <leader>se :Denite references<CR>
 map <leader>sw :Denite workspaceSymbol<CR>
 nmap <leader>sf :call LanguageClient_textDocument_formatting()<CR>
 vmap <leader>sf :call LanguageClient_textDocument_rangeFormatting()<CR>
+map <leader>sa :call LanguageClient_textDocument_codeAction()<CR>
+
+map <leader>c :Denite command<CR>
 
 map <leader>w :w<CR>
 
