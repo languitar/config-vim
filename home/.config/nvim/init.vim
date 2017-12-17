@@ -248,7 +248,7 @@ let NERDTreeChDirMode=2
 " ale settings
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_linters = {
-    \ 'tex': ['proselint', 'chktex'],
+    \ 'tex': ['alex', 'proselint', 'chktex', 'write-good'],
     \ }
 let g:ale_lint_on_text_changed = 'never'
 
