@@ -58,6 +58,7 @@ Plug 'kshenoy/vim-signature'
 Plug 'junegunn/vim-easy-align', {'on': 'EasyAlign'}
 Plug 'sbdchd/neoformat', {'on': 'Neoformat'}
 Plug 'machakann/vim-sandwich'
+Plug 'rhysd/vim-grammarous'
 
 " language support
 Plug 'lervag/vimtex'
