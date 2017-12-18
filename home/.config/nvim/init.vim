@@ -81,6 +81,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'Matt-Deacalion/vim-systemd-syntax'
+Plug 'junegunn/vader.vim'
 
 call plug#end()
 
