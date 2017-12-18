@@ -248,11 +248,14 @@ let g:detectindent_preferred_indent=4
 let NERDTreeChDirMode=2
 
 " ale settings
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_echo_msg_format = '[%linter%] %s% (code)% [%severity%]'
 let g:ale_linters = {
-    \ 'tex': ['alex', 'proselint', 'chktex', 'write-good'],
+    \ 'tex': ['alex', 'proselint', 'chktex', 'write-good', 'vale'],
+    \ 'python': ['flake8'],
     \ }
 let g:ale_lint_on_text_changed = 'never'
+highlight ALEError cterm=undercurl ctermfg=196
+highlight ALEInfo cterm=undercurl ctermfg=14
 
 " deoplete settings
 let g:deoplete#enable_at_startup = 1
