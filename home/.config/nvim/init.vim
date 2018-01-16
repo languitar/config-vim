@@ -21,7 +21,7 @@ Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'Shougo/neoyank.vim'
 Plug 'gcmt/taboo.vim'
 Plug 'bkad/CamelCaseMotion'
-Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
+Plug 'simnalamburt/vim-mundo', {'on': 'MundoToggle'}
 Plug 'easymotion/vim-easymotion'
 Plug 'itspriddle/ZoomWin'
 Plug 'tpope/vim-eunuch'
@@ -389,8 +389,6 @@ let g:SimpylFold_docstring_preview=1
 " riv rest settings
 " let g:riv_disable_folding=1
 
-" focus undo tree when toggling
-let g:undotree_SetFocusWhenToggle=1
 if has("persistent_undo")
     set undodir=~/.cache/nvim/undo/
     set undofile
@@ -410,7 +408,7 @@ autocmd vimrc BufNewFile,BufReadPost *.md.erb set filetype=markdown
 " key bindings to open navigation aids
 nmap <leader>n :NERDTreeToggle <CR>
 map <leader>t :TagbarToggle <CR>
-map <leader>u :UndotreeToggle <CR>
+map <leader>u :MundoToggle <CR>
 map <leader>i :IndentGuidesToggle <CR>
 map <leader>b :Denite buffer <CR>
 map <leader>r :Denite -resume <CR>
