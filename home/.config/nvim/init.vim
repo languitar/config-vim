@@ -4,7 +4,6 @@ if !has('nvim')
 end
 
 " bundle settings
-set nocompatible
 filetype off
 
 call plug#begin('~/.local/share/nvim/bundle/')
@@ -88,8 +87,6 @@ Plug 'janko-m/vim-test'
 
 call plug#end()
 
-filetype plugin indent on
-
 set hidden
 set noshowmode
 
@@ -102,7 +99,6 @@ augroup END
 " general settings independent of plugins
 set shell=bash " fix the shell to something vim understand
 
-syntax on " enable syntax highlighting
 set number " show line numbers
 
 set fileformats=unix,dos,mac " set newline preferences
@@ -111,7 +107,6 @@ set fileformats=unix,dos,mac " set newline preferences
 set expandtab
 set shiftwidth=4
 set tabstop=4
-set autoindent
 
 " detect lists when wrapping lines
 set formatoptions+=n
@@ -124,8 +119,6 @@ set scrolloff=3
 set spell spelllang=en,de
 
 " search options
-set hlsearch " highlight search matches. Turn of with :nohlsearch after a search
-set incsearch " highlight partial search pattern matches while typing
 set ignorecase " usually ignore case when searching
 set smartcase " unless a search term starts with a capital letter
 if exists('+inccommand')
@@ -136,11 +129,7 @@ endif
 " from off (being 0))
 set colorcolumn=-0
 
-" show leader character
-set showcmd
-
 " reload changed files
-set autoread
 autocmd vimrc FocusGained * :checktime
 
 " virtual line breaks on word boundaries with correct indentation
@@ -156,10 +145,6 @@ set sessionoptions+=tabpages,globals,winpos,winsize,blank,resize
 set exrc
 set secure
 
-" let backspace do something reasonable, i.e. delete also things outside the
-" current insert operation
-set backspace=indent,eol,start
-
 " ensure that ctrl+u in insert mode can be reversed
 " http://vim.wikia.com/wiki/Recover_from_accidental_Ctrl-U
 inoremap <c-u> <c-g>u<c-u>
@@ -170,13 +155,11 @@ highlight MatchParen cterm=bold ctermbg=none ctermfg=9
 
 " tab completion mode with partial match and list
 set wildmode=list:longest,full
-set wildmenu
 
 " allow mouse control
 set mouse=a
 
 " avoid delays when exiting insert mode with escape
-set timeoutlen=1000
 set ttimeoutlen=0
 
 " put leader to space
@@ -209,7 +192,6 @@ highlight IndentGuidesOdd  guibg=red   ctermbg=234
 highlight IndentGuidesEven guibg=green ctermbg=236
 
 " status line modification
-set laststatus=2 " always show a status line
 let g:airline#extensions#tabline#enabled = 1
 " already visible in gutter
 let g:airline#extensions#syntastic#enabled = 0
