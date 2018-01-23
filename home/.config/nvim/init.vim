@@ -1,7 +1,4 @@
 scriptencoding utf8
-if !has('nvim')
-    set encoding utf8
-end
 
 " bundle settings
 filetype off
@@ -121,9 +118,7 @@ set spell spelllang=en,de
 " search options
 set ignorecase " usually ignore case when searching
 set smartcase " unless a search term starts with a capital letter
-if exists('+inccommand')
-    set inccommand=nosplit
-endif
+set inccommand=nosplit
 
 " print margin at the specified textwidth setting (- important to distinguish
 " from off (being 0))
@@ -134,9 +129,7 @@ autocmd vimrc FocusGained * :checktime
 
 " virtual line breaks on word boundaries with correct indentation
 set linebreak
-if exists("&breakindent")
-    set breakindent
-endif
+set breakindent
 
 " remember tab names in sessions
 set sessionoptions+=tabpages,globals,winpos,winsize,blank,resize
@@ -345,10 +338,6 @@ let g:taboo_tabline = 0
 " JSON highlighting settings
 let g:vim_json_syntax_conceal = 0 " do not remove double quotes in view
 
-" InstantRst settings
-" let g:instant_rst_browser='chromium-browser'
-let g:instant_rst_bind_scroll = 0
-
 " latex settings
 let g:tex_flavor = "latex"
 let g:Tex_DefaultTargetFormat =" pdf"
@@ -358,16 +347,6 @@ let g:Tex_IgnoredWarnings =''
 let g:signify_vcs_list = [ 'git', 'svn', 'hg' ]
 autocmd vimrc User Fugitive SignifyRefresh
 
-" vim-slime
-let g:slime_target="tmux"
-let g:slime_python_ipython=1
-let g:slime_no_mappings=1
-nmap <c-c><c-f> vaf :SlimeSend<CR>
-nmap <c-c><c-c> vac :SlimeSend<CR>
-nmap <c-c><c-l> V :SlimeSend<CR>
-nmap <c-c><c-p> vip :SlimeSend<CR>
-xmap <c-c><c-c> :SlimeSend<CR>
-
 " python folding
 let g:SimpylFold_docstring_preview = 1
 
@@ -375,13 +354,8 @@ let g:python_highlight_operators = 0
 let g:python_highlight_space_errors = 0
 let g:python_highlight_all = 1
 
-" riv rest settings
-" let g:riv_disable_folding=1
-
-if has("persistent_undo")
-    set undodir=~/.cache/nvim/undo/
-    set undofile
-endif
+set undodir=~/.cache/nvim/undo/
+set undofile
 
 " fix editing modes to file types
 autocmd vimrc BufRead,BufNewFile rsb.conf set filetype=dosini
@@ -430,17 +404,15 @@ let g:UltiSnipsSnippetsDir = "~/.config/nvim/UltiSnips"
 let g:UltiSnipsListSnippets = "<A-tab>"
 
 " settings for neovim terminals
-if has('nvim')
-    autocmd vimrc TermOpen * setlocal nospell
-    autocmd vimrc TermOpen * set bufhidden=hide
-    command! Fish :terminal fish
-    autocmd vimrc BufEnter * if &buftype == 'terminal' | :startinsert | endif
-    set scrollback=-1
-    tnoremap <A-h> <C-\><C-n><C-w>h
-    tnoremap <A-j> <C-\><C-n><C-w>j
-    tnoremap <A-k> <C-\><C-n><C-w>k
-    tnoremap <A-l> <C-\><C-n><C-w>l
-endif
+autocmd vimrc TermOpen * setlocal nospell
+autocmd vimrc TermOpen * set bufhidden=hide
+command! Fish :terminal fish
+autocmd vimrc BufEnter * if &buftype == 'terminal' | :startinsert | endif
+set scrollback=-1
+tnoremap <A-h> <C-\><C-n><C-w>h
+tnoremap <A-j> <C-\><C-n><C-w>j
+tnoremap <A-k> <C-\><C-n><C-w>k
+tnoremap <A-l> <C-\><C-n><C-w>l
 
 " mappings for navigating between windows with alt+homerow
 nnoremap <A-h> <C-w>h
@@ -462,9 +434,7 @@ map! <Esc>OF <End>
 map <leader>h :nohlsearch <CR>
 
 " make vimtex work with neovim
-if has('nvim')
-    let g:vimtex_compiler_progname = 'nvr'
-endif
+let g:vimtex_compiler_progname = 'nvr'
 let g:vimtex_view_use_temp_files = 2
 let g:vimtex_view_method = 'zathura'
 let g:vimtex_quickfix_mode = 0 " do not open the quickfix window automatically
@@ -502,6 +472,7 @@ command! Dark :colorscheme badwolf | :AirlineTheme badwolf
 
 " utility commands
 command! W w
+command! Q q
 
 command! CopyFileLine let @+=expand("%") . ':' . line(".")
 
