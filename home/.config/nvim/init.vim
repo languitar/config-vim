@@ -82,6 +82,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'Matt-Deacalion/vim-systemd-syntax'
 Plug 'junegunn/vader.vim'
+Plug 'janko-m/vim-test'
 
 call plug#end()
 
