@@ -25,7 +25,7 @@ Plug 'simnalamburt/vim-mundo', {'on': 'MundoToggle'}
 Plug 'easymotion/vim-easymotion'
 Plug 'itspriddle/ZoomWin'
 Plug 'tpope/vim-eunuch'
-Plug 'hkupty/iron.nvim', {'do': ':UpdateRemotePlugins'}
+Plug 'BurningEther/iron.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'tpope/vim-obsession'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'chrisbra/Recover.vim'
