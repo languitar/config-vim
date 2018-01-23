@@ -67,6 +67,7 @@ Plug 'Rykka/riv.vim', {'for': 'rst'}
 Plug 'nelstrom/vim-markdown-folding', {'for': 'markdown'}
 Plug 'elzr/vim-json', {'for': 'json'}
 Plug 'dag/vim-fish', {'for': 'fish'}
+Plug 'vim-python/python-syntax', {'for': ['python', 'python3']}
 Plug 'hynek/vim-python-pep8-indent', {'for': ['python', 'python3']}
 Plug 'kana/vim-textobj-user', {'for': ['python', 'python3']}
 Plug 'bps/vim-textobj-python', {'for': ['python', 'python3']}
@@ -386,7 +387,10 @@ nmap <c-c><c-p> vip :SlimeSend<CR>
 xmap <c-c><c-c> :SlimeSend<CR>
 
 " python folding
-let g:SimpylFold_docstring_preview=1
+let g:SimpylFold_docstring_preview = 1
+
+let g:python_highlight_operators = 0
+let g:python_highlight_all = 1
 
 " riv rest settings
 " let g:riv_disable_folding=1
