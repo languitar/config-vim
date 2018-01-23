@@ -210,19 +210,19 @@ highlight IndentGuidesEven guibg=green ctermbg=236
 
 " status line modification
 set laststatus=2 " always show a status line
-let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#enabled = 1
 " already visible in gutter
-let g:airline#extensions#syntastic#enabled=0
-let g:airline#extensions#tagbar#enabled=1
+let g:airline#extensions#syntastic#enabled = 0
+let g:airline#extensions#tagbar#enabled = 1
 " not needed
-let g:airline#extensions#branch#enabled=0
+let g:airline#extensions#branch#enabled = 0
 " already done by another plugin
-let g:airline#extensions#whitespace#checks=['indent', 'mixed-indent-file']
-let g:airline_powerline_fonts=0
-let g:airline_left_sep='▙'
-let g:airline_right_sep='▟'
+let g:airline#extensions#whitespace#checks =[' indent', 'mixed-indent-file']
+let g:airline_powerline_fonts = 0
+let g:airline_left_sep = '▙'
+let g:airline_right_sep = '▟'
 " make things more compact
-let g:airline_mode_map={
+let g:airline_mode_map = {
     \ '__': '-',
     \ 'n' : 'N',
     \ 'i' : 'I',
@@ -242,13 +242,13 @@ let g:airline_symbols.spell = '✓'
 let g:airline_section_z = '%4l/%L'
 
 " detect indent settings
-let g:detectindent_preferred_expandtab=1
-let g:detectindent_preferred_indent=4
+let g:detectindent_preferred_expandtab = 1
+let g:detectindent_preferred_indent = 4
 " autocmd BufReadPost * :DetectIndent
 
 " nerdtree modifications
 " change cwd with nerd tree
-let NERDTreeChDirMode=2
+let NERDTreeChDirMode = 2
 
 " ale settings
 let g:ale_echo_msg_format = '[%linter%] %s% (code)% [%severity%]'
@@ -361,16 +361,16 @@ autocmd vimrc TermOpen * setlocal nonumber norelativenumber
 let g:taboo_tabline = 0
 
 " JSON highlighting settings
-let g:vim_json_syntax_conceal=0 " do not remove double quotes in view
+let g:vim_json_syntax_conceal = 0 " do not remove double quotes in view
 
 " InstantRst settings
 " let g:instant_rst_browser='chromium-browser'
-let g:instant_rst_bind_scroll=0
+let g:instant_rst_bind_scroll = 0
 
 " latex settings
 let g:tex_flavor = "latex"
-let g:Tex_DefaultTargetFormat="pdf"
-let g:Tex_IgnoredWarnings=''
+let g:Tex_DefaultTargetFormat =" pdf"
+let g:Tex_IgnoredWarnings =''
 
 " signify
 let g:signify_vcs_list = [ 'git', 'svn', 'hg' ]
