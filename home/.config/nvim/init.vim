@@ -59,7 +59,7 @@ Plug 'rhysd/vim-grammarous'
 " language support
 Plug 'lervag/vimtex'
 Plug 'Rykka/riv.vim', {'for': 'rst'}
-Plug 'nelstrom/vim-markdown-folding', {'for': 'markdown'}
+Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 Plug 'elzr/vim-json', {'for': 'json'}
 Plug 'dag/vim-fish', {'for': 'fish'}
 Plug 'vim-python/python-syntax', {'for': ['python', 'python3']}
@@ -401,6 +401,9 @@ map <leader>w :w<CR>
 let g:UltiSnipsEditSplit = "context"
 let g:UltiSnipsSnippetsDir = "~/.config/nvim/UltiSnips"
 let g:UltiSnipsListSnippets = "<A-tab>"
+
+" markdown
+let g:markdown_enable_mappings = 0
 
 " settings for neovim terminals
 autocmd vimrc TermOpen * setlocal nospell
