@@ -234,6 +234,10 @@ let g:ale_lint_on_text_changed = 'never'
 highlight ALEError cterm=undercurl ctermfg=196
 highlight ALEInfo cterm=undercurl ctermfg=14
 
+" grammarous settings
+let g:grammarous#use_vim_spelllang = 1
+let g:grammarous#languagetool_cmd = 'languagetool'
+
 " deoplete settings
 let g:deoplete#enable_at_startup = 1
 " let g:deoplete#enable_camel_case = 1
