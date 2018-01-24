@@ -24,7 +24,6 @@ Plug 'tpope/vim-eunuch'
 Plug 'BurningEther/iron.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'tpope/vim-obsession'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'chrisbra/Recover.vim'
 Plug 'tpope/vim-repeat'
 Plug 'vim-scripts/visualrepeat'
 Plug 'wellle/targets.vim'
