@@ -27,6 +27,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'tpope/vim-repeat'
 Plug 'vim-scripts/visualrepeat'
 Plug 'wellle/targets.vim'
+Plug 'editorconfig/editorconfig-vim'
 
 " completion
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
@@ -80,6 +81,7 @@ Plug 'mxw/vim-jsx', {'for': 'jsx'}
 Plug 'Matt-Deacalion/vim-systemd-syntax'
 Plug 'junegunn/vader.vim'
 Plug 'janko-m/vim-test'
+Plug 'carlitux/deoplete-ternjs', {'for': 'javascript', 'do': 'npm install -g tern'}
 
 call plug#end()
 
@@ -240,8 +242,14 @@ let g:grammarous#languagetool_cmd = 'languagetool'
 
 " deoplete settings
 let g:deoplete#enable_at_startup = 1
-" let g:deoplete#enable_camel_case = 1
-call deoplete#custom#set('ultisnips', 'matchers', ['matcher_fuzzy'])
+let g:deoplete#max_menu_width = 0
+let g:deoplete#enable_ignore_case = 0
+let g:deoplete#enable_camel_case = 1
+let g:deoplete#enable_smart_case = 1
+call deoplete#custom#set('_', 'matchers', ['matcher_fuzzy'])
+if !exists('g:deoplete#omni#input_patterns')
+    let g:deoplete#omni#input_patterns = {}
+endif
 
 let g:clang_complete_auto = 0
 let g:clang_auto_select = 0
@@ -252,13 +260,17 @@ let g:clang_complete_macros = 1
 let g:clang_auto_user_options = 'compile_commands.json'
 " let g:clang_complete_patterns = 1
 
+" javascript settings
+let g:jsx_ext_required = 1
+let g:deoplete#sources#ternjs#types = 1
+
 " language server stuff
 let g:LanguageClient_serverCommands = {
     \ 'python': ['pyls'],
     \ 'cpp': ['clangd'],
     \ 'java': ['jdtls', '-data', getcwd(), '-Dlog.level=ALL'],
     \ 'typescript': ['javascript-typescript-stdio'],
-    \ 'javascript': ['javascript-typescript-stdio'],
+    \ 'javascript': ['typescript-language-server', '--stdio'],
     \ 'html': ['html-languageserver', '--stdio'],
     \ 'css': ['css-languageserver', '--stdio'],
     \ 'json': ['json-languageserver', '--stdio'],
@@ -449,9 +461,6 @@ let g:vimtex_quickfix_mode = 0 " do not open the quickfix window automatically
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
 " deoplete completion for LaTeX
-if !exists('g:deoplete#omni#input_patterns')
-    let g:deoplete#omni#input_patterns = {}
-endif
 let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
 
 " function to explain the different highlights for spelling errors
