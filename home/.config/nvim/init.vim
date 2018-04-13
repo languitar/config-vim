@@ -138,6 +138,9 @@ set sessionoptions+=tabpages,globals,winpos,winsize,blank,resize
 set exrc
 set secure
 
+" always show the sign colum to prevent flickering
+set signcolumn=yes
+
 " ensure that ctrl+u in insert mode can be reversed
 " http://vim.wikia.com/wiki/Recover_from_accidental_Ctrl-U
 inoremap <c-u> <c-g>u<c-u>
@@ -266,7 +269,7 @@ let g:deoplete#sources#ternjs#types = 1
 " language server stuff
 let g:LanguageClient_serverCommands = {
     \ 'python': ['pyls'],
-    \ 'cpp': ['clangd'],
+    \ 'cpp': ['cquery'],
     \ 'java': ['jdtls', '-data', getcwd() . '/..', '--add-modules=ALL-SYSTEM', '--add-opens', 'java.base/java.util=ALL-UNNAMED', '--add-opens', 'java.base/java.lang=ALL-UNNAMED'],
     \ 'typescript': ['javascript-typescript-stdio'],
     \ 'javascript': ['typescript-language-server', '--stdio'],
@@ -274,6 +277,9 @@ let g:LanguageClient_serverCommands = {
     \ 'css': ['css-languageserver', '--stdio'],
     \ 'json': ['json-languageserver', '--stdio'],
     \ 'rust': ['rls'],
+    \ 'sh': ['bash-language-server', 'start'],
+    \ 'dockerfile': ['docker-langserver', '--stdio'],
+    \ 'xml': ['xml-language-server'],
     \ }
 
 " Automatically start language servers.
