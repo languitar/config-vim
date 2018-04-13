@@ -35,7 +35,6 @@ Plug 'zchee/deoplete-jedi', {'for': ['python', 'python3']}
 Plug 'w0rp/ale'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-" Plug 'artur-shaik/vim-javacomplete2', {'for': ['java']}
 Plug 'chrisbra/unicode.vim'
 Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'make release'}
 
@@ -246,7 +245,7 @@ let g:deoplete#max_menu_width = 0
 let g:deoplete#enable_ignore_case = 0
 let g:deoplete#enable_camel_case = 1
 let g:deoplete#enable_smart_case = 1
-call deoplete#custom#set('_', 'matchers', ['matcher_fuzzy'])
+call deoplete#custom#source('_', 'matchers', ['matcher_fuzzy'])
 if !exists('g:deoplete#omni#input_patterns')
     let g:deoplete#omni#input_patterns = {}
 endif
@@ -268,16 +267,18 @@ let g:deoplete#sources#ternjs#types = 1
 let g:LanguageClient_serverCommands = {
     \ 'python': ['pyls'],
     \ 'cpp': ['clangd'],
-    \ 'java': ['jdtls', '-data', getcwd(), '-Dlog.level=ALL'],
+    \ 'java': ['jdtls', '-data', getcwd() . '/..', '--add-modules=ALL-SYSTEM', '--add-opens', 'java.base/java.util=ALL-UNNAMED', '--add-opens', 'java.base/java.lang=ALL-UNNAMED'],
     \ 'typescript': ['javascript-typescript-stdio'],
     \ 'javascript': ['typescript-language-server', '--stdio'],
     \ 'html': ['html-languageserver', '--stdio'],
     \ 'css': ['css-languageserver', '--stdio'],
     \ 'json': ['json-languageserver', '--stdio'],
+    \ 'rust': ['rls'],
     \ }
 
 " Automatically start language servers.
 let g:LanguageClient_autoStart = 0
+let g:LanguageClient_settingsPath = 'ls-settings.json'
 
 " Denite settings
 " git file source
@@ -407,7 +408,7 @@ map <leader>se :Denite references<CR>
 map <leader>sw :Denite workspaceSymbol<CR>
 nmap <leader>sf :call LanguageClient_textDocument_formatting()<CR>
 vmap <leader>sf :call LanguageClient_textDocument_rangeFormatting()<CR>
-map <leader>sa :call LanguageClient_textDocument_codeAction()<CR>
+map <leader>sa :Denite codeAction<CR>
 
 map <leader>c :Denite command<CR>
 
