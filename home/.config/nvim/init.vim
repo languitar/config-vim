@@ -241,6 +241,7 @@ highlight ALEInfo cterm=undercurl ctermfg=14
 " grammarous settings
 let g:grammarous#use_vim_spelllang = 1
 let g:grammarous#languagetool_cmd = 'languagetool'
+let g:grammarous#show_first_error = 1
 
 " deoplete settings
 let g:deoplete#enable_at_startup = 1
