@@ -31,7 +31,6 @@ Plug 'editorconfig/editorconfig-vim'
 
 " completion
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
-Plug 'zchee/deoplete-jedi', {'for': ['python', 'python3']}
 Plug 'w0rp/ale'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
