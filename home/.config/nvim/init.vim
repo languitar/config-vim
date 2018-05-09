@@ -80,6 +80,7 @@ Plug 'Matt-Deacalion/vim-systemd-syntax'
 Plug 'junegunn/vader.vim'
 Plug 'janko-m/vim-test'
 Plug 'carlitux/deoplete-ternjs', {'for': 'javascript', 'do': 'npm install -g tern'}
+Plug 'gko/vim-coloresque'
 
 call plug#end()
 
