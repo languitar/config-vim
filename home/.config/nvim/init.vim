@@ -270,7 +270,7 @@ let g:deoplete#sources#ternjs#types = 1
 let g:LanguageClient_serverCommands = {
     \ 'python': ['pyls'],
     \ 'cpp': ['cquery'],
-    \ 'java': ['jdtls', '-data', getcwd() . '/..', '--add-modules=ALL-SYSTEM', '--add-opens', 'java.base/java.util=ALL-UNNAMED', '--add-opens', 'java.base/java.lang=ALL-UNNAMED'],
+    \ 'java': ['jdtls', '-data', '~/.local/share/nvim/ls/java', '--add-modules=ALL-SYSTEM', '--add-opens', 'java.base/java.util=ALL-UNNAMED', '--add-opens', 'java.base/java.lang=ALL-UNNAMED'],
     \ 'typescript': ['javascript-typescript-stdio'],
     \ 'javascript': ['typescript-language-server', '--stdio'],
     \ 'html': ['html-languageserver', '--stdio'],
@@ -417,6 +417,7 @@ map <leader>sw :Denite workspaceSymbol<CR>
 nmap <leader>sf :call LanguageClient_textDocument_formatting()<CR>
 vmap <leader>sf :call LanguageClient_textDocument_rangeFormatting()<CR>
 map <leader>sa :Denite codeAction<CR>
+map <leader>sju: :call LanguageClient#Notify("java/projectConfigurationUpdate", {'uri': "file://" . getcwd() . "/" . bufname("%")})
 
 map <leader>c :Denite command<CR>
 
