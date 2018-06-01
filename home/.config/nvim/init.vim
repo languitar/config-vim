@@ -285,8 +285,9 @@ let g:LanguageClient_serverCommands = {
     \ }
 
 " Automatically start language servers.
-let g:LanguageClient_autoStart = 0
+" let g:LanguageClient_autoStart = 0
 let g:LanguageClient_settingsPath = 'ls-settings.json'
+let g:LanguageClient_hoverPreview = 'Always'
 
 " Denite settings
 " git file source
