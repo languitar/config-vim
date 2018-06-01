@@ -19,7 +19,6 @@ Plug 'gcmt/taboo.vim'
 Plug 'bkad/CamelCaseMotion'
 Plug 'simnalamburt/vim-mundo', {'on': 'MundoToggle'}
 Plug 'easymotion/vim-easymotion'
-Plug 'itspriddle/ZoomWin'
 Plug 'tpope/vim-eunuch'
 Plug 'BurningEther/iron.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'tpope/vim-obsession'
