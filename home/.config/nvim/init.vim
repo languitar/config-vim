@@ -80,6 +80,7 @@ Plug 'junegunn/vader.vim'
 Plug 'janko-m/vim-test'
 Plug 'carlitux/deoplete-ternjs', {'for': 'javascript', 'do': 'npm install -g tern'}
 Plug 'gko/vim-coloresque'
+Plug 'rodjek/vim-puppet'
 
 call plug#end()
 
@@ -268,20 +269,22 @@ let g:deoplete#sources#ternjs#types = 1
 
 " language server stuff
 let g:LanguageClient_serverCommands = {
-    \ 'python': ['pyls'],
     \ 'cpp': ['cquery'],
-    \ 'java': ['jdtls', '-data', '~/.local/share/nvim/ls/java', '--add-modules=ALL-SYSTEM', '--add-opens', 'java.base/java.util=ALL-UNNAMED', '--add-opens', 'java.base/java.lang=ALL-UNNAMED'],
-    \ 'typescript': ['javascript-typescript-stdio'],
-    \ 'javascript': ['typescript-language-server', '--stdio'],
-    \ 'html': ['html-languageserver', '--stdio'],
     \ 'css': ['css-languageserver', '--stdio'],
-    \ 'less': ['css-languageserver', '--stdio'],
-    \ 'sass': ['css-languageserver', '--stdio'],
-    \ 'json': ['json-languageserver', '--stdio'],
-    \ 'rust': ['rls'],
-    \ 'sh': ['bash-language-server', 'start'],
     \ 'dockerfile': ['docker-langserver', '--stdio'],
+    \ 'html': ['html-languageserver', '--stdio'],
+    \ 'java': ['jdtls', '-data', '~/.local/share/nvim/ls/java', '--add-modules=ALL-SYSTEM', '--add-opens', 'java.base/java.util=ALL-UNNAMED', '--add-opens', 'java.base/java.lang=ALL-UNNAMED'],
+    \ 'javascript': ['typescript-language-server', '--stdio'],
+    \ 'json': ['json-languageserver', '--stdio'],
+    \ 'less': ['css-languageserver', '--stdio'],
+    \ 'puppet': ['puppet-languageserver', '--stdio'],
+    \ 'python': ['pyls'],
+    \ 'rust': ['rls'],
+    \ 'sass': ['css-languageserver', '--stdio'],
+    \ 'sh': ['bash-language-server', 'start'],
+    \ 'typescript': ['javascript-typescript-stdio'],
     \ 'xml': ['xml-language-server'],
+    \ 'yaml': ['yaml-language-server', '--stdio'],
     \ }
 
 " Automatically start language servers.
