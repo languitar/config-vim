@@ -81,6 +81,7 @@ Plug 'janko-m/vim-test'
 Plug 'carlitux/deoplete-ternjs', {'for': 'javascript', 'do': 'npm install -g tern'}
 Plug 'gko/vim-coloresque'
 Plug 'rodjek/vim-puppet'
+Plug 'pearofducks/ansible-vim'
 
 call plug#end()
 
@@ -285,6 +286,7 @@ let g:LanguageClient_serverCommands = {
     \ 'typescript': ['javascript-typescript-stdio'],
     \ 'xml': ['xml-language-server'],
     \ 'yaml': ['yaml-language-server', '--stdio'],
+    \ 'yaml.ansible': ['yaml-language-server', '--stdio'],
     \ }
 
 " Automatically start language servers.
