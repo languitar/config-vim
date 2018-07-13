@@ -45,7 +45,6 @@ Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'make release'}
 
 " SCM support
 Plug 'tpope/vim-fugitive'
-Plug 'idanarye/vim-merginal'
 Plug 'mhinz/vim-signify'
 
 " editing aids
