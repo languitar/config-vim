@@ -29,11 +29,18 @@ Plug 'wellle/targets.vim'
 Plug 'editorconfig/editorconfig-vim'
 
 " completion
-Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'w0rp/ale'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'chrisbra/unicode.vim'
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2-ultisnips'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-rst-subscope'
+Plug 'ncm2/ncm2-markdown-subscope'
+Plug 'ncm2/ncm2-html-subscope'
 Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'make release'}
 
 " SCM support
@@ -70,7 +77,6 @@ Plug 'chrisbra/csv.vim', {'for': 'csv'}
 Plug 'vim-scripts/icalendar.vim', {'for': 'icalendar'}
 Plug 'tmux-plugins/vim-tmux', {'for': 'tmux'}
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
-Plug 'sebastianmarkow/deoplete-rust', {'for': 'rust'}
 Plug 'cespare/vim-toml', {'for': 'toml'}
 Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
 Plug 'pangloss/vim-javascript', {'for': 'javascript'}
@@ -78,7 +84,6 @@ Plug 'mxw/vim-jsx', {'for': 'jsx'}
 Plug 'Matt-Deacalion/vim-systemd-syntax'
 Plug 'junegunn/vader.vim'
 Plug 'janko-m/vim-test'
-Plug 'carlitux/deoplete-ternjs', {'for': 'javascript', 'do': 'npm install -g tern'}
 Plug 'gko/vim-coloresque'
 Plug 'rodjek/vim-puppet'
 Plug 'pearofducks/ansible-vim'
@@ -244,29 +249,27 @@ let g:grammarous#use_vim_spelllang = 1
 let g:grammarous#languagetool_cmd = 'languagetool'
 let g:grammarous#show_first_error = 1
 
-" deoplete settings
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#max_menu_width = 0
-let g:deoplete#enable_ignore_case = 0
-let g:deoplete#enable_camel_case = 1
-let g:deoplete#enable_smart_case = 1
-call deoplete#custom#source('_', 'matchers', ['matcher_fuzzy'])
-if !exists('g:deoplete#omni#input_patterns')
-    let g:deoplete#omni#input_patterns = {}
-endif
-
-let g:clang_complete_auto = 0
-let g:clang_auto_select = 0
-let g:clang_omnicppcomplete_compliance = 0
-let g:clang_make_default_keymappings = 0
-let g:clang_use_library = 1
-let g:clang_complete_macros = 1
-let g:clang_auto_user_options = 'compile_commands.json'
-" let g:clang_complete_patterns = 1
+" ncm2 settings
+autocmd vimrc BufEnter * call ncm2#enable_for_buffer()
+set completeopt=noinsert,menuone,preview,noselect
+set shortmess+=c
+let g:ncm2#comple_length=1
+" LaTeX
+autocmd User Ncm2Plugin call ncm2#register_source({
+      \ 'name': 'vimtex',
+      \ 'mark': 'TeX',
+      \ 'priority': 9,
+      \ 'subscope_enable': 1,
+      \ 'scope': ['tex'],
+      \ 'word_pattern': '\w+',
+      \ 'complete_pattern': g:vimtex#re#ncm,
+      \ 'on_complete': ['ncm2#on_complete#omni', 'vimtex#complete#omnifunc'],
+      \ })
+" Ultisnips from LSP
+inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
 
 " javascript settings
 let g:jsx_ext_required = 1
-let g:deoplete#sources#ternjs#types = 1
 
 " language server stuff
 let g:LanguageClient_serverCommands = {
@@ -472,12 +475,6 @@ let g:vimtex_compiler_progname = 'nvr'
 let g:vimtex_view_use_temp_files = 2
 let g:vimtex_view_method = 'zathura'
 let g:vimtex_quickfix_mode = 0 " do not open the quickfix window automatically
-
-" java completion
-autocmd FileType java setlocal omnifunc=javacomplete#Complete
-
-" deoplete completion for LaTeX
-let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
 
 " function to explain the different highlights for spelling errors
 function! s:SpellLegend()
