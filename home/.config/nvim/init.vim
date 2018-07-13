@@ -358,6 +358,32 @@ call denite#custom#option('_', 'highlight_mode_insert', 'CursorLine')
 call denite#custom#option('_', 'highlight_matched_range', 'None')
 call denite#custom#option('_', 'highlight_matched_char', 'None')
 
+" custom denite menus
+let g:denite_menus = {}
+
+let g:denite_menus.vim = {
+    \ 'description': 'Vim tasks',
+    \ }
+function! g:ReloadConfig()
+    source ~/.config/nvim/init.vim
+    if filereadable(".exrc")
+        source .exrc
+    endif
+endfunction
+let g:denite_menus.vim.file_candidates = [
+    \ ['Edit global settings', '~/.config/nvim/init.vim'],
+    \ ['Edit local settings', '.exrc'],
+    \ ]
+let g:denite_menus.vim.command_candidates = [
+    \ ['Reload config', 'call ReloadConfig()'],
+    \ ]
+
+let g:denite_menus.project = {
+    \ 'description': 'Project tasks',
+    \ }
+
+call denite#custom#var('menu', 'menus', g:denite_menus)
+
 " disable spell checking here
 autocmd vimrc FileType denite setlocal nospell
 
@@ -410,6 +436,7 @@ map <leader>r :Denite -resume <CR>
 map <leader>p :DeniteProjectDir buffer file_rec <CR>
 map <leader>g :Denite buffer file_rec/git <CR>
 map <leader>e :Denite grep/git <CR>
+map <leader>m :Denite menu <CR>
 map <leader>vp :Gpull --rebase<CR>
 map <leader>vu :Gpush<CR>
 map <leader>vs :Gstatus <CR>
