@@ -27,6 +27,7 @@ Plug 'tpope/vim-repeat'
 Plug 'vim-scripts/visualrepeat'
 Plug 'wellle/targets.vim'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'moll/vim-bbye'
 
 " completion
 Plug 'w0rp/ale'
@@ -502,6 +503,7 @@ map <leader>sju: :call LanguageClient#Notify("java/projectConfigurationUpdate", 
 map <leader>c :Denite command<CR>
 
 map <leader>w :w<CR>
+map <leader>q :Bdelete<CR>
 
 " UltiSnips settings
 let g:UltiSnipsEditSplit = "context"
