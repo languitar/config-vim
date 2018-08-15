@@ -483,8 +483,8 @@ map <leader>u :MundoToggle <CR>
 map <leader>i :IndentGuidesToggle <CR>
 map <leader>b :Denite buffer <CR>
 map <leader>r :Denite -resume <CR>
-map <leader>p :DeniteProjectDir buffer file_rec <CR>
-map <leader>g :Denite buffer file_rec/git <CR>
+map <leader>p :DeniteProjectDir file_rec <CR>
+map <leader>g :Denite file_rec/git <CR>
 map <leader>e :Denite grep/git <CR>
 map <leader>m :Denite menu <CR>
 map <leader>vp :Gpull --rebase<CR>
