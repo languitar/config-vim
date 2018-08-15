@@ -111,6 +111,7 @@ set fileformats=unix,dos,mac " set newline preferences
 set expandtab
 set shiftwidth=4
 set tabstop=4
+set shiftround
 
 " detect lists when wrapping lines
 set formatoptions+=n
@@ -158,6 +159,10 @@ highlight MatchParen cterm=bold ctermbg=none ctermfg=9
 
 " tab completion mode with partial match and list
 set wildmode=list:longest,full
+
+" split directions
+set splitbelow
+set splitright
 
 " allow mouse control
 set mouse=a
