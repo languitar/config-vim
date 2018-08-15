@@ -87,6 +87,7 @@ Plug 'janko-m/vim-test'
 Plug 'gko/vim-coloresque'
 Plug 'rodjek/vim-puppet'
 Plug 'pearofducks/ansible-vim'
+Plug 'arrufat/vala.vim'
 
 call plug#end()
 
