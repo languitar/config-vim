@@ -469,7 +469,7 @@ let g:Tex_IgnoredWarnings =''
 
 " signify
 let g:signify_vcs_list = [ 'git', 'svn', 'hg' ]
-autocmd vimrc User Fugitive SignifyRefresh
+" autocmd vimrc User Fugitive SignifyRefresh
 
 " python folding
 let g:SimpylFold_docstring_preview = 1
