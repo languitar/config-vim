@@ -166,10 +166,6 @@ highlight MatchParen cterm=bold ctermbg=none ctermfg=9
 " tab completion mode with partial match and list
 set wildmode=list:longest,full
 
-" split directions
-set splitbelow
-set splitright
-
 " allow mouse control
 set mouse=a
 
