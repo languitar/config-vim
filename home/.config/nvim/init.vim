@@ -372,6 +372,12 @@ call denite#custom#var('grep/git', 'pattern_opt', ['-e'])
 call denite#custom#var('grep/git', 'separator', ['--'])
 call denite#custom#var('grep/git', 'final_opts', ['.'])
 
+" mercurial file source
+call denite#custom#alias('source', 'file_rec/hg', 'file_rec')
+call denite#custom#var('file_rec/hg', 'command',
+    \ ['hg', 'locate'])
+" mercural grep source doesn't work... No compatible output
+
 " maps for navigating entries up and downwards
 call denite#custom#map(
     \ 'insert',
