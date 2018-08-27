@@ -196,9 +196,7 @@ let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
 
 " indent guides
 let g:indent_guides_default_mapping = 0
-let g:indent_guides_auto_colors = 0
-highlight IndentGuidesOdd  guibg=red   ctermbg=234
-highlight IndentGuidesEven guibg=green ctermbg=236
+let g:indent_guides_auto_colors = 1
 
 " status line modification
 let g:airline#extensions#tabline#enabled = 1
