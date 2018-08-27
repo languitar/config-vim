@@ -42,10 +42,15 @@ Plug 'ncm2/ncm2-path'
 Plug 'ncm2/ncm2-rst-subscope'
 Plug 'ncm2/ncm2-markdown-subscope'
 Plug 'ncm2/ncm2-html-subscope'
+Plug 'ncm2/ncm2-github'
 Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'make -j 8 release'}
 
 " SCM support
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'shumphrey/fugitive-gitlab.vim'
+Plug 'tommcdo/vim-fubitive'
+Plug 'junegunn/gv.vim'
 Plug 'mhinz/vim-signify'
 
 " editing aids
