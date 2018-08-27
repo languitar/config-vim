@@ -6,8 +6,8 @@ filetype off
 call plug#begin('~/.local/share/nvim/bundle/')
 
 " general configuration
-Plug 'sjl/badwolf'
-Plug 'vim-scripts/mayansmoke'
+Plug 'chriskempson/base16-vim'
+Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'majutsushi/tagbar'
 Plug 'bling/vim-airline'
@@ -175,15 +175,14 @@ map <space> <leader>
 map <space><space> <leader><leader>
 
 " color scheme
-" set background=dark
-colorscheme badwolf
-let g:airline_theme="badwolf"
-" local color scheme modifications
-" highlight ColorColumn ctermbg=8
-highlight DiffAdd ctermbg=2
-highlight DiffDelete ctermbg=1
-highlight DiffChange ctermbg=238
-highlight DiffChange ctermbg=242
+set termguicolors
+set background=dark
+let g:gruvbox_italic=1
+let g:gruvbox_contrast_dark="hard"
+colorscheme gruvbox
+let g:airline_theme="gruvbox"
+" colorscheme base16-bright
+" let g:airline_theme = "base16"
 
 " solid utf-8 lines for splits
 set fillchars=vert:\│
@@ -570,10 +569,6 @@ function! s:SpellLegend()
     endfor
 endfunction
 command! -bar SpellLegend call s:SpellLegend()
-
-" Colorscheme switching
-command! Light :colorscheme mayansmoke | :AirlineTheme molokai
-command! Dark :colorscheme badwolf | :AirlineTheme badwolf
 
 " utility commands
 command! W w
