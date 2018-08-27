@@ -67,6 +67,7 @@ Plug 'machakann/vim-sandwich'
 Plug 'rhysd/vim-grammarous'
 
 " language support
+Plug 'sheerun/vim-polyglot'
 Plug 'lervag/vimtex'
 Plug 'Rykka/riv.vim', {'for': 'rst'}
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
