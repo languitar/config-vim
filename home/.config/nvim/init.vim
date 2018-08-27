@@ -204,11 +204,20 @@ highlight IndentGuidesEven guibg=green ctermbg=236
 let g:airline#extensions#tabline#enabled = 1
 " already visible in gutter
 let g:airline#extensions#syntastic#enabled = 0
-let g:airline#extensions#tagbar#enabled = 1
-" not needed
-let g:airline#extensions#branch#enabled = 0
-" already done by another plugin
-let g:airline#extensions#whitespace#checks =[' indent', 'mixed-indent-file']
+" I usually know where I am in a file
+let g:airline#extensions#tagbar#enabled = 0
+" VCS stuff
+let g:airline#extensions#hunks#enabled = 0
+let g:airline#extensions#branch#displayed_head_limit = 12
+let g:airline#extensions#branch#sha1_len = 8
+" reduce whitespace checks to what other plugins are not doing
+let g:airline#extensions#whitespace#checks = ['indent', 'mixed-indent-file']
+" taboo
+let g:airline#extensions#taboo#enabled = 1
+" ale
+let g:airline#extensions#ale#enabled = 0
+
+" theming
 let g:airline_powerline_fonts = 0
 let g:airline_left_sep = '▙'
 let g:airline_right_sep = '▟'
