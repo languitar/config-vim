@@ -65,35 +65,23 @@ Plug 'junegunn/vim-easy-align', {'on': 'EasyAlign'}
 Plug 'sbdchd/neoformat', {'on': 'Neoformat'}
 Plug 'machakann/vim-sandwich'
 Plug 'rhysd/vim-grammarous'
+Plug 'kana/vim-textobj-user'
+Plug 'Konfekt/FastFold'
 
 " language support
 Plug 'sheerun/vim-polyglot'
 Plug 'lervag/vimtex'
 Plug 'Rykka/riv.vim', {'for': 'rst'}
-Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
-Plug 'elzr/vim-json', {'for': 'json'}
-Plug 'dag/vim-fish', {'for': 'fish'}
-Plug 'vim-python/python-syntax', {'for': ['python', 'python3']}
-Plug 'hynek/vim-python-pep8-indent', {'for': ['python', 'python3']}
-Plug 'kana/vim-textobj-user', {'for': ['python', 'python3']}
+Plug 'Vimjas/vim-python-pep8-indent', {'for': ['python', 'python3']}
 Plug 'bps/vim-textobj-python', {'for': ['python', 'python3']}
 Plug 'tmhedberg/SimpylFold', {'for': ['python', 'python3']}
 Plug 'jamessan/vim-gnupg'
 Plug 'chrisbra/csv.vim', {'for': 'csv'}
 Plug 'vim-scripts/icalendar.vim', {'for': 'icalendar'}
-Plug 'tmux-plugins/vim-tmux', {'for': 'tmux'}
-Plug 'rust-lang/rust.vim', {'for': 'rust'}
-Plug 'cespare/vim-toml', {'for': 'toml'}
-Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
-Plug 'pangloss/vim-javascript', {'for': 'javascript'}
 Plug 'mxw/vim-jsx', {'for': 'jsx'}
-Plug 'Matt-Deacalion/vim-systemd-syntax'
 Plug 'junegunn/vader.vim'
 Plug 'janko-m/vim-test'
 Plug 'gko/vim-coloresque'
-Plug 'rodjek/vim-puppet'
-Plug 'pearofducks/ansible-vim'
-Plug 'arrufat/vala.vim'
 
 call plug#end()
 
@@ -216,6 +204,9 @@ let g:airline#extensions#whitespace#checks = ['indent', 'mixed-indent-file']
 let g:airline#extensions#taboo#enabled = 1
 " ale
 let g:airline#extensions#ale#enabled = 0
+
+" Disable some polyglot packages
+let g:polyglot_disabled = ['latex']
 
 " theming
 let g:airline_powerline_fonts = 0
