@@ -153,6 +153,9 @@ inoremap <c-w> <c-g>u<c-w>
 " bracket matching settings
 highlight MatchParen cterm=bold ctermbg=none ctermfg=9
 
+" make terminal cursor more visible
+highlight! TermCursorNC ctermfg=15 guifg=#fdf6e3 ctermbg=14 guibg=#93a1a1 cterm=NONE gui=NONE
+
 " tab completion mode with partial match and list
 set wildmode=list:longest,full
 
