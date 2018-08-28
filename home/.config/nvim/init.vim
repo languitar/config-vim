@@ -472,7 +472,6 @@ let g:signify_vcs_list = [ 'git', 'svn', 'hg' ]
 " python folding
 let g:SimpylFold_docstring_preview = 1
 
-let g:python_highlight_operators = 0
 let g:python_highlight_space_errors = 0
 let g:python_highlight_all = 1
 
