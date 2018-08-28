@@ -469,6 +469,10 @@ let g:Tex_IgnoredWarnings =''
 let g:signify_vcs_list = [ 'git', 'svn', 'hg' ]
 " autocmd vimrc User Fugitive SignifyRefresh
 
+" fugitive
+" automatically delete fugitive buffers
+autocmd vimrc BufReadPost fugitive://* setlocal bufhidden=delete
+
 " python folding
 let g:SimpylFold_docstring_preview = 1
 
