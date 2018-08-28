@@ -248,8 +248,7 @@ let g:ale_linters = {
     \ 'python': ['flake8'],
     \ }
 let g:ale_lint_on_text_changed = 'never'
-highlight ALEError cterm=undercurl ctermfg=196
-highlight ALEInfo cterm=undercurl ctermfg=14
+let g:ale_set_quickfix=0
 
 " grammarous settings
 let g:grammarous#use_vim_spelllang = 1
