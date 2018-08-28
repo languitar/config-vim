@@ -178,13 +178,15 @@ map <space><space> <leader><leader>
 
 " color scheme
 set termguicolors
-set background=dark
-let g:gruvbox_italic=1
-let g:gruvbox_contrast_dark="hard"
-colorscheme gruvbox
-let g:airline_theme="gruvbox"
-" colorscheme base16-bright
-" let g:airline_theme = "base16"
+
+" set background=dark
+" let g:gruvbox_italic=1
+" let g:gruvbox_contrast_dark="hard"
+" colorscheme gruvbox
+" let g:airline_theme="gruvbox"
+
+colorscheme base16-bright
+let g:airline_theme="base16"
 
 " solid utf-8 lines for splits
 set fillchars=vert:\│
