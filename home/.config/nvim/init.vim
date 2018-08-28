@@ -448,9 +448,10 @@ let g:denite_menus.project={
 call denite#custom#var('menu', 'menus', g:denite_menus)
 
 " Remove some stuff for special windows
-autocmd vimrc FileType denite,git setlocal nospell signcolumn=no foldcolumn=0
+autocmd vimrc BufReadPost fugitive://* setlocal nospell foldcolumn=0 nonumber norelativenumber
+autocmd vimrc FileType denite,git setlocal nospell signcolumn=no nonumber norelativenumber
+autocmd vimrc FileType gitcommit setlocal signcolumn=no foldcolumn=0 nonumber norelativenumber
 autocmd vimrc TermOpen * setlocal nonumber norelativenumber signcolumn=no foldcolumn=0
-autocmd vimrc BufReadPost fugitive://* setlocal nospell signcolumn=no foldcolumn=0
 autocmd vimrc WinEnter * if &previewwindow | setlocal nospell nonumber norelativenumber signcolumn=no foldcolumn=0 | endif
 autocmd vimrc FileType help setlocal signcolumn=no foldcolumn=0 nospell
 
