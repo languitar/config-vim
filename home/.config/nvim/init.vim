@@ -184,38 +184,38 @@ set fillchars=vert:\│
 " recommended by vim-sandwich (and never used)
 nmap s <Nop>
 xmap s <Nop>
-let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
+let g:sandwich#recipes=deepcopy(g:sandwich#default_recipes)
 
 " indent guides
-let g:indent_guides_default_mapping = 0
-let g:indent_guides_auto_colors = 1
+let g:indent_guides_default_mapping=0
+let g:indent_guides_auto_colors=1
 
 " status line modification
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled=1
 " already visible in gutter
-let g:airline#extensions#syntastic#enabled = 0
+let g:airline#extensions#syntastic#enabled=0
 " I usually know where I am in a file
-let g:airline#extensions#tagbar#enabled = 0
+let g:airline#extensions#tagbar#enabled=0
 " VCS stuff
-let g:airline#extensions#hunks#enabled = 0
-let g:airline#extensions#branch#displayed_head_limit = 12
-let g:airline#extensions#branch#sha1_len = 8
+let g:airline#extensions#hunks#enabled=0
+let g:airline#extensions#branch#displayed_head_limit=12
+let g:airline#extensions#branch#sha1_len=8
 " reduce whitespace checks to what other plugins are not doing
-let g:airline#extensions#whitespace#checks = ['indent', 'mixed-indent-file']
+let g:airline#extensions#whitespace#checks=['indent', 'mixed-indent-file']
 " taboo
-let g:airline#extensions#taboo#enabled = 1
+let g:airline#extensions#taboo#enabled=1
 " ale
-let g:airline#extensions#ale#enabled = 0
+let g:airline#extensions#ale#enabled=0
 
 " Disable some polyglot packages
 let g:polyglot_disabled = ['latex']
 
 " theming
-let g:airline_powerline_fonts = 0
-let g:airline_left_sep = '▙'
-let g:airline_right_sep = '▟'
+let g:airline_powerline_fonts=0
+let g:airline_left_sep='▙'
+let g:airline_right_sep='▟'
 " make things more compact
-let g:airline_mode_map = {
+let g:airline_mode_map={
     \ '__': '-',
     \ 'n' : 'N',
     \ 'i' : 'I',
@@ -229,10 +229,10 @@ let g:airline_mode_map = {
     \ '': 'S',
     \ }
 if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
+    let g:airline_symbols={}
 endif
-let g:airline_symbols.spell = '✓'
-let g:airline_section_z = '%4l/%L'
+let g:airline_symbols.spell='✓'
+let g:airline_section_z='%4l/%L'
 
 " better whitespace
 autocmd vimrc FileType git DisableWhitespace
@@ -240,27 +240,27 @@ autocmd vimrc FileType diff DisableWhitespace
 autocmd vimrc FileType help DisableWhitespace
 
 " detect indent settings
-let g:detectindent_preferred_expandtab = 1
-let g:detectindent_preferred_indent = 4
+let g:detectindent_preferred_expandtab=1
+let g:detectindent_preferred_indent=4
 " autocmd BufReadPost * :DetectIndent
 
 " nerdtree modifications
 " change cwd with nerd tree
-let NERDTreeChDirMode = 2
+let NERDTreeChDirMode=2
 
 " ale settings
-let g:ale_echo_msg_format = '[%linter%] %s% (code)% [%severity%]'
-let g:ale_linters = {
+let g:ale_echo_msg_format='[%linter%] %s% (code)% [%severity%]'
+let g:ale_linters={
     \ 'tex': ['alex', 'proselint', 'chktex', 'write-good', 'vale'],
     \ 'python': ['flake8'],
     \ }
-let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_text_changed='never'
 let g:ale_set_quickfix=0
 
 " grammarous settings
-let g:grammarous#use_vim_spelllang = 1
-let g:grammarous#languagetool_cmd = 'languagetool'
-let g:grammarous#show_first_error = 1
+let g:grammarous#use_vim_spelllang=1
+let g:grammarous#languagetool_cmd='languagetool'
+let g:grammarous#show_first_error=1
 
 " ncm2 settings
 autocmd vimrc BufEnter * call ncm2#enable_for_buffer()
@@ -327,10 +327,10 @@ autocmd vimrc Filetype tex call ncm2#register_source({
 inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
 
 " javascript settings
-let g:jsx_ext_required = 1
+let g:jsx_ext_required=1
 
 " language server stuff
-let g:LanguageClient_serverCommands = {
+let g:LanguageClient_serverCommands={
     \ 'cpp': ['cquery'],
     \ 'css': ['css-languageserver', '--stdio'],
     \ 'dockerfile': ['docker-langserver', '--stdio'],
@@ -349,9 +349,9 @@ let g:LanguageClient_serverCommands = {
     \ }
 
 " Automatically start language servers.
-" let g:LanguageClient_autoStart = 0
-let g:LanguageClient_settingsPath = 'ls-settings.json'
-let g:LanguageClient_hoverPreview = 'Always'
+" let g:LanguageClient_autoStart=0
+let g:LanguageClient_settingsPath='ls-settings.json'
+let g:LanguageClient_hoverPreview='Always'
 
 " Denite settings
 " git file source
@@ -422,9 +422,9 @@ call denite#custom#option('_', 'highlight_matched_range', 'None')
 call denite#custom#option('_', 'highlight_matched_char', 'None')
 
 " custom denite menus
-let g:denite_menus = {}
+let g:denite_menus={}
 
-let g:denite_menus.vim = {
+let g:denite_menus.vim={
     \ 'description': 'Vim tasks',
     \ }
 function! g:ReloadConfig()
@@ -433,15 +433,15 @@ function! g:ReloadConfig()
         source .exrc
     endif
 endfunction
-let g:denite_menus.vim.file_candidates = [
+let g:denite_menus.vim.file_candidates=[
     \ ['Edit global settings', '~/.config/nvim/init.vim'],
     \ ['Edit local settings', '.exrc'],
     \ ]
-let g:denite_menus.vim.command_candidates = [
+let g:denite_menus.vim.command_candidates=[
     \ ['Reload config', 'call ReloadConfig()'],
     \ ]
 
-let g:denite_menus.project = {
+let g:denite_menus.project={
     \ 'description': 'Project tasks',
     \ }
 
@@ -455,18 +455,18 @@ autocmd vimrc WinEnter * if &previewwindow | setlocal nospell nonumber norelativ
 autocmd vimrc FileType help setlocal signcolumn=no foldcolumn=0 nospell
 
 " taboo settings
-let g:taboo_tabline = 0
+let g:taboo_tabline=0
 
 " JSON highlighting settings
-let g:vim_json_syntax_conceal = 0 " do not remove double quotes in view
+let g:vim_json_syntax_conceal=0 " do not remove double quotes in view
 
 " latex settings
-let g:tex_flavor = "latex"
+let g:tex_flavor="latex"
 let g:Tex_DefaultTargetFormat =" pdf"
 let g:Tex_IgnoredWarnings =''
 
 " signify
-let g:signify_vcs_list = [ 'git', 'svn', 'hg' ]
+let g:signify_vcs_list=[ 'git', 'svn', 'hg' ]
 " autocmd vimrc User Fugitive SignifyRefresh
 
 " fugitive
@@ -474,10 +474,10 @@ let g:signify_vcs_list = [ 'git', 'svn', 'hg' ]
 autocmd vimrc BufReadPost fugitive://* setlocal bufhidden=delete
 
 " python folding
-let g:SimpylFold_docstring_preview = 1
+let g:SimpylFold_docstring_preview=1
 
-let g:python_highlight_space_errors = 0
-let g:python_highlight_all = 1
+let g:python_highlight_space_errors=0
+let g:python_highlight_all=1
 
 set undodir=~/.cache/nvim/undo/
 set undofile
@@ -528,12 +528,12 @@ map <leader>w :w<CR>
 map <leader>q :Bdelete<CR>
 
 " UltiSnips settings
-let g:UltiSnipsEditSplit = "context"
-let g:UltiSnipsSnippetsDir = "~/.config/nvim/UltiSnips"
-let g:UltiSnipsListSnippets = "<A-tab>"
+let g:UltiSnipsEditSplit="context"
+let g:UltiSnipsSnippetsDir="~/.config/nvim/UltiSnips"
+let g:UltiSnipsListSnippets="<A-tab>"
 
 " markdown
-let g:markdown_enable_mappings = 0
+let g:markdown_enable_mappings=0
 
 " settings for neovim terminals
 autocmd vimrc TermOpen * setlocal nospell
@@ -566,10 +566,10 @@ map! <Esc>OF <End>
 map <leader>h :nohlsearch <CR>
 
 " make vimtex work with neovim
-let g:vimtex_compiler_progname = 'nvr'
-let g:vimtex_view_use_temp_files = 2
-let g:vimtex_view_method = 'zathura'
-let g:vimtex_quickfix_mode = 0 " do not open the quickfix window automatically
+let g:vimtex_compiler_progname='nvr'
+let g:vimtex_view_use_temp_files=2
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0 " do not open the quickfix window automatically
 
 " function to explain the different highlights for spelling errors
 function! s:SpellLegend()
