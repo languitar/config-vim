@@ -502,7 +502,7 @@ map <leader>b :Denite buffer <CR>
 map <leader>r :Denite -resume <CR>
 map <leader>p :DeniteProjectDir file_rec <CR>
 map <leader>g :DeniteProjectDir file_rec/git <CR>
-map <leader>e :DeniteCursorWord grep/git<CR>
+map <leader>e :Denite grep/git:::`input('Pattern: ', expand('<cword>'))`<CR>
 map <leader>m :Denite menu <CR>
 map <leader>vp :Gpull --rebase<CR>
 map <leader>vu :Gpush<CR>
