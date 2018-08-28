@@ -513,6 +513,7 @@ map <leader>vs :Gstatus <CR>
 map <leader>sh :call LanguageClient_textDocument_hover()<CR>
 map <leader>sd :call LanguageClient_textDocument_definition()<CR>
 map <leader>sr :call LanguageClient_textDocument_rename()<CR>
+map <leader>sx :call LanguageClient#explainErrorAtPoint()<CR>
 map <leader>ss :Denite documentSymbol<CR>
 map <leader>se :Denite references<CR>
 map <leader>sw :Denite workspaceSymbol<CR>
