@@ -99,6 +99,8 @@ set shell=bash " fix the shell to something vim understand
 
 set number " show line numbers
 
+set foldcolumn=1
+
 set fileformats=unix,dos,mac " set newline preferences
 
 " default indentation settings
@@ -231,6 +233,11 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_symbols.spell = '✓'
 let g:airline_section_z = '%4l/%L'
+
+" better whitespace
+autocmd vimrc FileType git DisableWhitespace
+autocmd vimrc FileType diff DisableWhitespace
+autocmd vimrc FileType help DisableWhitespace
 
 " detect indent settings
 let g:detectindent_preferred_expandtab = 1
@@ -440,11 +447,12 @@ let g:denite_menus.project = {
 
 call denite#custom#var('menu', 'menus', g:denite_menus)
 
-" disable spell checking here
-autocmd vimrc FileType denite setlocal nospell
-
-" disable line numbers in terminal
-autocmd vimrc TermOpen * setlocal nonumber norelativenumber
+" Remove some stuff for special windows
+autocmd vimrc FileType denite,git setlocal nospell signcolumn=no foldcolumn=0
+autocmd vimrc TermOpen * setlocal nonumber norelativenumber signcolumn=no foldcolumn=0
+autocmd vimrc BufReadPost fugitive://* setlocal nospell signcolumn=no foldcolumn=0
+autocmd vimrc WinEnter * if &previewwindow | setlocal nospell nonumber norelativenumber signcolumn=no foldcolumn=0 | endif
+autocmd vimrc FileType help setlocal signcolumn=no foldcolumn=0 nospell
 
 " taboo settings
 let g:taboo_tabline = 0
