@@ -66,6 +66,7 @@ Plug 'sbdchd/neoformat', {'on': 'Neoformat'}
 Plug 'machakann/vim-sandwich'
 Plug 'rhysd/vim-grammarous'
 Plug 'kana/vim-textobj-user'
+Plug 'glts/vim-textobj-comment'
 Plug 'Konfekt/FastFold'
 
 " language support
