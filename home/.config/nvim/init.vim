@@ -529,7 +529,15 @@ map <leader>sju: :call LanguageClient#Notify("java/projectConfigurationUpdate", 
 map <leader>c :Denite command<CR>
 
 map <leader>w :w<CR>
-map <leader>q :Bdelete<CR>
+
+function! DeleteBuffer()
+    if &buftype ==# 'terminal'
+        Bdelete!
+    else
+        Bdelete
+    endif
+endfunction
+map <leader>q :call DeleteBuffer()<CR>
 
 " UltiSnips settings
 let g:UltiSnipsEditSplit="context"
