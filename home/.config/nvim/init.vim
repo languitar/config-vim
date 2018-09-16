@@ -346,6 +346,7 @@ let g:LanguageClient_serverCommands={
     \ 'less': ['css-languageserver', '--stdio'],
     \ 'puppet': ['puppet-languageserver', '--stdio'],
     \ 'python': ['pyls'],
+    \ 'ruby': ['solargraph', 'stdio'],
     \ 'rust': ['rls'],
     \ 'sass': ['css-languageserver', '--stdio'],
     \ 'sh': ['bash-language-server', 'start'],
