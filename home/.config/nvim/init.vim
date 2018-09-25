@@ -328,6 +328,8 @@ autocmd vimrc Filetype tex call ncm2#register_source({
         \ 'on_complete': ['ncm2#on_complete#omni', 'vimtex#complete#omnifunc'],
         \ })
 
+imap <C-Space> <Plug>(ncm2_manual_trigger)
+
 " Ultisnips from LSP
 inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
 
