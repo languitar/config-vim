@@ -152,9 +152,6 @@ set signcolumn=yes
 inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
 
-" bracket matching settings
-highlight MatchParen cterm=bold ctermbg=none ctermfg=9
-
 " make terminal cursor more visible
 highlight! TermCursorNC ctermfg=15 guifg=#fdf6e3 ctermbg=14 guibg=#93a1a1 cterm=NONE gui=NONE
 
@@ -182,6 +179,7 @@ set termguicolors
 
 colorscheme base16-bright
 let g:airline_theme="base16"
+call Base16hi("MatchParen", "", g:base16_gui02, g:base16_cterm05, g:base16_cterm03, "bold", "")
 
 " solid utf-8 lines for splits
 set fillchars=vert:\│
