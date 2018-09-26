@@ -84,6 +84,7 @@ Plug 'mxw/vim-jsx', {'for': 'jsx'}
 Plug 'junegunn/vader.vim'
 Plug 'janko-m/vim-test'
 Plug 'gko/vim-coloresque'
+Plug 'OmniSharp/omnisharp-vim'
 
 call plug#end()
 
@@ -327,6 +328,17 @@ autocmd vimrc Filetype tex call ncm2#register_source({
         \ 'word_pattern': '\w+',
         \ 'complete_pattern': g:vimtex#re#ncm2#bibtex,
         \ 'on_complete': ['ncm2#on_complete#omni', 'vimtex#complete#omnifunc'],
+        \ })
+
+autocmd vimrc Filetype cs call ncm2#register_source({
+        \ 'name': 'omnisharp',
+        \ 'mark': 'C#',
+        \ 'priority': 9,
+        \ 'complete_length': 2,
+        \ 'scope': ['cs'],
+        \ 'word_pattern': '[\w\-_]+',
+        \ 'complete_pattern': ['\.', 'new\W+'],
+        \ 'on_complete': ['ncm2#on_complete#omni', 'OmniSharp#Complete'],
         \ })
 
 imap <C-Space> <Plug>(ncm2_manual_trigger)
