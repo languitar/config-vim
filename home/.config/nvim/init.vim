@@ -164,6 +164,9 @@ set mouse=a
 " avoid delays when exiting insert mode with escape
 set ttimeoutlen=0
 
+" more frequent updates and cursor hold
+set updatetime=2000
+
 " put leader to space
 map <space> <leader>
 map <space><space> <leader><leader>
@@ -358,6 +361,34 @@ let g:LanguageClient_serverCommands={
 " let g:LanguageClient_autoStart=0
 let g:LanguageClient_settingsPath='ls-settings.json'
 let g:LanguageClient_hoverPreview='Always'
+
+" automatic highlighting etc
+function! LspMaybeHighlight(is_running) abort
+    if a:is_running.result
+        call LanguageClient#textDocument_documentHighlight()
+    endif
+endfunction
+augroup lsp_aucommands
+    au!
+    au CursorHold * call LanguageClient#isAlive(function('LspMaybeHighlight'))
+augroup END
+
+" use something different for highlighting
+let g:LanguageClient_documentHighlightDisplay={
+  \     1: {
+  \         "name": "Text",
+  \         "texthl": "MatchParen",
+  \     },
+  \     2: {
+  \         "name": "Read",
+  \         "texthl": "MatchParen",
+  \     },
+  \     3: {
+  \         "name": "Write",
+  \         "texthl": "MatchParen",
+  \     },
+  \  }
+
 
 " Denite settings
 " git file source
