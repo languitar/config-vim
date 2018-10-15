@@ -10,8 +10,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'majutsushi/tagbar'
-Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 Plug 'Shougo/denite.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'Shougo/neoyank.vim'
@@ -180,10 +179,8 @@ set termguicolors
 " let g:gruvbox_italic=1
 " let g:gruvbox_contrast_dark="hard"
 " colorscheme gruvbox
-" let g:airline_theme="gruvbox"
 
 colorscheme base16-bright
-let g:airline_theme="base16"
 call Base16hi("MatchParen", "", g:base16_gui02, g:base16_cterm05, g:base16_cterm03, "bold", "")
 
 " solid utf-8 lines for splits
@@ -198,49 +195,8 @@ let g:sandwich#recipes=deepcopy(g:sandwich#default_recipes)
 let g:indent_guides_default_mapping=0
 let g:indent_guides_auto_colors=1
 
-" status line modification
-let g:airline#extensions#tabline#enabled=1
-" already visible in gutter
-let g:airline#extensions#syntastic#enabled=0
-" I usually know where I am in a file
-let g:airline#extensions#tagbar#enabled=0
-" VCS stuff
-let g:airline#extensions#hunks#enabled=0
-let g:airline#extensions#branch#displayed_head_limit=12
-let g:airline#extensions#branch#sha1_len=8
-" reduce whitespace checks to what other plugins are not doing
-let g:airline#extensions#whitespace#checks=['indent', 'mixed-indent-file']
-" taboo
-let g:airline#extensions#taboo#enabled=1
-" ale
-let g:airline#extensions#ale#enabled=0
-
 " Disable some polyglot packages
 let g:polyglot_disabled = ['latex']
-
-" theming
-let g:airline_powerline_fonts=0
-let g:airline_left_sep='▙'
-let g:airline_right_sep='▟'
-" make things more compact
-let g:airline_mode_map={
-    \ '__': '-',
-    \ 'n' : 'N',
-    \ 'i' : 'I',
-    \ 'R' : 'R',
-    \ 'c' : 'C',
-    \ 'v' : 'V',
-    \ 'V' : 'V',
-    \ '': 'V',
-    \ 's' : 'S',
-    \ 'S' : 'S',
-    \ '': 'S',
-    \ }
-if !exists('g:airline_symbols')
-    let g:airline_symbols={}
-endif
-let g:airline_symbols.spell='✓'
-let g:airline_section_z='%4l/%L'
 
 " better whitespace
 autocmd vimrc FileType git DisableWhitespace
@@ -275,7 +231,45 @@ let g:grammarous#show_first_error=1
 autocmd vimrc BufEnter * call ncm2#enable_for_buffer()
 set completeopt=noinsert,menuone,preview,noselect
 set shortmess+=c
-let g:ncm2#comple_length=1
+let g:ncm2#comple_length=0
+
+" lightline settings
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename' ] ],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ ' fileformat', 'fileencoding', 'filetype', 'spell' ], ]
+      \ },
+      \ 'inactive': {
+      \   'right': [ [ 'lineinfo' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head',
+      \   'filename': 'LightlineFilename',
+      \   'filetype': 'LightlineFiletype',
+      \ },
+      \ 'component_visible_function': {
+      \   'filetype': '&ft',
+      \ }
+      \ }
+function! LightlineReadonly()
+    return &readonly && &filetype !=# 'help' ? 'RO' : ''
+endfunction
+function! LightlineFiletype()
+    return &filetype
+endfunction
+function! LightlineFilename()
+    let root = fnamemodify(get(b:, 'git_dir'), ':h')
+    let path = expand('%:p')
+    let modified = &modified ? ' +' : ''
+    if path[:len(root)-1] ==# root
+        return path[len(root)+1:] . modified
+    endif
+    let filename = expand('%') !=# '' ? expand('%') : '[No Name]'
+    return filename . modified
+endfunction
 
 " LaTeX
 autocmd vimrc Filetype tex call ncm2#register_source({
@@ -496,7 +490,7 @@ autocmd vimrc WinEnter * if &previewwindow | setlocal nospell nonumber norelativ
 autocmd vimrc FileType help setlocal signcolumn=no foldcolumn=0 nospell
 
 " taboo settings
-let g:taboo_tabline=0
+" let g:taboo_tabline=0
 
 " JSON highlighting settings
 let g:vim_json_syntax_conceal=0 " do not remove double quotes in view
