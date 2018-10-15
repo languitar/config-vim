@@ -596,7 +596,7 @@ let g:markdown_enable_mappings=0
 autocmd vimrc TermOpen * setlocal nospell
 autocmd vimrc TermOpen * set bufhidden=hide
 command! Fish :terminal fish
-autocmd vimrc BufEnter * if &buftype == 'terminal' | :startinsert | endif
+" autocmd vimrc BufEnter * if &buftype == 'terminal' | :startinsert | endif
 set scrollback=-1
 tnoremap <A-h> <C-\><C-n><C-w>h
 tnoremap <A-j> <C-\><C-n><C-w>j
