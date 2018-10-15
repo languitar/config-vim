@@ -376,17 +376,6 @@ let g:LanguageClient_serverCommands={
 let g:LanguageClient_settingsPath='ls-settings.json'
 let g:LanguageClient_hoverPreview='Always'
 
-" automatic highlighting etc
-function! LspMaybeHighlight(is_running) abort
-    if a:is_running.result
-        call LanguageClient#textDocument_documentHighlight()
-    endif
-endfunction
-augroup lsp_aucommands
-    au!
-    au CursorHold * call LanguageClient#isAlive(function('LspMaybeHighlight'))
-augroup END
-
 " use something different for highlighting
 let g:LanguageClient_documentHighlightDisplay={
   \     1: {
