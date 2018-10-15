@@ -622,6 +622,9 @@ map! <Esc>OF <End>
 " leader combination to stop search highlighting
 map <leader>h :nohlsearch <CR>
 
+" vimtest config
+let test#strategy="neovim"
+
 " make vimtex work with neovim
 let g:vimtex_compiler_progname='nvr'
 let g:vimtex_view_use_temp_files=2
