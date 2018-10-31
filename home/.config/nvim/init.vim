@@ -198,6 +198,8 @@ let g:sandwich#recipes=deepcopy(g:sandwich#default_recipes)
 let g:indent_guides_default_mapping=0
 let g:indent_guides_auto_colors=1
 
+let g:airline_highlighting_cache=1
+
 " status line modification
 let g:airline#extensions#tabline#enabled=1
 " already visible in gutter
@@ -235,6 +237,7 @@ let g:airline_mode_map={
     \ 's' : 'S',
     \ 'S' : 'S',
     \ '': 'S',
+    \ 't' : 'T',
     \ }
 if !exists('g:airline_symbols')
     let g:airline_symbols={}
