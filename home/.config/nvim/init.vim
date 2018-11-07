@@ -361,7 +361,7 @@ let g:LanguageClient_serverCommands={
     \ 'css': ['css-languageserver', '--stdio'],
     \ 'dockerfile': ['docker-langserver', '--stdio'],
     \ 'html': ['html-languageserver', '--stdio'],
-    \ 'java': ['jdtls', '-data', '~/.local/share/nvim/ls/java', '--add-modules=ALL-SYSTEM', '--add-opens', 'java.base/java.util=ALL-UNNAMED', '--add-opens', 'java.base/java.lang=ALL-UNNAMED'],
+    \ 'java': ['jdtls', '-data', '/home/languitar/.local/share/nvim/ls/java/' . fnamemodify(getcwd(), ':t'), '--add-modules=ALL-SYSTEM', '--add-opens', 'java.base/java.util=ALL-UNNAMED', '--add-opens', 'java.base/java.lang=ALL-UNNAMED'],
     \ 'javascript': ['typescript-language-server', '--stdio'],
     \ 'json': ['json-languageserver', '--stdio'],
     \ 'less': ['css-languageserver', '--stdio'],
