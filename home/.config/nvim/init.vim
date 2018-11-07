@@ -265,6 +265,7 @@ let g:ale_linters={
     \ 'tex': ['alex', 'proselint', 'chktex', 'write-good', 'vale'],
     \ 'python': ['flake8'],
     \ 'cs': ['omnisharp'],
+    \ 'java': ['checkstyle', 'pmd'],
     \ }
 let g:ale_lint_on_text_changed='never'
 let g:ale_set_quickfix=0
