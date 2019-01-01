@@ -20,7 +20,6 @@ Plug 'bkad/CamelCaseMotion'
 Plug 'simnalamburt/vim-mundo', {'on': 'MundoToggle'}
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-eunuch'
-Plug 'BurningEther/iron.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'tpope/vim-obsession'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'tpope/vim-repeat'
@@ -28,6 +27,7 @@ Plug 'vim-scripts/visualrepeat'
 Plug 'wellle/targets.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'moll/vim-bbye'
+Plug 'wellle/visual-split.vim'
 
 " completion
 Plug 'w0rp/ale'
@@ -86,6 +86,7 @@ Plug 'junegunn/vader.vim'
 Plug 'janko-m/vim-test'
 Plug 'gko/vim-coloresque'
 Plug 'OmniSharp/omnisharp-vim'
+Plug 'gutenye/json5.vim'
 
 call plug#end()
 
