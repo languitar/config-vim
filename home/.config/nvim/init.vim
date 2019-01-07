@@ -87,6 +87,7 @@ Plug 'janko-m/vim-test'
 Plug 'gko/vim-coloresque'
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'gutenye/json5.vim'
+Plug 'neo4j-contrib/cypher-vim-syntax'
 
 call plug#end()
 
