@@ -10,7 +10,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'majutsushi/tagbar'
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Shougo/denite.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
@@ -218,6 +218,8 @@ let g:airline#extensions#whitespace#checks=['indent', 'mixed-indent-file']
 let g:airline#extensions#taboo#enabled=1
 " ale
 let g:airline#extensions#ale#enabled=0
+" disable for now
+let g:airline#extensions#languageclient#enabled=0
 
 " Disable some polyglot packages
 let g:polyglot_disabled = ['latex']
