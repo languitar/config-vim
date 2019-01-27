@@ -377,6 +377,7 @@ let g:LanguageClient_serverCommands={
     \ 'sh': ['bash-language-server', 'start'],
     \ 'typescript': ['javascript-typescript-stdio'],
     \ 'xml': ['xml-language-server'],
+    \ 'yaml': ['yaml-language-server'],
     \ }
 
 " Automatically start language servers.
