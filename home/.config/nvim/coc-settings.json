@@ -1,0 +1,27 @@
+{
+    "languageserver": {
+        "bash": {
+            "command": "bash-language-server",
+            "args": ["start"],
+            "filetypes": ["sh"],
+            "ignoredRootPaths": ["~"]
+        },
+        "dockerfile": {
+            "command": "docker-langserver",
+            "filetypes": ["dockerfile"],
+            "args": ["--stdio"]
+        },
+        "cquery": {
+            "command": "cquery",
+            "args": ["--log-file=/tmp/cq.log"],
+            "filetypes": ["c", "cpp"],
+            "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+            "initializationOptions": {
+                "cacheDirectory": "/tmp/cquery"
+            }
+        }
+    },
+    "coc.preferences.codeLens.enable": true,
+    "coc.preferences.diagnostic.virtualText": true,
+    "coc.preferences.diagnostic.displayByAle": true
+}

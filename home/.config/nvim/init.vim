@@ -9,7 +9,6 @@ call plug#begin('~/.local/share/nvim/bundle/')
 Plug 'chriskempson/base16-vim'
 Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
-Plug 'majutsushi/tagbar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Shougo/denite.nvim', {'do': ':UpdateRemotePlugins'}
@@ -34,16 +33,7 @@ Plug 'w0rp/ale'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'chrisbra/unicode.vim'
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
-Plug 'ncm2/ncm2-ultisnips'
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-rst-subscope'
-Plug 'ncm2/ncm2-markdown-subscope'
-Plug 'ncm2/ncm2-html-subscope'
-Plug 'ncm2/ncm2-github'
-Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'make -j 8 release'}
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 
 " SCM support
 Plug 'tpope/vim-fugitive'
@@ -84,10 +74,10 @@ Plug 'vim-scripts/icalendar.vim', {'for': 'icalendar'}
 Plug 'mxw/vim-jsx', {'for': 'jsx'}
 Plug 'junegunn/vader.vim'
 Plug 'janko-m/vim-test'
-Plug 'gko/vim-coloresque'
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'gutenye/json5.vim'
 Plug 'neo4j-contrib/cypher-vim-syntax'
+" Plug 'ekalinin/Dockerfile.vim'
 
 call plug#end()
 
@@ -272,135 +262,22 @@ let g:ale_linters={
     \ 'java': ['checkstyle', 'pmd'],
     \ }
 let g:ale_lint_on_text_changed='never'
-let g:ale_set_quickfix=0
+let g:ale_set_quickfix=1
+let g:ale_virtualtext_cursor=1
+let g:ale_virtualtext_prefix='▶ '
+highlight! ALEVirtualTextError guifg=#fb0128 guibg=#000000 gui=italic
+highlight! ALEVirtualTextWarning guifg=#fc6d24 guibg=#000000 gui=italic
+highlight! ALEVirtualTextInfo guifg=#6fb3d2 guibg=#000000 gui=italic
 
 " grammarous settings
 let g:grammarous#use_vim_spelllang=1
 let g:grammarous#languagetool_cmd='languagetool'
 let g:grammarous#show_first_error=1
 
-" ncm2 settings
-autocmd vimrc BufEnter * call ncm2#enable_for_buffer()
-set completeopt=noinsert,menuone,preview,noselect
 set shortmess+=c
-let g:ncm2#comple_length=1
-
-" LaTeX
-autocmd vimrc Filetype tex call ncm2#register_source({
-        \ 'name' : 'vimtex-cmds',
-        \ 'priority': 8,
-        \ 'complete_length': -1,
-        \ 'scope': ['tex'],
-        \ 'matcher': {'name': 'prefix', 'key': 'word'},
-        \ 'word_pattern': '\w+',
-        \ 'complete_pattern': g:vimtex#re#ncm2#cmds,
-        \ 'on_complete': ['ncm2#on_complete#omni', 'vimtex#complete#omnifunc'],
-        \ })
-autocmd vimrc Filetype tex call ncm2#register_source({
-        \ 'name' : 'vimtex-labels',
-        \ 'priority': 8,
-        \ 'complete_length': -1,
-        \ 'scope': ['tex'],
-        \ 'matcher': {'name': 'combine',
-        \             'matchers': [
-        \               {'name': 'substr', 'key': 'word'},
-        \               {'name': 'substr', 'key': 'menu'},
-        \             ]},
-        \ 'word_pattern': '\w+',
-        \ 'complete_pattern': g:vimtex#re#ncm2#labels,
-        \ 'on_complete': ['ncm2#on_complete#omni', 'vimtex#complete#omnifunc'],
-        \ })
-autocmd vimrc Filetype tex call ncm2#register_source({
-        \ 'name' : 'vimtex-files',
-        \ 'priority': 8,
-        \ 'complete_length': -1,
-        \ 'scope': ['tex'],
-        \ 'matcher': {'name': 'combine',
-        \             'matchers': [
-        \               {'name': 'abbrfuzzy', 'key': 'word'},
-        \               {'name': 'abbrfuzzy', 'key': 'abbr'},
-        \             ]},
-        \ 'word_pattern': '\w+',
-        \ 'complete_pattern': g:vimtex#re#ncm2#files,
-        \ 'on_complete': ['ncm2#on_complete#omni', 'vimtex#complete#omnifunc'],
-        \ })
-autocmd vimrc Filetype tex call ncm2#register_source({
-        \ 'name' : 'bibtex',
-        \ 'priority': 8,
-        \ 'complete_length': -1,
-        \ 'scope': ['tex'],
-        \ 'matcher': {'name': 'combine',
-        \             'matchers': [
-        \               {'name': 'prefix', 'key': 'word'},
-        \               {'name': 'abbrfuzzy', 'key': 'abbr'},
-        \               {'name': 'abbrfuzzy', 'key': 'menu'},
-        \             ]},
-        \ 'word_pattern': '\w+',
-        \ 'complete_pattern': g:vimtex#re#ncm2#bibtex,
-        \ 'on_complete': ['ncm2#on_complete#omni', 'vimtex#complete#omnifunc'],
-        \ })
-
-autocmd vimrc Filetype cs call ncm2#register_source({
-        \ 'name': 'omnisharp',
-        \ 'mark': 'C#',
-        \ 'priority': 9,
-        \ 'complete_length': 2,
-        \ 'scope': ['cs'],
-        \ 'word_pattern': '[\w\-_]+',
-        \ 'complete_pattern': ['\.', 'new\W+'],
-        \ 'on_complete': ['ncm2#on_complete#omni', 'OmniSharp#Complete'],
-        \ })
-
-imap <C-Space> <Plug>(ncm2_manual_trigger)
-
-" Ultisnips from LSP
-inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
 
 " javascript settings
 let g:jsx_ext_required=1
-
-" language server stuff
-let g:LanguageClient_serverCommands={
-    \ 'cpp': ['cquery'],
-    \ 'css': ['css-languageserver', '--stdio'],
-    \ 'dockerfile': ['docker-langserver', '--stdio'],
-    \ 'html': ['html-languageserver', '--stdio'],
-    \ 'java': ['jdtls', '-data', '/home/languitar/.local/share/nvim/ls/java/' . fnamemodify(getcwd(), ':t'), '--add-modules=ALL-SYSTEM', '--add-opens', 'java.base/java.util=ALL-UNNAMED', '--add-opens', 'java.base/java.lang=ALL-UNNAMED'],
-    \ 'javascript': ['typescript-language-server', '--stdio'],
-    \ 'json': ['json-languageserver', '--stdio'],
-    \ 'less': ['css-languageserver', '--stdio'],
-    \ 'puppet': ['puppet-languageserver', '--stdio'],
-    \ 'python': ['pyls'],
-    \ 'ruby': ['solargraph', 'stdio'],
-    \ 'rust': ['rls'],
-    \ 'sass': ['css-languageserver', '--stdio'],
-    \ 'sh': ['bash-language-server', 'start'],
-    \ 'typescript': ['javascript-typescript-stdio'],
-    \ 'xml': ['xml-language-server'],
-    \ 'yaml': ['yaml-language-server'],
-    \ }
-
-" Automatically start language servers.
-" let g:LanguageClient_autoStart=0
-let g:LanguageClient_settingsPath='ls-settings.json'
-let g:LanguageClient_hoverPreview='Always'
-
-" use something different for highlighting
-let g:LanguageClient_documentHighlightDisplay={
-  \     1: {
-  \         "name": "Text",
-  \         "texthl": "MatchParen",
-  \     },
-  \     2: {
-  \         "name": "Read",
-  \         "texthl": "MatchParen",
-  \     },
-  \     3: {
-  \         "name": "Write",
-  \         "texthl": "MatchParen",
-  \     },
-  \  }
-
 
 " Denite settings
 " git file source
@@ -542,7 +419,6 @@ autocmd vimrc BufNewFile,BufReadPost *.md.erb set filetype=markdown
 
 " key bindings to open navigation aids
 nmap <leader>n :NERDTreeToggle <CR>
-map <leader>t :TagbarToggle <CR>
 map <leader>u :MundoToggle <CR>
 map <leader>i :IndentGuidesToggle <CR>
 map <leader>b :Denite buffer <CR>
@@ -554,20 +430,26 @@ map <leader>m :Denite menu <CR>
 map <leader>vp :Gpull --rebase<CR>
 map <leader>vu :Gpush<CR>
 map <leader>vs :Gstatus <CR>
+map <leader>tt :TestLast <CR>
+map <leader>tf :TestFile <CR>
+map <leader>ts :TestSuite <CR>
+map <leader>tn :TestNearest <CR>
 
 " l used by latex
 
-map <leader>sh :call LanguageClient_textDocument_hover()<CR>
-map <leader>sd :call LanguageClient_textDocument_definition()<CR>
-map <leader>sr :call LanguageClient_textDocument_rename()<CR>
-map <leader>sx :call LanguageClient#explainErrorAtPoint()<CR>
+map <leader>sh :call CocActionAsync('doHover')<CR>
+map <leader>sd <Plug>(coc-definition)
+map <leader>sr <Plug>(coc-rename)
+map <leader>sl <Plug>(coc-codelens-action)
+" map <leader>sx :call LanguageClient#explainErrorAtPoint()<CR>
 map <leader>ss :Denite documentSymbol<CR>
 map <leader>se :Denite references<CR>
 map <leader>sw :Denite workspaceSymbol<CR>
-nmap <leader>sf :call LanguageClient_textDocument_formatting()<CR>
-vmap <leader>sf :call LanguageClient_textDocument_rangeFormatting()<CR>
-map <leader>sa :Denite codeAction<CR>
-map <leader>sju: :call LanguageClient#Notify("java/projectConfigurationUpdate", {'uri': "file://" . getcwd() . "/" . bufname("%")})
+nmap <leader>sf  <Plug>(coc-format)
+vmap <leader>sf  <Plug>(coc-format-selected)
+map <leader>sa <Plug>(coc-codeaction)
+map <leader>sq <Plug>(coc-fix-current)
+" map <leader>sju: :call LanguageClient#Notify("java/projectConfigurationUpdate", {'uri': "file://" . getcwd() . "/" . bufname("%")})
 
 map <leader>c :Denite command<CR>
 
