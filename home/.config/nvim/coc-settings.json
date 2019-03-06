@@ -21,7 +21,7 @@
             }
         }
     },
-    "coc.preferences.codeLens.enable": true,
-    "coc.preferences.diagnostic.virtualText": true,
-    "coc.preferences.diagnostic.displayByAle": true
+    "codeLens.enable": true,
+    "diagnostic.virtualText": true,
+    "diagnostic.displayByAle": true
 }
