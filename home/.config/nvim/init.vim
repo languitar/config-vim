@@ -281,7 +281,7 @@ let g:jsx_ext_required=1
 
 " Denite settings
 " git file source
-call denite#custom#alias('source', 'file_rec/git', 'file_rec')
+call denite#custom#alias('source', 'file_rec/git', 'file/rec')
 call denite#custom#var('file_rec/git', 'command',
     \ ['git', 'ls-files', '-co', '--exclude-standard'])
 " git grep source
@@ -296,7 +296,7 @@ call denite#custom#var('grep/git', 'separator', ['--'])
 call denite#custom#var('grep/git', 'final_opts', ['.'])
 
 " mercurial file source
-call denite#custom#alias('source', 'file_rec/hg', 'file_rec')
+call denite#custom#alias('source', 'file_rec/hg', 'file/rec')
 call denite#custom#var('file_rec/hg', 'command',
     \ ['hg', 'locate'])
 " mercural grep source doesn't work... No compatible output
