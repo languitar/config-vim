@@ -22,6 +22,5 @@
         }
     },
     "codeLens.enable": true,
-    "diagnostic.virtualText": true,
     "diagnostic.displayByAle": true
 }

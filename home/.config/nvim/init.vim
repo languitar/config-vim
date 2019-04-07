@@ -449,6 +449,7 @@ nmap <leader>sf  <Plug>(coc-format)
 vmap <leader>sf  <Plug>(coc-format-selected)
 map <leader>sa <Plug>(coc-codeaction)
 map <leader>sq <Plug>(coc-fix-current)
+autocmd CursorHold * if ! coc#util#has_float() | call CocAction('doHover') | endif
 " map <leader>sju: :call LanguageClient#Notify("java/projectConfigurationUpdate", {'uri': "file://" . getcwd() . "/" . bufname("%")})
 
 map <leader>c :Denite command<CR>
