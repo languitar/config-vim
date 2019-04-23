@@ -33,7 +33,7 @@ Plug 'w0rp/ale'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'chrisbra/unicode.vim'
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
 " SCM support
 Plug 'tpope/vim-fugitive'
@@ -73,6 +73,7 @@ Plug 'chrisbra/csv.vim', {'for': 'csv'}
 Plug 'vim-scripts/icalendar.vim', {'for': 'icalendar'}
 Plug 'mxw/vim-jsx', {'for': 'jsx'}
 Plug 'junegunn/vader.vim'
+Plug 'tpope/vim-dispatch'
 Plug 'janko-m/vim-test'
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'gutenye/json5.vim'
