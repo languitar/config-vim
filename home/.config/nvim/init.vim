@@ -300,45 +300,23 @@ call denite#custom#var('grep/git', 'final_opts', ['.'])
 call denite#custom#alias('source', 'file_rec/hg', 'file/rec')
 call denite#custom#var('file_rec/hg', 'command',
     \ ['hg', 'locate'])
-" mercural grep source doesn't work... No compatible output
+" mercurial grep source doesn't work... No compatible output
 
-" maps for navigating entries up and downwards
-call denite#custom#map(
-    \ 'insert',
-    \ '<Down>',
-    \ '<denite:move_to_next_line>',
-    \ 'noremap'
-    \)
-call denite#custom#map(
-    \ 'insert',
-    \ '<C-j>',
-    \ '<denite:move_to_next_line>',
-    \ 'noremap'
-    \)
-call denite#custom#map(
-    \ 'insert',
-    \ '<C-n>',
-    \ '<denite:move_to_next_line>',
-    \ 'noremap'
-    \)
-call denite#custom#map(
-    \ 'insert',
-    \ '<Up>',
-    \ '<denite:move_to_previous_line>',
-    \ 'noremap'
-    \)
-call denite#custom#map(
-    \ 'insert',
-    \ '<C-k>',
-    \ '<denite:move_to_previous_line>',
-    \ 'noremap'
-    \)
-call denite#custom#map(
-    \ 'insert',
-    \ '<C-p>',
-    \ '<denite:move_to_previous_line>',
-    \ 'noremap'
-    \)
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+    nnoremap <silent><buffer><expr> <CR>
+    \ denite#do_map('do_action')
+    nnoremap <silent><buffer><expr> d
+    \ denite#do_map('do_action', 'delete')
+    nnoremap <silent><buffer><expr> p
+    \ denite#do_map('do_action', 'preview')
+    nnoremap <silent><buffer><expr> q
+    \ denite#do_map('quit')
+    nnoremap <silent><buffer><expr> i
+    \ denite#do_map('open_filter_buffer')
+    nnoremap <silent><buffer><expr> <Space>
+    \ denite#do_map('toggle_select').'j'
+endfunction
 
 " lru sorting for buffers
 call denite#custom#source('buffer', 'sorters', [])
@@ -424,10 +402,10 @@ map <leader>u :MundoToggle <CR>
 map <leader>i :IndentGuidesToggle <CR>
 map <leader>b :Denite buffer <CR>
 map <leader>r :Denite -resume <CR>
-map <leader>p :DeniteProjectDir file_rec <CR>
-map <leader>g :DeniteProjectDir file_rec/git <CR>
+map <leader>p :DeniteProjectDir -start-filter file_rec <CR>
+map <leader>g :DeniteProjectDir -start-filter file_rec/git <CR>
 map <leader>e :Denite grep/git:::`input('Pattern: ', expand('<cword>'))`<CR>
-map <leader>m :Denite menu <CR>
+map <leader>m :Denite -start-filter menu <CR>
 map <leader>vp :Gpull --rebase<CR>
 map <leader>vu :Gpush<CR>
 map <leader>vs :Gstatus <CR>
