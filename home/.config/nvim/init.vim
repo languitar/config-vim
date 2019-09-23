@@ -28,6 +28,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'moll/vim-bbye'
 Plug 'wellle/visual-split.vim'
 
+Plug 'rasjani/robotframework-vim'
+
 " completion
 Plug 'w0rp/ale'
 Plug 'SirVer/ultisnips'
@@ -41,6 +43,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'tommcdo/vim-fubitive'
 Plug 'junegunn/gv.vim'
+Plug 'sodapopcan/vim-twiggy'
 Plug 'mhinz/vim-signify'
 
 " editing aids
