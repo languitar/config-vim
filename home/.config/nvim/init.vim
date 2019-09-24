@@ -320,6 +320,10 @@ function! s:denite_my_settings() abort
     nnoremap <silent><buffer><expr> <Space>
     \ denite#do_map('toggle_select').'j'
 endfunction
+autocmd FileType denite-filter call s:denite_filter_my_settings()
+function! s:denite_filter_my_settings() abort
+    imap <silent><buffer> <C-c> <Plug>(denite_filter_quit)
+endfunction
 
 " lru sorting for buffers
 call denite#custom#source('buffer', 'sorters', [])
