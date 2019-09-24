@@ -42,8 +42,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'tommcdo/vim-fubitive'
-Plug 'junegunn/gv.vim'
 Plug 'sodapopcan/vim-twiggy'
+Plug 'rbong/vim-flog'
 Plug 'mhinz/vim-signify'
 
 " editing aids
