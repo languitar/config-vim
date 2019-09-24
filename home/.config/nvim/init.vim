@@ -381,6 +381,7 @@ let g:Tex_IgnoredWarnings =''
 " signify
 let g:signify_vcs_list=[ 'git', 'svn', 'hg' ]
 " autocmd vimrc User Fugitive SignifyRefresh
+autocmd BufDelete COMMIT_EDITMSG SignifyRefresh
 
 " fugitive
 " automatically delete fugitive buffers
