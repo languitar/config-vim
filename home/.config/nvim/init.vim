@@ -69,6 +69,7 @@ Plug 'brooth/far.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'lervag/vimtex'
 Plug 'Rykka/riv.vim', {'for': 'rst'}
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'Vimjas/vim-python-pep8-indent', {'for': ['python', 'python3']}
 Plug 'bps/vim-textobj-python', {'for': ['python', 'python3']}
 Plug 'tmhedberg/SimpylFold', {'for': ['python', 'python3']}
