@@ -62,6 +62,7 @@ Plug 'glts/vim-textobj-comment'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'Konfekt/FastFold'
 Plug 'brooth/far.vim'
+Plug 'tpope/vim-projectionist'
 
 " language support
 Plug 'sheerun/vim-polyglot'
