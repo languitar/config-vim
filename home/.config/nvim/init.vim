@@ -28,8 +28,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'moll/vim-bbye'
 Plug 'wellle/visual-split.vim'
 
-Plug 'rasjani/robotframework-vim'
-
 " completion
 Plug 'w0rp/ale'
 Plug 'SirVer/ultisnips'
@@ -83,7 +81,7 @@ Plug 'janko-m/vim-test'
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'gutenye/json5.vim'
 Plug 'neo4j-contrib/cypher-vim-syntax'
-" Plug 'ekalinin/Dockerfile.vim'
+Plug 'rasjani/robotframework-vim'
 
 call plug#end()
 
