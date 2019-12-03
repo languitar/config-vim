@@ -438,6 +438,8 @@ vmap <leader>sf  <Plug>(coc-format-selected)
 map <leader>sa <Plug>(coc-codeaction)
 map <leader>sq <Plug>(coc-fix-current)
 
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
 map <leader>c :Denite command<CR>
 
 map <leader>w :w<CR>
