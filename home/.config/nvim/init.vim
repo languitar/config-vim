@@ -439,6 +439,7 @@ map <leader>sa <Plug>(coc-codeaction)
 map <leader>sq <Plug>(coc-fix-current)
 
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <silent><expr> <c-space> coc#refresh()
 
 map <leader>c :Denite command<CR>
 
