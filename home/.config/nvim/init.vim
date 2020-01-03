@@ -29,7 +29,7 @@ Plug 'moll/vim-bbye'
 Plug 'wellle/visual-split.vim'
 
 " completion
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'chrisbra/unicode.vim'
@@ -259,20 +259,20 @@ let g:detectindent_preferred_indent=4
 let NERDTreeChDirMode=2
 
 " ale settings
-let g:ale_echo_msg_format='[%linter%] %s% (code)% [%severity%]'
-let g:ale_linters={
-    \ 'tex': ['alex', 'proselint', 'chktex', 'write-good', 'vale'],
-    \ 'python': ['flake8'],
-    \ 'cs': ['omnisharp'],
-    \ 'java': ['checkstyle', 'pmd'],
-    \ }
-let g:ale_lint_on_text_changed='never'
-let g:ale_set_quickfix=1
-let g:ale_virtualtext_cursor=1
-let g:ale_virtualtext_prefix='▶ '
-highlight! ALEVirtualTextError guifg=#fb0128 guibg=#000000 gui=italic
-highlight! ALEVirtualTextWarning guifg=#fc6d24 guibg=#000000 gui=italic
-highlight! ALEVirtualTextInfo guifg=#6fb3d2 guibg=#000000 gui=italic
+" let g:ale_echo_msg_format='[%linter%] %s% (code)% [%severity%]'
+" let g:ale_linters={
+"     \ 'tex': ['alex', 'proselint', 'chktex', 'write-good', 'vale'],
+"     \ 'python': ['flake8'],
+"     \ 'cs': ['omnisharp'],
+"     \ 'java': ['checkstyle', 'pmd'],
+"     \ }
+" let g:ale_lint_on_text_changed='never'
+" let g:ale_set_quickfix=1
+" let g:ale_virtualtext_cursor=1
+" let g:ale_virtualtext_prefix='▶ '
+" highlight! ALEVirtualTextError guifg=#fb0128 guibg=#000000 gui=italic
+" highlight! ALEVirtualTextWarning guifg=#fc6d24 guibg=#000000 gui=italic
+" highlight! ALEVirtualTextInfo guifg=#6fb3d2 guibg=#000000 gui=italic
 
 " grammarous settings
 let g:grammarous#use_vim_spelllang=1
@@ -425,18 +425,29 @@ map <leader>tn :TestNearest <CR>
 
 " l used by latex
 
-map <leader>sh :call CocActionAsync('doHover')<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+map <leader>sh :call <SID>show_documentation()<CR>
 map <leader>sd <Plug>(coc-definition)
 map <leader>sr <Plug>(coc-rename)
 map <leader>sl <Plug>(coc-codelens-action)
-" map <leader>sx :call LanguageClient#explainErrorAtPoint()<CR>
-map <leader>ss :Denite documentSymbol<CR>
-map <leader>se :Denite references<CR>
-map <leader>sw :Denite workspaceSymbol<CR>
-nmap <leader>sf  <Plug>(coc-format)
-vmap <leader>sf  <Plug>(coc-format-selected)
+map <leader>ss :<C-u>CocList outline<cr>
+map <leader>sw :<C-u>CocList -I symbols<cr>
+nmap <leader>sf <Plug>(coc-format)
+vmap <leader>sf <Plug>(coc-format-selected)
 map <leader>sa <Plug>(coc-codeaction)
+xmap <leader>sa <Plug>(coc-codeaction-selected)
 map <leader>sq <Plug>(coc-fix-current)
+
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <silent><expr> <c-space> coc#refresh()
