@@ -76,5 +76,10 @@
             }
         }
     },
-    "codeLens.enable": true
+    "codeLens.enable": true,
+    "diagnostic.displayByAle": false,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.mypyEnabled": true,
+    "python.linting.enabled": true
 }
