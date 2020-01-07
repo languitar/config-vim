@@ -63,6 +63,7 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'Konfekt/FastFold'
 Plug 'brooth/far.vim'
 Plug 'tpope/vim-projectionist'
+Plug 'AndrewRadev/splitjoin.vim'
 
 " language support
 Plug 'sheerun/vim-polyglot'
@@ -397,6 +398,35 @@ let g:python_highlight_all=1
 set undodir=~/.cache/nvim/undo/
 set undofile
 
+" default coc settings
+let g:coc_global_extensions = [
+  \   'coc-yank',
+  \   'coc-word',
+  \   'coc-vimlsp',
+  \   'coc-ultisnips',
+  \   'coc-tag',
+  \   'coc-syntax',
+  \   'coc-omni',
+  \   'coc-highlight',
+  \   'coc-git',
+  \   'coc-emoji',
+  \   'coc-dictionary',
+  \   'coc-diagnostic',
+  \   'coc-python',
+  \   'coc-yaml',
+  \   'coc-java',
+  \   'coc-json',
+  \   'coc-css',
+  \   'coc-xml',
+  \   'coc-markdownlint',
+  \   'coc-lists',
+  \   'coc-actions',
+  \   'coc-sh',
+  \   'coc-docker',
+  \   'coc-html',
+  \   'coc-svg',
+  \ ]
+
 " fix editing modes to file types
 autocmd vimrc BufRead,BufNewFile rsb.conf set filetype=dosini
 autocmd vimrc BufRead,BufNewFile *.ics set filetype=icalendar
@@ -445,6 +475,12 @@ vmap <leader>sf <Plug>(coc-format-selected)
 map <leader>sa <Plug>(coc-codeaction)
 xmap <leader>sa <Plug>(coc-codeaction-selected)
 map <leader>sq <Plug>(coc-fix-current)
+
+function! s:cocActionsOpenFromSelected(type) abort
+  execute 'CocCommand actions.open ' . a:type
+endfunction
+xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
