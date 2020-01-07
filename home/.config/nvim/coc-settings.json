@@ -18,7 +18,7 @@
         "dls": {
             "command": "diagnostic-languageserver",
             "args": ["--stdio"],
-            "filetypes": [ "sh", "email" ],
+            "filetypes": [ "sh", "email", "markdown" ],
             "initializationOptions": {
                 "linters": {
                     "shellcheck": {
@@ -47,7 +47,7 @@
                     "languagetool": {
                         "command": "languagetool",
                         "debounce": 200,
-                        "args": ["-"],
+                        "args": ["-l", "en-US", "-"],
                         "offsetLine": 0,
                         "offsetColumn": 0,
                         "sourceName": "languagetool",
@@ -65,7 +65,8 @@
                 "formatters": {},
                 "filetypes": {
                     "sh": "shellcheck",
-                    "email": "languagetool"
+                    "markdown": ["languagetool", "write-good", "vale"],
+                    "email": ["languagetool", "write-good", "vale"]
                 },
                 "formatFiletypes": {}
             }
