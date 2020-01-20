@@ -11,9 +11,7 @@ Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'Shougo/denite.nvim', {'do': ':UpdateRemotePlugins'}
-Plug 'Shougo/vimproc.vim', {'do': 'make'}
-Plug 'Shougo/neoyank.vim'
+Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
 Plug 'gcmt/taboo.vim'
 Plug 'bkad/CamelCaseMotion'
 Plug 'simnalamburt/vim-mundo', {'on': 'MundoToggle'}
@@ -285,85 +283,9 @@ set shortmess+=c
 " javascript settings
 let g:jsx_ext_required=1
 
-" Denite settings
-" git file source
-call denite#custom#alias('source', 'file_rec/git', 'file/rec')
-call denite#custom#var('file_rec/git', 'command',
-    \ ['git', 'ls-files', '-co', '--exclude-standard'])
-" git grep source
-call denite#custom#alias('source', 'grep/git', 'grep')
-call denite#custom#var('grep/git', 'command',
-    \ ['git'])
-call denite#custom#var('grep/git', 'default_opts',
-        \ ['grep', '-n', '-P'])
-call denite#custom#var('grep/git', 'recursive_opts', ['--recurse-submodules'])
-call denite#custom#var('grep/git', 'pattern_opt', ['-e'])
-call denite#custom#var('grep/git', 'separator', ['--'])
-call denite#custom#var('grep/git', 'final_opts', ['.'])
-
-" mercurial file source
-call denite#custom#alias('source', 'file_rec/hg', 'file/rec')
-call denite#custom#var('file_rec/hg', 'command',
-    \ ['hg', 'locate'])
-" mercurial grep source doesn't work... No compatible output
-
-autocmd FileType denite call s:denite_my_settings()
-function! s:denite_my_settings() abort
-    nnoremap <silent><buffer><expr> <CR>
-    \ denite#do_map('do_action')
-    nnoremap <silent><buffer><expr> d
-    \ denite#do_map('do_action', 'delete')
-    nnoremap <silent><buffer><expr> p
-    \ denite#do_map('do_action', 'preview')
-    nnoremap <silent><buffer><expr> q
-    \ denite#do_map('quit')
-    nnoremap <silent><buffer><expr> i
-    \ denite#do_map('open_filter_buffer')
-    nnoremap <silent><buffer><expr> <Space>
-    \ denite#do_map('toggle_select').'j'
-endfunction
-autocmd FileType denite-filter call s:denite_filter_my_settings()
-function! s:denite_filter_my_settings() abort
-    imap <silent><buffer> <C-c> <Plug>(denite_filter_quit)
-endfunction
-
-" lru sorting for buffers
-call denite#custom#source('buffer', 'sorters', [])
-
-" better colors
-call denite#custom#option('_', 'highlight_mode_insert', 'CursorLine')
-call denite#custom#option('_', 'highlight_matched_range', 'None')
-call denite#custom#option('_', 'highlight_matched_char', 'None')
-
-" custom denite menus
-let g:denite_menus={}
-
-let g:denite_menus.vim={
-    \ 'description': 'Vim tasks',
-    \ }
-function! g:ReloadConfig()
-    source ~/.config/nvim/init.vim
-    if filereadable(".exrc")
-        source .exrc
-    endif
-endfunction
-let g:denite_menus.vim.file_candidates=[
-    \ ['Edit global settings', '~/.config/nvim/init.vim'],
-    \ ['Edit local settings', '.exrc'],
-    \ ]
-let g:denite_menus.vim.command_candidates=[
-    \ ['Reload config', 'call ReloadConfig()'],
-    \ ]
-
-let g:denite_menus.project={
-    \ 'description': 'Project tasks',
-    \ }
-
-call denite#custom#var('menu', 'menus', g:denite_menus)
-
 " Remove some stuff for special windows
 autocmd vimrc BufReadPost fugitive://* setlocal nospell foldcolumn=0 nonumber norelativenumber
-autocmd vimrc FileType denite,git setlocal nospell signcolumn=no nonumber norelativenumber
+autocmd vimrc FileType git setlocal nospell signcolumn=no nonumber norelativenumber
 autocmd vimrc FileType gitcommit setlocal signcolumn=no foldcolumn=0 nonumber norelativenumber
 autocmd vimrc TermOpen * setlocal nonumber norelativenumber signcolumn=no foldcolumn=0
 autocmd vimrc WinEnter * if &previewwindow | setlocal nospell nonumber norelativenumber signcolumn=no foldcolumn=0 | endif
@@ -439,15 +361,13 @@ autocmd vimrc BufNewFile,BufReadPost *.md.erb set filetype=markdown
 nmap <leader>n :NERDTreeToggle <CR>
 map <leader>u :MundoToggle <CR>
 map <leader>i :IndentGuidesToggle <CR>
-map <leader>b :Denite buffer <CR>
-map <leader>r :Denite -resume <CR>
-map <leader>p :DeniteProjectDir -start-filter file_rec <CR>
-map <leader>g :DeniteProjectDir -start-filter file_rec/git <CR>
-map <leader>e :Denite grep/git:::`input('Pattern: ', expand('<cword>'))`<CR>
-map <leader>m :Denite -start-filter menu <CR>
-map <leader>vp :Gpull --rebase<CR>
-map <leader>vu :Gpush<CR>
-map <leader>vs :Gstatus <CR>
+map <leader>b :Clap buffers <CR>
+map <leader>c :Clap command<CR>
+map <leader>r :Clap registers <CR>
+map <leader>y :Clap yanks <CR>
+map <leader>p :Clap files <CR>
+map <leader>g :Clap gfiles <CR>
+map <leader>e :Clap grep ++query=<cword> <CR>
 map <leader>tt :TestLast <CR>
 map <leader>tf :TestFile <CR>
 map <leader>ts :TestSuite <CR>
@@ -487,8 +407,6 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <silent><expr> <c-space> coc#refresh()
-
-map <leader>c :Denite command<CR>
 
 map <leader>w :w<CR>
 
