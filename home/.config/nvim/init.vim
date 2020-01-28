@@ -11,7 +11,7 @@ Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
+Plug 'liuchengxu/vim-clap', {'do': ':Clap install-binary'}
 Plug 'gcmt/taboo.vim'
 Plug 'bkad/CamelCaseMotion'
 Plug 'simnalamburt/vim-mundo', {'on': 'MundoToggle'}
@@ -356,6 +356,9 @@ autocmd vimrc BufRead,BufNewFile *.bbx set filetype=tex
 autocmd vimrc BufRead,BufNewFile *.cbx set filetype=tex
 autocmd vimrc BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd vimrc BufNewFile,BufReadPost *.md.erb set filetype=markdown
+
+" clap settings
+let g:clap_layout = {'relative': 'editor'}
 
 " key bindings to open navigation aids
 nmap <leader>n :NERDTreeToggle <CR>
