@@ -1,0 +1,5 @@
+priority 1
+
+snippet uuidn "Random UUID without dashes" w
+`!p if not snip.c: import uuid; snip.rv = str(uuid.uuid4()).replace('-', '')`
+endsnippet
