@@ -62,6 +62,7 @@ Plug 'Konfekt/FastFold'
 Plug 'brooth/far.vim'
 Plug 'tpope/vim-projectionist'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'KabbAmine/zeavim.vim'
 
 " language support
 Plug 'sheerun/vim-polyglot'
@@ -462,6 +463,11 @@ map <leader>h :nohlsearch <CR>
 
 " vimtest config
 let test#strategy="neovim"
+
+" zeavim config
+let g:zv_file_types = {
+    \   'py': 'python,pandas,numpy',
+    \ }
 
 " make vimtex work with neovim
 let g:vimtex_compiler_progname='nvr'
