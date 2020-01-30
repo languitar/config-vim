@@ -1,0 +1,18 @@
+priority 1
+
+snippet deff "function or class method"
+def ${1:fname}(`!p snip.rv = "self, " if snip.indent else ""`$2) -> ${3:None}:
+	$0
+endsnippet
+
+snippet dc "pytest test class"
+class Test${1:Cname}:
+
+	def test_${2:smoke}(self) -> ${3:None}:
+		$0
+endsnippet
+
+snippet dt "pytest test function"
+def test_${1:fname}(`!p snip.rv = "self" if snip.indent else ""`$2) -> None:
+	$0
+endsnippet
