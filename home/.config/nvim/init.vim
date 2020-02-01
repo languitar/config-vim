@@ -27,7 +27,6 @@ Plug 'moll/vim-bbye'
 Plug 'wellle/visual-split.vim'
 
 " completion
-" Plug 'w0rp/ale'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'chrisbra/unicode.vim'
@@ -256,22 +255,6 @@ let g:detectindent_preferred_indent=4
 " nerdtree modifications
 " change cwd with nerd tree
 let NERDTreeChDirMode=2
-
-" ale settings
-" let g:ale_echo_msg_format='[%linter%] %s% (code)% [%severity%]'
-" let g:ale_linters={
-"     \ 'tex': ['alex', 'proselint', 'chktex', 'write-good', 'vale'],
-"     \ 'python': ['flake8'],
-"     \ 'cs': ['omnisharp'],
-"     \ 'java': ['checkstyle', 'pmd'],
-"     \ }
-" let g:ale_lint_on_text_changed='never'
-" let g:ale_set_quickfix=1
-" let g:ale_virtualtext_cursor=1
-" let g:ale_virtualtext_prefix='▶ '
-" highlight! ALEVirtualTextError guifg=#fb0128 guibg=#000000 gui=italic
-" highlight! ALEVirtualTextWarning guifg=#fc6d24 guibg=#000000 gui=italic
-" highlight! ALEVirtualTextInfo guifg=#6fb3d2 guibg=#000000 gui=italic
 
 " grammarous settings
 let g:grammarous#use_vim_spelllang=1
