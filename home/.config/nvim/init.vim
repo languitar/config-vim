@@ -179,7 +179,7 @@ autocmd vim-colors ColorScheme afterglow highlight FoldColumn guifg=#6c99bb
 
 let g:afterglow_blackout=1
 let g:afterglow_italic_comments=1
-let g:airline_theme='afterglow'
+let g:airline_theme='onedark'
 colorscheme afterglow
 
 " solid utf-8 lines for splits
@@ -194,6 +194,9 @@ let g:sandwich#recipes=deepcopy(g:sandwich#default_recipes)
 let g:indent_guides_default_mapping=0
 let g:indent_guides_auto_colors=1
 
+" Disable some polyglot packages
+let g:polyglot_disabled = ['latex']
+
 let g:airline_highlighting_cache=1
 
 " status line modification
@@ -202,21 +205,24 @@ let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#syntastic#enabled=0
 " I usually know where I am in a file
 let g:airline#extensions#tagbar#enabled=0
-" VCS stuff
 let g:airline#extensions#hunks#enabled=0
-let g:airline#extensions#branch#displayed_head_limit=12
+let g:airline#extensions#branch#displayed_head_limit=20
+let g:airline#extensions#branch#format=2
 let g:airline#extensions#branch#sha1_len=8
 " reduce whitespace checks to what other plugins are not doing
 let g:airline#extensions#whitespace#checks=['indent', 'mixed-indent-file']
-" taboo
 let g:airline#extensions#taboo#enabled=1
-" ale
 let g:airline#extensions#ale#enabled=0
-" disable for now
 let g:airline#extensions#languageclient#enabled=0
-
-" Disable some polyglot packages
-let g:polyglot_disabled = ['latex']
+let g:airline#extensions#virtualenv#enabled=0
+let g:airline#extensions#poetv#enabled=0
+let g:airline_detect_spell=1
+let g:airline_detect_spelllang=0
+let g:airline#extensions#fugitiveline#enabled = 1
+" hide mode indicator for the desired common case
+let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
+" skip empty secionts
+let g:airline_skip_empty_sections=1
 
 " theming
 let g:airline_powerline_fonts=0
