@@ -7,7 +7,7 @@ call plug#begin('~/.local/share/nvim/bundle/')
 
 " general configuration
 Plug 'chriskempson/base16-vim'
-Plug 'morhetz/gruvbox'
+Plug 'danilo-augusto/vim-afterglow'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -151,9 +151,6 @@ set signcolumn=yes
 inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
 
-" make terminal cursor more visible
-highlight! TermCursorNC ctermfg=15 guifg=#fdf6e3 ctermbg=14 guibg=#93a1a1 cterm=NONE gui=NONE
-
 " tab completion mode with partial match and list
 set wildmode=list:longest,full
 
@@ -173,15 +170,17 @@ map <space><space> <leader><leader>
 " color scheme
 set termguicolors
 
-" set background=dark
-" let g:gruvbox_italic=1
-" let g:gruvbox_contrast_dark="hard"
-" colorscheme gruvbox
-" let g:airline_theme="gruvbox"
+augroup vim-colors
+    autocmd!
+augroup END
 
-colorscheme base16-bright
-let g:airline_theme="base16"
-call Base16hi("MatchParen", "", g:base16_gui02, g:base16_cterm05, g:base16_cterm03, "bold", "")
+autocmd vim-colors ColorScheme afterglow highlight ColorColumn guibg=#202020
+autocmd vim-colors ColorScheme afterglow highlight FoldColumn guifg=#6c99bb
+
+let g:afterglow_blackout=1
+let g:afterglow_italic_comments=1
+let g:airline_theme='afterglow'
+colorscheme afterglow
 
 " solid utf-8 lines for splits
 set fillchars=vert:\│
@@ -360,6 +359,7 @@ autocmd vimrc BufNewFile,BufReadPost *.md.erb set filetype=markdown
 
 " clap settings
 let g:clap_layout = {'relative': 'editor'}
+let g:clap_theme = 'material_design_dark'
 
 " key bindings to open navigation aids
 nmap <leader>n :NERDTreeToggle <CR>
