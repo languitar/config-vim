@@ -484,6 +484,13 @@ command! CopyFileLine let @+=expand("%") . ':' . line(".")
 
 command! PlugLoadAll call plug#load(keys(g:plugs))
 
+function! SynStack()
+    if !exists("*synstack")
+        return
+    endif
+    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
 " system-specific changes
 if filereadable(glob("~/.config/nvim/local.vim"))
     source ~/.config/nvim/local.vim
