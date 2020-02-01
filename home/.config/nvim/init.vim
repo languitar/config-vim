@@ -98,6 +98,7 @@ augroup END
 set shell=bash " fix the shell to something vim understand
 
 set number " show line numbers
+set relativenumber
 
 set foldcolumn=1
 
