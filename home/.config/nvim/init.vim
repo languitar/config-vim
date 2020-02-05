@@ -350,6 +350,11 @@ autocmd vimrc BufNewFile,BufReadPost *.md.erb set filetype=markdown
 " clap settings
 let g:clap_layout = {'relative': 'editor'}
 let g:clap_theme = 'material_design_dark'
+function! ConfigureClap() abort
+    call g:clap.display.setbufvar('&spell', 0)
+    call g:clap.display.setbufvar('&relativenumber', 0)
+endfunction
+autocmd vimrc User ClapOnEnter call ConfigureClap()
 
 " key bindings to open navigation aids
 nmap <leader>n :NERDTreeToggle <CR>
