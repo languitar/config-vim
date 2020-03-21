@@ -69,7 +69,7 @@
                 "formatters": {},
                 "filetypes": {
                     "sh": "shellcheck",
-                    "markdown": ["languagetool", "write-good", "vale"],
+                    "markdown": ["write-good", "vale"],
                     "email": ["languagetool", "write-good", "vale"]
                 },
                 "formatFiletypes": {}
