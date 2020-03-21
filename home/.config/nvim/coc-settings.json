@@ -15,6 +15,10 @@
                 "cacheDirectory": "/tmp/cquery"
             }
         },
+        "terraform-lsp": {
+            "command": "terraform-lsp",
+            "filetypes": ["terraform"]
+        },
         "dls": {
             "command": "diagnostic-languageserver",
             "args": ["--stdio"],
