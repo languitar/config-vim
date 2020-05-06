@@ -78,6 +78,7 @@
     },
     "codeLens.enable": false,
     "diagnostic.displayByAle": false,
+    "python.jediEnabled": false,
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
     "python.linting.mypyEnabled": true,
