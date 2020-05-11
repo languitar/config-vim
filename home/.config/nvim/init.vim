@@ -31,7 +31,7 @@ Plug 'wellle/visual-split.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'chrisbra/unicode.vim'
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " SCM support
 Plug 'tpope/vim-fugitive'
