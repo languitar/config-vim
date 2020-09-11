@@ -84,6 +84,7 @@ Plug 'OmniSharp/omnisharp-vim'
 Plug 'gutenye/json5.vim'
 Plug 'neo4j-contrib/cypher-vim-syntax'
 Plug 'rasjani/robotframework-vim'
+Plug 'towolf/vim-helm'
 
 call plug#end()
 
