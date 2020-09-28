@@ -3,6 +3,9 @@ scriptencoding utf8
 " bundle settings
 filetype off
 
+" Disable some polyglot packages
+let g:polyglot_disabled = ['latex']
+
 call plug#begin('~/.local/share/nvim/bundle/')
 
 " general configuration
@@ -12,7 +15,7 @@ Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'liuchengxu/vim-clap', {'do': ':Clap install-binary'}
+Plug 'liuchengxu/vim-clap', {'tag': 'v*', 'do': ':Clap install-binary'}
 Plug 'gcmt/taboo.vim'
 Plug 'bkad/CamelCaseMotion'
 Plug 'simnalamburt/vim-mundo', {'on': 'MundoToggle'}
@@ -66,8 +69,8 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'KabbAmine/zeavim.vim'
 
 " language support
-Plug 'sheerun/vim-polyglot'
-Plug 'lervag/vimtex'
+Plug 'sheerun/vim-polyglot', {'tag': 'v*'}
+Plug 'lervag/vimtex', {'tag': 'v*'}
 Plug 'Rykka/riv.vim', {'for': 'rst'}
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'Vimjas/vim-python-pep8-indent', {'for': ['python', 'python3']}
@@ -196,9 +199,6 @@ let g:sandwich#recipes=deepcopy(g:sandwich#default_recipes)
 " indent guides
 let g:indent_guides_default_mapping=0
 let g:indent_guides_auto_colors=1
-
-" Disable some polyglot packages
-let g:polyglot_disabled = ['latex']
 
 let g:airline_highlighting_cache=1
 
