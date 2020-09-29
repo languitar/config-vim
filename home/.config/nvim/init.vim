@@ -11,6 +11,7 @@ call plug#begin('~/.local/share/nvim/bundle/')
 " general configuration
 Plug 'chriskempson/base16-vim'
 Plug 'danilo-augusto/vim-afterglow'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
@@ -218,6 +219,7 @@ let g:airline#extensions#ale#enabled=0
 let g:airline#extensions#languageclient#enabled=0
 let g:airline#extensions#virtualenv#enabled=0
 let g:airline#extensions#poetv#enabled=0
+let g:airline#extensions#coc#enabled=0
 let g:airline_detect_spell=1
 let g:airline_detect_spelllang=0
 let g:airline#extensions#fugitiveline#enabled = 1
@@ -264,6 +266,7 @@ let g:detectindent_preferred_indent=4
 " nerdtree modifications
 " change cwd with nerd tree
 let NERDTreeChDirMode=2
+let NERDTreeIgnore = ['\.pyc$', '\.swp$', '\.egg-info$', '\.egg$', '__pycache__']
 
 " grammarous settings
 let g:grammarous#use_vim_spelllang=1
