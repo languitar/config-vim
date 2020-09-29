@@ -365,7 +365,7 @@ map <leader>b :Clap buffers <CR>
 map <leader>c :Clap command<CR>
 map <leader>r :Clap registers <CR>
 map <leader>y :Clap yanks <CR>
-map <leader>p :Clap files <CR>
+map <leader>p :Clap files --hidden <CR>
 map <leader>g :Clap gfiles <CR>
 map <leader>e :Clap grep ++query=<cword> <CR>
 map <leader>tt :TestLast <CR>
