@@ -53,7 +53,6 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'nathanaelkane/vim-indent-guides', {'on': 'IndentGuidesToggle'}
 Plug 'tomtom/tcomment_vim'
 Plug 'sk1418/Join', {'on': 'Join'}
-Plug 'machakann/vim-highlightedyank'
 Plug 'kshenoy/vim-signature'
 Plug 'junegunn/vim-easy-align', {'on': 'EasyAlign'}
 Plug 'sbdchd/neoformat', {'on': 'Neoformat'}
