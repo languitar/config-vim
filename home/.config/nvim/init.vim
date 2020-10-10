@@ -4,7 +4,7 @@ scriptencoding utf8
 filetype off
 
 " Disable some polyglot packages
-let g:polyglot_disabled = ['latex']
+let g:polyglot_disabled = ['latex', 'markdown']
 
 call plug#begin('~/.local/share/nvim/bundle/')
 
@@ -67,6 +67,7 @@ Plug 'wincent/ferret'
 Plug 'tpope/vim-projectionist'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'KabbAmine/zeavim.vim'
+Plug 'vigoux/LanguageTool.nvim'
 
 " language support
 Plug 'sheerun/vim-polyglot', {'tag': 'v*'}
@@ -88,6 +89,8 @@ Plug 'gutenye/json5.vim'
 Plug 'neo4j-contrib/cypher-vim-syntax'
 Plug 'rasjani/robotframework-vim'
 Plug 'towolf/vim-helm'
+Plug 'fatih/vim-go', {'tag': '*', 'do': ':GoUpdateBinaries'}
+Plug 'plasticboy/vim-markdown'
 
 call plug#end()
 
@@ -429,6 +432,7 @@ let g:UltiSnipsListSnippets="<A-tab>"
 
 " markdown
 let g:markdown_enable_mappings=0
+let g:vim_markdown_frontmatter=1
 
 " settings for neovim terminals
 autocmd vimrc TermOpen * setlocal nospell
