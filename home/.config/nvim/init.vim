@@ -91,6 +91,7 @@ Plug 'rasjani/robotframework-vim'
 Plug 'towolf/vim-helm'
 Plug 'fatih/vim-go', {'tag': '*', 'do': ':GoUpdateBinaries'}
 Plug 'plasticboy/vim-markdown'
+Plug 'gurpreetatwal/vim-avro'
 
 call plug#end()
 
