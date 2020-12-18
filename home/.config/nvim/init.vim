@@ -332,7 +332,7 @@ let g:coc_global_extensions = [
   \   'coc-emoji',
   \   'coc-dictionary',
   \   'coc-diagnostic',
-  \   'coc-python',
+  \   'coc-pyright',
   \   'coc-yaml',
   \   'coc-java',
   \   'coc-json',
