@@ -82,12 +82,10 @@ Plug 'mxw/vim-jsx', {'for': 'jsx'}
 Plug 'junegunn/vader.vim'
 Plug 'tpope/vim-dispatch'
 Plug 'janko-m/vim-test'
-Plug 'OmniSharp/omnisharp-vim'
 Plug 'gutenye/json5.vim'
 Plug 'neo4j-contrib/cypher-vim-syntax'
 Plug 'rasjani/robotframework-vim'
 Plug 'towolf/vim-helm'
-Plug 'fatih/vim-go', {'tag': '*', 'do': ':GoUpdateBinaries'}
 Plug 'plasticboy/vim-markdown'
 Plug 'gurpreetatwal/vim-avro'
 
@@ -334,6 +332,7 @@ let g:coc_global_extensions = [
   \   'coc-docker',
   \   'coc-html',
   \   'coc-svg',
+  \   'coc-go',
   \ ]
 
 " clap settings
