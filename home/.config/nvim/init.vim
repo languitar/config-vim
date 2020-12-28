@@ -17,7 +17,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'liuchengxu/vim-clap', {'tag': 'v*', 'do': ':Clap install-binary'}
 Plug 'gcmt/taboo.vim'
-Plug 'bkad/CamelCaseMotion'
 Plug 'simnalamburt/vim-mundo', {'on': 'MundoToggle'}
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-eunuch'
