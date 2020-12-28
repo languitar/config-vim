@@ -88,6 +88,7 @@ Plug 'rasjani/robotframework-vim'
 Plug 'towolf/vim-helm'
 Plug 'plasticboy/vim-markdown'
 Plug 'gurpreetatwal/vim-avro'
+Plug 'stsewd/sphinx.nvim', { 'do': ':UpdateRemotePlugins' }
 
 call plug#end()
 
