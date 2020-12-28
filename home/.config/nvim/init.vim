@@ -255,11 +255,6 @@ endif
 let g:airline_symbols.spell='✓'
 let g:airline_section_z='%4l/%L'
 
-" better whitespace
-autocmd vimrc FileType git DisableWhitespace
-autocmd vimrc FileType diff DisableWhitespace
-autocmd vimrc FileType help DisableWhitespace
-
 " detect indent settings
 let g:detectindent_preferred_expandtab=1
 let g:detectindent_preferred_indent=4
@@ -282,11 +277,8 @@ let g:jsx_ext_required=1
 
 " Remove some stuff for special windows
 autocmd vimrc BufReadPost fugitive://* setlocal nospell foldcolumn=0 nonumber norelativenumber
-autocmd vimrc FileType git setlocal nospell signcolumn=no nonumber norelativenumber
-autocmd vimrc FileType gitcommit setlocal signcolumn=no foldcolumn=0 nonumber norelativenumber
 autocmd vimrc TermOpen * setlocal nonumber norelativenumber signcolumn=no foldcolumn=0
 autocmd vimrc WinEnter * if &previewwindow | setlocal nospell nonumber norelativenumber signcolumn=no foldcolumn=0 | endif
-autocmd vimrc FileType help setlocal signcolumn=no foldcolumn=0 nospell
 
 " taboo settings
 let g:taboo_tabline=0
@@ -338,20 +330,11 @@ let g:coc_global_extensions = [
   \   'coc-xml',
   \   'coc-markdownlint',
   \   'coc-lists',
-  \   'coc-actions',
   \   'coc-sh',
   \   'coc-docker',
   \   'coc-html',
   \   'coc-svg',
   \ ]
-
-" fix editing modes to file types
-autocmd vimrc BufRead,BufNewFile rsb.conf set filetype=dosini
-autocmd vimrc BufRead,BufNewFile *.ics set filetype=icalendar
-autocmd vimrc BufRead,BufNewFile *.bbx set filetype=tex
-autocmd vimrc BufRead,BufNewFile *.cbx set filetype=tex
-autocmd vimrc BufNewFile,BufReadPost *.md set filetype=markdown
-autocmd vimrc BufNewFile,BufReadPost *.md.erb set filetype=markdown
 
 " clap settings
 let g:clap_layout = {'relative': 'editor'}
@@ -401,28 +384,14 @@ map <leader>sa <Plug>(coc-codeaction)
 xmap <leader>sa <Plug>(coc-codeaction-selected)
 map <leader>sq <Plug>(coc-fix-current)
 
-function! s:cocActionsOpenFromSelected(type) abort
-  execute 'CocCommand actions.open ' . a:type
-endfunction
-xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
-nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
-
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <silent><expr> <c-space> coc#refresh()
+inoremap <expr> <c-n> pumvisible() ? "\<C-n>" : coc#refresh()
 
 map <leader>w :w<CR>
-
-function! DeleteBuffer()
-    if &buftype ==# 'terminal'
-        Bdelete!
-    else
-        Bdelete
-    endif
-endfunction
-map <leader>q :call DeleteBuffer()<CR>
+map <leader>q :call myhelpers#DeleteBuffer()<CR>
 
 " UltiSnips settings
 let g:UltiSnipsEditSplit="context"
@@ -477,23 +446,7 @@ let g:vimtex_view_use_temp_files=2
 let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0 " do not open the quickfix window automatically
 
-" function to explain the different highlights for spelling errors
-function! s:SpellLegend()
-    for [l:group, l:explanation] in [
-    \   ['SpellBad', 'word not recognized'],
-    \   ['SpellCap', 'word not capitalized'],
-    \   ['SpellRare', 'rare word'],
-    \   ['SpellLocal', 'wrong spelling for selected region']
-    \]
-        echo ''
-        echon l:group . "\t"
-        execute 'echohl' l:group
-        echon 'xxx'
-        echohl None
-        echon "\t" . l:explanation
-    endfor
-endfunction
-command! -bar SpellLegend call s:SpellLegend()
+command! -bar SpellLegend call myhelpers#SpellLegend()
 
 " utility commands
 command! W w
@@ -502,13 +455,6 @@ command! Q q
 command! CopyFileLine let @+=expand("%") . ':' . line(".")
 
 command! PlugLoadAll call plug#load(keys(g:plugs))
-
-function! SynStack()
-    if !exists("*synstack")
-        return
-    endif
-    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
 
 " system-specific changes
 if filereadable(glob("~/.config/nvim/local.vim"))

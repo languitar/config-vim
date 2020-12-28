@@ -1,0 +1,1 @@
+/home/languitar/.homesick/repos/config-vim/home/.config/nvim/after/ftplugin/tex_macros.vim
