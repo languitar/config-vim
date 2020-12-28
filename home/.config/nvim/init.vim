@@ -10,7 +10,6 @@ call plug#begin('~/.local/share/nvim/bundle/')
 
 " general configuration
 Plug 'chriskempson/base16-vim'
-Plug 'danilo-augusto/vim-afterglow'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'ryanoasis/vim-devicons'
@@ -189,8 +188,8 @@ autocmd vim-colors ColorScheme afterglow highlight FoldColumn guifg=#6c99bb
 
 let g:afterglow_blackout=1
 let g:afterglow_italic_comments=1
-let g:airline_theme='onedark'
-colorscheme afterglow
+let g:airline_theme='base16_bright'
+colorscheme base16-bright
 
 " solid utf-8 lines for splits
 set fillchars=vert:\│
