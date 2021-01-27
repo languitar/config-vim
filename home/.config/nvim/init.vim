@@ -411,6 +411,10 @@ vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(
 map <leader>w :w<CR>
 map <leader>q :call myhelpers#DeleteBuffer()<CR>
 
+" better whitespace settings
+" add clap_input to not detect things there
+let g:better_whitespace_filetypes_blacklist=['diff', 'gitcommit', 'unite', 'qf', 'help', 'markdown', 'clap_input']
+
 " UltiSnips settings
 let g:UltiSnipsEditSplit="context"
 let g:UltiSnipsSnippetsDir="~/.config/nvim/UltiSnips"
