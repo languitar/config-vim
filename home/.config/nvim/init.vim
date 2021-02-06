@@ -11,13 +11,13 @@ call plug#begin('~/.local/share/nvim/bundle/')
 " general configuration
 Plug 'chriskempson/base16-vim'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
-Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'liuchengxu/vim-clap', {'tag': 'v*', 'do': ':Clap install-binary'}
 Plug 'gcmt/taboo.vim'
-Plug 'simnalamburt/vim-mundo', {'on': 'MundoToggle'}
+Plug 'simnalamburt/vim-mundo'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-obsession'
@@ -47,14 +47,14 @@ Plug 'rbong/vim-flog'
 Plug 'mhinz/vim-signify'
 
 " editing aids
-Plug 'roryokane/detectindent', {'on': 'DetectIndent'}
+Plug 'roryokane/detectindent'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'nathanaelkane/vim-indent-guides', {'on': 'IndentGuidesToggle'}
+Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tomtom/tcomment_vim'
-Plug 'sk1418/Join', {'on': 'Join'}
+Plug 'sk1418/Join'
 Plug 'kshenoy/vim-signature'
-Plug 'junegunn/vim-easy-align', {'on': 'EasyAlign'}
-Plug 'sbdchd/neoformat', {'on': 'Neoformat'}
+Plug 'junegunn/vim-easy-align'
+Plug 'sbdchd/neoformat'
 Plug 'machakann/vim-sandwich'
 Plug 'rhysd/vim-grammarous'
 Plug 'kana/vim-textobj-user'
@@ -70,15 +70,14 @@ Plug 'vigoux/LanguageTool.nvim'
 " language support
 Plug 'sheerun/vim-polyglot', {'tag': 'v*'}
 Plug 'lervag/vimtex', {'tag': 'v*'}
-Plug 'Rykka/riv.vim', {'for': 'rst'}
+Plug 'Rykka/riv.vim'
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
-Plug 'Vimjas/vim-python-pep8-indent', {'for': ['python', 'python3']}
-Plug 'bps/vim-textobj-python', {'for': ['python', 'python3']}
-Plug 'tmhedberg/SimpylFold', {'for': ['python', 'python3']}
+Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'bps/vim-textobj-python'
+Plug 'tmhedberg/SimpylFold'
 Plug 'jamessan/vim-gnupg'
-Plug 'chrisbra/csv.vim', {'for': 'csv'}
-Plug 'vim-scripts/icalendar.vim', {'for': 'icalendar'}
-Plug 'mxw/vim-jsx', {'for': 'jsx'}
+Plug 'chrisbra/csv.vim'
+Plug 'vim-scripts/icalendar.vim'
 Plug 'junegunn/vader.vim'
 Plug 'tpope/vim-dispatch'
 Plug 'janko-m/vim-test'
@@ -342,6 +341,7 @@ let g:coc_global_extensions = [
   \   'coc-xml',
   \   'coc-yaml',
   \   'coc-yank',
+  \   'coc-bibtex',
   \ ]
 
 " clap settings
