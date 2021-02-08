@@ -27,7 +27,6 @@ Plug 'vim-scripts/visualrepeat'
 Plug 'wellle/targets.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'moll/vim-bbye'
-Plug 'wellle/visual-split.vim'
 
 " completion
 Plug 'SirVer/ultisnips'
