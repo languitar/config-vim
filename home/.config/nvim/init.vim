@@ -47,7 +47,6 @@ Plug 'mhinz/vim-signify'
 
 " editing aids
 Plug 'roryokane/detectindent'
-Plug 'ntpeters/vim-better-whitespace'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tomtom/tcomment_vim'
 Plug 'sk1418/Join'
@@ -211,8 +210,6 @@ let g:airline#extensions#hunks#enabled=0
 let g:airline#extensions#branch#displayed_head_limit=20
 let g:airline#extensions#branch#format=2
 let g:airline#extensions#branch#sha1_len=8
-" reduce whitespace checks to what other plugins are not doing
-let g:airline#extensions#whitespace#checks=['indent', 'mixed-indent-file']
 let g:airline#extensions#taboo#enabled=1
 let g:airline#extensions#ale#enabled=0
 let g:airline#extensions#languageclient#enabled=0
@@ -409,10 +406,6 @@ vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(
 
 map <leader>w :w<CR>
 map <leader>q :call myhelpers#DeleteBuffer()<CR>
-
-" better whitespace settings
-" add clap_input to not detect things there
-let g:better_whitespace_filetypes_blacklist=['diff', 'gitcommit', 'unite', 'qf', 'help', 'markdown', 'clap_input']
 
 " UltiSnips settings
 let g:UltiSnipsEditSplit="context"
